@@ -107,7 +107,7 @@
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Definições de cores usadas; veja http://latexcolor.com/
@@ -865,16 +865,29 @@ O título deve ser o mais claro possível, não deixando dúvidas sobre o assunt
 \align center
 
 \size large
-PROJETO ENGENHARIA
+PROJETO DE ENGENHARIA
 \begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\begin_inset VSpace defskip
 \end_inset
 
 DESENVOLVIMENTO DO SOFTWARE 
 \begin_inset Newline newline
 \end_inset
 
-XXX
+PARA CÁLCULO DAS PROPRIEDADES REOLÓGICAS DE FLUIDOS DE PERFURAÇÃO, VELOCIDADE
+ CRÍTICA E PERDAS DE CARGA EM POÇOS DE PETRÓLEO
 \begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace defskip
 \end_inset
 
 TRABALHO DA DISCIPLINA PROGRAMAÇÃO PRÁTICA
@@ -895,15 +908,7 @@ Versão 1:
 \begin_inset Newline newline
 \end_inset
 
-AUTORES
-\begin_inset Newline newline
-\end_inset
-
-Versão 2:
-\begin_inset Newline newline
-\end_inset
-
-AUTORES
+ROBERT ALEPHY SOUZA DA SILVA
 \begin_inset Newline newline
 \end_inset
 
@@ -936,7 +941,7 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-Janeiro - 2023
+Setembro - 2023
 \end_layout
 
 \end_body
