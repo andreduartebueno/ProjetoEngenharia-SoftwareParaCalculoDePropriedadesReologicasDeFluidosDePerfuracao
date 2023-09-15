@@ -106,3 +106,6 @@ Nota:
 	lyx-common-2.3.5-1.fc31.noarch
 	lyx-2.3.5-1.fc31.x86_64
 	
+
+Comentário:
+Alterado na aula do dia 15/09/2023.
