@@ -4,3 +4,4 @@ Colocar aqui códigos desenvolvidos, arquivos .hy .cpp.
 Aqui não entram arquivos usados em testes;
 Arquivos usados para testar o funcionamento do programa ficam no diretório test.
 
+Alteração realizada na aula do dia 15/09, mostra o que ocorre quando altera um arquivo.
