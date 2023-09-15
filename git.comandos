@@ -35,3 +35,6 @@ git branch –d <branch-name>     -> deleta ramo
 git merge <branch-name>         -> mesclar uma ramificação no ramo ativo
 git diff                        -> listar diferenças / conflitos
 git stash                       -> salvar as mudanças sem gerar um commit
+
+
+OI tudo bem?
