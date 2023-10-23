@@ -97,11 +97,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -167,14 +168,38 @@ name "sec:Análise-de-domínio"
 \end_layout
 
 \begin_layout Standard
-Após estudo dos requisitos/especificações do sistema, algumas entrevistas,
- estudos na biblioteca e disciplinas do curso foi possível identificar o
- domínio de trabalho:
+Após estudo dos requisitos/especificações do sistema, algumas entrevistas
+\change_inserted 1635264300 1697978603
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1697978603
+citar no rodapé nome entrevistados
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, estudos na biblioteca e disciplinas do curso foi possível identificar
+ o domínio de trabalho:
 \end_layout
 
 \begin_layout Itemize
 O software envolverá disciplinas de Matemática, Física, Química, Geometria
- e Engenharia de Poços.
+\change_deleted 1635264300 1697978608
+ e
+\change_inserted 1635264300 1697978608
+,
+\change_unchanged
+ Engenharia de Poços
+\change_inserted 1635264300 1697978616
+, cálculo numérico e programação
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Itemize
@@ -199,18 +224,52 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Standard
-Serão apresentadas e descritas nesta seção as fórmulas e medidas necessárias
- para a realização dos cálculos no software.
+Serão apresentadas e descritas nesta seção as 
+\change_deleted 1635264300 1697978642
+fórmulas
+\change_inserted 1635264300 1697978643
+equações
+\change_unchanged
+ e medidas necessárias para a realização dos cálculos no software.
 \end_layout
 
 \begin_layout Standard
-A hidráulica de perfuração e a limpeza do poço têm papel fundamental na
- construção de poços de petróleo.
- Por isso, é necessário prever o comportamento dos fluidos de perfuração.
+A hidráulica de perfuração 
+\change_deleted 1635264300 1697978674
+e a limpeza do poço 
+\change_unchanged
+têm papel fundamental na construção de poços de petróleo.
+ 
+\change_deleted 1635264300 1697978684
+Por isso, é necessário 
+\change_inserted 1635264300 1697978687
+A mesma é utilizada para 
+\change_unchanged
+prever o comportamento dos fluidos de perfuração.
+
+\change_inserted 1635264300 1697978736
+ 
+\change_deleted 1635264300 1697978735
+
 \end_layout
 
 \begin_layout Standard
-Os parâmetros reológicos são propriedades dos fluidos que podem ser cálculadas
+
+\change_inserted 1635264300 1697978740
+O estudo dos seus parâmetros nos permite viabilizar mecanismos para a correta
+ limpeza dos poços.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1635264300 1697978758
+Seu entendimento passa pelo conhecimento d
+\change_deleted 1635264300 1697978759
+O
+\change_inserted 1635264300 1697978759
+o
+\change_unchanged
+s parâmetros reológicos são propriedades dos fluidos que podem ser cálculadas
  e aproximadas a partir de resultados de ensaios com viscosímetro em laboratório.
 \end_layout
 
@@ -218,8 +277,42 @@ Os parâmetros reológicos são propriedades dos fluidos que podem ser cálculad
 Os resultados dos ensaios realizados com o viscosímetro Fann 35A, de mais
  largo uso na indústria, disponível no Laboratório de Fluidos e Mecânica
  das Rochas no LENEP (Labóratório de Engenharia e Exploração de Petróleo)
- são apresentados na forma da Tabela 1.1, com seis pares de rotação e deflexão
- da mola.
+ são apresentados na 
+\change_deleted 1635264300 1697978806
+forma da 
+\change_unchanged
+Tabela 
+\change_deleted 1635264300 1697978852
+1.1
+\change_inserted 1635264300 1697978856
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Nomenclatura-dos-ensaios"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1697978947
+clica no título da tabela e insere um label; a seguir clica com botão direito
+ no label e copia a referencia; depois vai onde vai citar a tabela e cola;
+ veja seao "
+\lang portuguese
+Etiquetas e Referências Cruzadas" do tutorial do LyX - Ajuda->Tutorial
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, com seis pares de rotação e deflexão da mola.
 \end_layout
 
 \begin_layout Standard
@@ -232,7 +325,34 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Nomenclatura dos ensaios com viscosímetro Fann 35A.
+Nomenclatura dos ensaios com viscosímetro Fann 35A
+\change_inserted 1635264300 1697978847
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1697978838
+não coloque ponto final em título de tabelas e figuras
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Nomenclatura-dos-ensaios"
+
+\end_inset
+
+
+\change_deleted 1635264300 1697978827
+.
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1000,8 +1120,62 @@ v_{a}=24,51*Q/(D_{0}^{2}-D_{i}^{2})\:(Espaços\:anulares,\:unidades\:de\:campo)
 \end_layout
 
 \begin_layout Standard
-onde as velocidades (v) estão expressas em ft/min, a vazão (Q) em gal/min
- e os diâmetros D em polegadas.
+onde as velocidades (
+\change_deleted 1635264300 1697978977
+v
+\change_inserted 1635264300 1697978979
+
+\begin_inset Formula $v$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1697979016
+note que nas equações os termos estão em itático, quando foir citar um termo
+ selecione o mesmo e pressione ctrl+m para inserir equação inline
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+) estão expressas em 
+\change_deleted 1635264300 1697979021
+ft/min
+\change_inserted 1635264300 1697979021
+
+\begin_inset Formula $ft/min$
+\end_inset
+
+
+\change_unchanged
+, a vazão (
+\change_deleted 1635264300 1697979024
+Q
+\change_inserted 1635264300 1697979024
+
+\begin_inset Formula $Q$
+\end_inset
+
+
+\change_unchanged
+) em gal/min e os diâmetros 
+\change_deleted 1635264300 1697979028
+D 
+\change_inserted 1635264300 1697979029
+
+\begin_inset Formula $D$
+\end_inset
+
+ 
+\change_unchanged
+em polegadas.
 \end_layout
 
 \begin_layout Standard
@@ -1009,8 +1183,19 @@ As velocidades calculadas pelas equações devem ser comparadas com as velocidad
  críticas de fluxo, que são função da geometria do poço e dos parâmetros
  reológicos.
  Caso o fluido esteja escoando a velocidades menores do que as críticas,
- o padrão de fluxo é laminar, ao passo que, em volecidades maiores do que
- as críticas o padrão de fluxo é turbulento.
+ o padrão de fluxo é laminar, ao passo que, em v
+\change_deleted 1635264300 1697979042
+o
+\change_inserted 1635264300 1697979042
+e
+\change_unchanged
+l
+\change_deleted 1635264300 1697979044
+e
+\change_inserted 1635264300 1697979044
+o
+\change_unchanged
+cidades maiores do que as críticas o padrão de fluxo é turbulento.
 \end_layout
 
 \begin_layout Standard
@@ -1019,10 +1204,23 @@ De posse do padrão de fluxo em cada trecho, pode-se selecionar as equações
 \end_layout
 
 \begin_layout Standard
-Na Tabela 1.3 constam as equações de velocidades críticas e perdas de carga
- para o interior de colunas e espaços anulares de fluidos Binghamianos em
- regime laminar e turbulento, para unidades do Sitema Internacional (SI)
- ou Unidades de campo.
+Na Tabela 
+\change_deleted 1635264300 1697979076
+1.3
+\change_inserted 1635264300 1697979076
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Equações para cálculo de velocidades críticas Binghamianos"
+
+\end_inset
+
+
+\change_unchanged
+ constam as equações de velocidades críticas e perdas de carga para o interior
+ de colunas e espaços anulares de fluidos Binghamianos em regime laminar
+ e turbulento, para unidades do Sitema Internacional (SI) ou Unidades de
+ campo.
 \end_layout
 
 \begin_layout Standard
@@ -1037,7 +1235,20 @@ status open
 
 \begin_layout Plain Layout
 Equações para cálculo de velocidades críticas e perdas de carga na circulação
- de fluidos Binghamianos (MACHADO, 2002).
+ de fluidos Binghamianos (MACHADO, 2002)
+\change_deleted 1635264300 1697979056
+.
+\change_inserted 1635264300 1697979071
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Equações para cálculo de velocidades críticas Binghamianos"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1645,7 +1856,20 @@ Unidade de campo
 
 \begin_layout Standard
 Caso o modelo reológico de fluido seja de potência, deve-se utilizar as
- equações constantes na Tabela 1.4.
+ equações constantes na Tabela 
+\change_deleted 1635264300 1697979137
+1.4
+\change_inserted 1635264300 1697979137
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Equações para cálculo de velocidades críticas Potencia"
+
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -1660,7 +1884,20 @@ status open
 
 \begin_layout Plain Layout
 Equações para cálculo de velocidades críticas e de perdas de carga na circulação
- de fluidos de Potência (MACHADO, 2002).
+ de fluidos de Potência (MACHADO, 2002)
+\change_deleted 1635264300 1697979098
+.
+\change_inserted 1635264300 1697979132
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Equações para cálculo de velocidades críticas Potencia"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2094,12 +2331,35 @@ Perfuração Direcional
 \begin_inset Quotes eld
 \end_inset
 
+
+\emph on
 Composition and Propertiesof Drilling and Completion Fluids
+\emph default
+
 \begin_inset Quotes erd
 \end_inset
 
- de Darley e Gray, para a consulta de informações a cerca do assunto abordado
- neste projeto.
+ de Darley e Gray
+\change_inserted 1635264300 1697979181
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1697979282
+no diretório tem um arquivo bibliografia.bib; abra o mesmo e insira estas
+ 3 referências; a seguir coloque referencia cruzada (vá em Inserir->Referencia
+ Cruzada; leia o apêndice B, explica como fazer
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, para a consulta de informações a cerca do assunto abordado neste projeto.
  Assim como outros materiais disponíveis nas plataformas digitais de pesquisa.
 \end_layout
 
@@ -2109,7 +2369,11 @@ Identificação de pacotes – assuntos
 
 \begin_layout Standard
 Apresentados os conceitos físico-matatemáticos relacionados ao software
- desenvolvido, pode-se montar a lista de assuntos (pacotes).
+ 
+\change_inserted 1635264300 1697979359
+a ser 
+\change_unchanged
+desenvolvido, pode-se montar a lista de assuntos (pacotes).
 \end_layout
 
 \begin_layout Itemize
@@ -2162,6 +2426,34 @@ reference "fig:Diagrama-de-Pacotes"
 \end_inset
 
  representa o diagrama de pacotes do sistema.
+\change_inserted 1635264300 1697979418
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698092904
+o diagrama de pacotes esta errado; um pacote é algo grande com classes dentro;
+ modelo de fluido é uma enumeração; tipo de fluido é uma enumeração; propriedade
+s são as propriedades dos fluidos dentro da classe CFluido; Propriedades
+ do Poço estarão na classe CPoco; ENTRE OS PACOTES DE SEU PROJETO PODEMOS
+ TER PACOTES QUE REPRESENTEM CONJUNTO DE CLASSES; POR EXEMPLO, pacotte Fluido
+ representando as diversas classes CFluido e derivadas; pacote Poço representand
+o as diversas classes de poço; Pacote Graficos, representando as classes
+ que geram gráficos, como CGnuplot e QCustomPlot; Se utiliza estatística
+ pacote estatística; se usa métodos numéricos pacote métodos numéricos;
+ enfim, um pacote é um conjunto de classes e funções que estão fortememtne
+ relacionadas entre sí; 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -2180,8 +2472,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../../../../Desktop/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica-master/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica-master/doc/ManualDoDesenvolvedor/imagens/Diagrama_pacotes.png
-	lyxscale 50
+	filename imagens/Diagrama_pacotes.png
 	width 100text%
 
 \end_inset

@@ -83,11 +83,12 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -158,8 +159,12 @@ Diagramas de classes
 \end_layout
 
 \begin_layout Standard
-O diagrama do software desenvolvido é composto por 6 classes e é apresentado
- na Figura 
+O diagrama 
+\change_inserted 1635264300 1697981185
+de classes 
+\change_unchanged
+do software desenvolvido é composto por 6 classes e é apresentado na Figura
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-classes"
@@ -168,6 +173,32 @@ reference "cap:Diagrama-de-classes"
 
 .
  
+\change_inserted 1635264300 1698093477
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698094077
+vamos marcar aula em que você me apresenta este diagrama abaixo; acho que
+ teremos de corrigir;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698094109
+Aqui não fazemos referencia a CGnuplot; esta é uma decisão de projeto; a
+ classe CGnuplot vai aparecer na revisão dos diagramas; lá no projeto
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -223,39 +254,158 @@ name "subsec:Dicionário-de-classes"
 \end_layout
 
 \begin_layout Itemize
-Classe CAmostraFluido: é a classe responsável por armazenar dados importantes
- a respeito das amostras de fluidos de perfuração analisadas e do usuário
- responsável pela realização dos experimentos.
+Classe CAmostraFluido: 
+\change_inserted 1635264300 1698092927
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+é a classe responsável por armazenar dados importantes a respeito das amostras
+ de fluidos de perfuração analisadas e do usuário responsável pela realização
+ dos experimentos.
+\change_inserted 1635264300 1697981360
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093232
+em vez de armazenar o nome do pesquisador pense em armazenar um inteiro
+ que identifica o pesquisador.
+ Pode ter arquivo disco com este número inteiro e do lado o nome do pesquisador;
+ em vez de armazenar o ID como string use um INT; USAMOS STRING QUANDO TEMOS
+ UM PADRÃO DE NOME DEFINIDO E QUE USA CARACTERES E NÚMEROS.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CViscosimetro
+\change_inserted 1635264300 1698093036
+_
+\change_unchanged
+Fann35A
+\change_deleted 1635264300 1698093027
+-
+\change_inserted 1635264300 1698093027
+_
+\change_unchanged
+R1B1: 
+\change_inserted 1635264300 1698093012
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093020
+não coloque - no nome! 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+representa a classe responsável por armazenar os dados referentes ao viscosímetr
+o, como: as leituras das deflexões da mola do viscosímetro e os géis inicial
+ e final.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CSimuladorPropriedadesReologicas: 
+\change_inserted 1635264300 1698092931
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+esta classe é reponsável pelos cálculos das propriedades reológicas.
+ 
+\change_inserted 1635264300 1698093250
+
 \end_layout
 
 \begin_layout Itemize
-Classe CViscosimetroFann35A-R1B1: representa a classe responsável por armazenar
- os dados referentes ao viscosímetro, como: as leituras das deflexões da
- mola do viscosímetro e os géis inicial e final.
+Referentes a Fluidos Binghamianos: viscosidade aparente, a viscosidade plástica
+ e o limite de escoamento.
+ 
+\change_inserted 1635264300 1698093254
+
 \end_layout
 
 \begin_layout Itemize
-Classe CSimuladorPropriedadesReologicas: esta classe é reponsável pelos
- cálculos das propriedades reológicas.
- Referentes a Fluidos Binghamianos: viscosidade aparente, a viscosidade
- plástica e o limite de escoamento.
- Referentes a Fluidos de Potência: índice de comportamento e índice de consistên
-cia.
+Referentes a Fluidos de Potência: índice de comportamento e índice de consistênc
+ia.
+\change_inserted 1635264300 1698093323
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093323
+SE SÃO DOIS TIPOS DE FLUIDOS COM PROPRIEDADES DIFERENTES CRIAR CFluido e
+ as herdeiras CFluidoBinghamianos e CFluidoPotencia
+\change_unchanged
+
 \end_layout
 
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-Classe CSimuladorPerdaCargaCirculacaoFluidos: é a classe responsável por
- simular o cálculo da velocidade crítica e das perdas de carga do fluido
- de perfuração em um poço de petróleo, assim como, de definir o regime de
- fluxo, posição do fluido no poço e unidades de medida que serão utilizadas
- na simulação.
+Classe CSimuladorPerdaCargaCirculacaoFluidos: 
+\change_inserted 1635264300 1698092933
+
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Classe CViscosimetro: representa a classe que possui métodos que possibilitam
- a realização dos cálculos.
+é a classe responsável por simular o cálculo da velocidade crítica e das
+ perdas de carga do fluido de perfuração em um poço de petróleo, assim como,
+ de definir o regime de fluxo, posição do fluido no poço e unidades de medida
+ que serão utilizadas na simulação.
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+Classe CViscosimetro: 
+\change_inserted 1635264300 1698092935
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+representa a classe que possui métodos que possibilitam a realização dos
+ cálculos
+\change_inserted 1635264300 1697981441
+ associados ao viscosímetro
+\change_unchanged
+.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Classe CPoco: esta classe é responsável pelo armazenamento de todos os dados
  referentes ao poço, ou propriedades de fluidos no poço, necessárias para
@@ -263,10 +413,41 @@ Classe CPoco: esta classe é responsável pelo armazenamento de todos os dados
 \end_layout
 
 \begin_layout Itemize
-Classe CGrafico: representa a classe que possibilita a geração de gráficos
- usando o software externo Gnuplot.
+Classe CGrafico: 
+\change_inserted 1635264300 1698092937
+
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+representa a classe que possibilita a geração de gráficos usando o software
+ externo 
+\family typewriter
+Gnuplot
+\family default
+.
+\change_inserted 1635264300 1698093519
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093552
+quando nos referimos a aplicativos, classes definidos, usamos letra typewriter;
+ seleciona e muda para typewriter;
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Diagrama de sequência – eventos
 \begin_inset Index idx
@@ -312,7 +493,13 @@ name "subsec:diagrama de sequência"
 
 \shape italic
 \emph on
-NEsta seção é apresentado o diagrama de sequência na
+N
+\change_deleted 1635264300 1698093556
+E
+\change_inserted 1635264300 1698093556
+e
+\change_unchanged
+sta seção é apresentado o diagrama de sequência na
 \shape default
 \emph default
  Figura 
@@ -325,14 +512,46 @@ reference "cap:Diagrama-de-sequencia"
 , observe que 
 \shape italic
 \emph on
-o diagrama enfatiza a troca de eventos e mensagens respeitando sua ordem
- temporal.
+o 
+\change_deleted 1635264300 1698093564
+diagrama
+\change_inserted 1635264300 1698093564
+mesmo
+\change_unchanged
+ enfatiza a troca de eventos e mensagens respeitando sua ordem temporal.
 
 \shape default
 \emph default
  Ele representa dois possíveis casos em que o usuário deverá escolher entre
  apenas calcular as propriedades reológicas ou alem disso calcular as perdas
  de carga no poço.
+\change_inserted 1635264300 1698093596
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093636
+corrigir o diagrama; da forma como esta o usuário só cria a amostra de fluiodo,
+ esta cria o viscosimetro que cria o simulador que cria gráfico...
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093677
+As setas que partem do usuário devem mostrar cada iteração do mesmo com
+ o software; se houver chamadas entre os objetos as setas partem de quem
+ chama
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -439,6 +658,24 @@ reference "subsec:Diagrama-de-Comunicação"
 , o diagrama de comunicação mostra a sequência para determinação do diferencial
  de pressão do software.
  Observe que as trocas de mensagem estão numeradas em sequência temporal.
+\change_inserted 1635264300 1698093695
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093703
+gráfico precisa ser corrigido
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -555,6 +792,10 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de máquina de estado
+\change_inserted 1635264300 1698093731
+ para classe CSimuladorPerdaCarga
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-maquina-de-estado"
@@ -588,6 +829,26 @@ reference "cap:Diagrama-de-atividades"
 
  é apresentado o diagrama de atividades correspondente a uma atividade específic
 a do diagrama de máguina de estado, onde calcula-se as propriedades reológicas.
+\change_inserted 1635264300 1698093750
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093792
+precisa dizer nome da classe e nome do método; o gráfico esta errado; veja
+ exemplos de diagramas de atividade nas provas e projetos; tem na internet
+ tambémn
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -614,6 +875,10 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de atividades
+\change_inserted 1635264300 1698093746
+: método XX da classe YY
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"

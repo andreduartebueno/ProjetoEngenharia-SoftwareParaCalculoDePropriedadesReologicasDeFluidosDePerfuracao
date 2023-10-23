@@ -101,6 +101,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \author 1908091853 "andreduartebueno"
 \end_header
 
@@ -140,6 +141,26 @@ Versão 0.1 - xxx
 Na primeira versão foi 
 \shape italic
 ...
+\change_inserted 1635264300 1698094830
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698094841
+
+\shape italic
+precisa montar a primeira versão e falar aqui o que foi feito
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -230,6 +251,27 @@ Versão 0.2 - xxx
 
 \begin_layout Standard
 Nesta segunda versão ...
+\change_inserted 1635264300 1698094847
+
+\shape italic
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698094863
+
+\shape italic
+precisa montar a primeira versão e falar aqui o que foi feito de novo; cada
+ nova versão deve ser documentada
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

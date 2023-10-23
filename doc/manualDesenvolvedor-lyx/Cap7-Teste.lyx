@@ -141,24 +141,70 @@ Todo projeto de engenharia passa por uma etapa de testes.
  apresentados (diagramas de caso de uso geral e específicos).
 \end_layout
 
+\begin_layout Standard
+Cada teste deve atender o seguinte:
+\end_layout
+
+\begin_layout Itemize
+O que esta sendo testado (relacione com os requisitos, quais requisitos
+ serão testados neste teste)? 
+\end_layout
+
+\begin_layout Itemize
+Objetivo do teste?
+\end_layout
+
+\begin_layout Itemize
+Como o teste será realizado (estratégia)?
+\end_layout
+
+\begin_layout Itemize
+Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
+ específica.
+\end_layout
+
+\begin_layout Itemize
+Resultados dos testes: registram os resultados do teste; se deu tudo certo
+ ou se tem algum erro/falha;
+\end_layout
+
+\begin_layout Itemize
+Data/hora/responsável pelo teste;
+\end_layout
+
 \begin_layout Section
 Teste 1: Descrição
 \end_layout
 
 \begin_layout Standard
-No início apresente texto explicativo do teste:
+Sobre o teste:
 \end_layout
 
 \begin_layout Itemize
-O que esta sendo testado?
+O que esta sendo testado (relacione com os requisitos, quais requisitos
+ serão testados neste teste)? 
 \end_layout
 
 \begin_layout Itemize
-Como o teste vai ser realizado?
+Objetivo do teste?
 \end_layout
 
 \begin_layout Itemize
-Como o programa será validado?
+Como o teste será realizado (estratégia)?
+\end_layout
+
+\begin_layout Itemize
+Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
+ específica.
+\end_layout
+
+\begin_layout Itemize
+Resultados dos testes: registram os resultados do teste; se deu tudo certo
+ ou se tem algum erro/falha;
+\end_layout
+
+\begin_layout Itemize
+Data/hora/responsável pelo teste;
 \end_layout
 
 \begin_layout Standard
@@ -225,19 +271,34 @@ Teste 2: Descrição
 \end_layout
 
 \begin_layout Standard
-No início apresente texto explicativo do teste:
+Sobre o teste:
 \end_layout
 
 \begin_layout Itemize
-O que esta sendo testado?
+O que esta sendo testado (relacione com os requisitos, quais requisitos
+ serão testados neste teste)? 
 \end_layout
 
 \begin_layout Itemize
-Como o teste vai ser realizado?
+Objetivo do teste?
 \end_layout
 
 \begin_layout Itemize
-Como o programa será validado?
+Como o teste será realizado (estratégia)?
+\end_layout
+
+\begin_layout Itemize
+Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
+ específica.
+\end_layout
+
+\begin_layout Itemize
+Resultados dos testes: registram os resultados do teste; se deu tudo certo
+ ou se tem algum erro/falha;
+\end_layout
+
+\begin_layout Itemize
+Data/hora/responsável pelo teste;
 \end_layout
 
 \begin_layout Standard
@@ -314,19 +375,34 @@ Teste 3: Descrição
 \end_layout
 
 \begin_layout Standard
-No início apresente texto explicativo do teste:
+Sobre o teste:
 \end_layout
 
 \begin_layout Itemize
-O que esta sendo testado?
+O que esta sendo testado (relacione com os requisitos, quais requisitos
+ serão testados neste teste)? 
 \end_layout
 
 \begin_layout Itemize
-Como o teste vai ser realizado?
+Objetivo do teste?
 \end_layout
 
 \begin_layout Itemize
-Como o programa será validado?
+Como o teste será realizado (estratégia)?
+\end_layout
+
+\begin_layout Itemize
+Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
+ específica.
+\end_layout
+
+\begin_layout Itemize
+Resultados dos testes: registram os resultados do teste; se deu tudo certo
+ ou se tem algum erro/falha;
+\end_layout
+
+\begin_layout Itemize
+Data/hora/responsável pelo teste;
 \end_layout
 
 \begin_layout Standard
@@ -408,6 +484,145 @@ status open
 
 \begin_layout Plain Layout
 apague!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tabela Resumo
+\end_layout
+
+\begin_layout Itemize
+Monte uma tabela com a lista de requisitos e se os mesmos foram implementados
+ e testados;
+\end_layout
+
+\begin_layout Itemize
+A ideia é correlacionar o requisito com sua implementação e teste;
+\end_layout
+
+\begin_layout Itemize
+Exemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requisito
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implementação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Teste
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gerar gráficos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sim
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Passou
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+note que no fundo temos de ter mecanismos de verificação das tarefas; check
+ lists; 
+\end_layout
+
+\begin_layout Plain Layout
+tinha de fazer gráfico
+\end_layout
+
+\begin_layout Plain Layout
+foi implementado
+\end_layout
+
+\begin_layout Plain Layout
+foi testado
+\end_layout
+
+\begin_layout Plain Layout
+isto garante que não esquecemos nada; um controle mínimo das atividades
+ feitas
 \end_layout
 
 \end_inset
