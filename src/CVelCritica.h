@@ -2,62 +2,48 @@
 #define CVelCritica_h
 
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
+
+#include "CPropriedadesReologicas.h"
+#include "CPoco.h"
 
 /**
-@brief Classe que calcula a velocidade crítica do fluido de perfuração no poço
+@brief Classe que calcula a velocidade crítica do fluido de perfuração no poço para fluidos Binghamianos
 @class CVelCritica
 @file CVelCritica.h
  */
 
-class CVelCritica : public CPropriedadesReologicas, public CIndice { /// Herdeira das classes CPropriedadesReologicas e CIndice
-///Atributos
-public:
+ class CVelCritica {
+ /// Atributos
+ public:
     /// Velocidade Crítica para Fluidos Binghamianos, no interior de tubos e unidades no Sistema Internacional
-    double vel_critica_Bighamiano_it_SI;
+    double vel_critica_Binghamiano_it_SI;
     /// Velocidade Crítica para Fluidos Binghamianos, no interior de tubos e unidades de Campo
-    double vel_critica_Bighamiano_it_UC;
+    double vel_critica_Binghamiano_it_UC;
     /// Velocidade Crítica para Fluidos Binghamianos, no espaço anular e unidades no Sistema Internacional
-    double vel_critica_Bighamiano_ea_SI;
+    double vel_critica_Binghamiano_ea_SI;
     /// Velocidade Crítica para Fluidos Binghamianos, no espaço anular e unidades de Campo
-    double vel_critica_Bighamiano_ea_UC;
+    double vel_critica_Binghamiano_ea_UC;
+    /// Ponteiro para objeto da classe CPropriedadesReologicas
+    CPropriedadesReologicas* ppropriedade;
+    /// Ponteiro para objeto da classe CPoco
+    CPoco* ppoco;
 
-    /// Velocidade Crítica para Fluidos de Potência, no interior de tubos e unidades no Sistema Internacional
-    double vel_critica_Potencia_it_SI;
-    /// Velocidade Crítica para Fluidos de Potência, no interior de tubos e unidades de Campo
-    double vel_critica_Potencia_it_UC;
-    /// Velocidade Crítica para Fluidos de Potência, no espaço anular e unidades no Sistema Internacional
-    double vel_critica_Potencia_ea_SI;
-    /// Velocidade Crítica para Fluidos de Potência, no espaço anular e unidades de Campo
-    double vel_critica_Potencia_ea_UC;
-
-///Métodos
-public:
-    ///Construtor default
-    CVelCritica() {};
-    ///Destrutor
-    ~CVelCritica() {};
+/// Metodos
+ public:
+    /// Construtor
+    CVelCritica(CPropriedadesReologicas* _ppropriedade, CPoco* _ppoco) : ppropriedade(_ppropriedade), ppoco(_ppoco){};
+    /// Destrutor
+    CVelCritica();
 
     /// Metodo para o calculo da Velocidade Crítica para Fluidos Binghamianos, no interior de tubos e unidades no Sistema Internacional
-    double Vel_critica_Bighamiano_it_SI(CPropiedadesReologicas& propriedade);
+    double Vel_critica_Binghamiano_it_SI();
     /// Metodo para o calculo da Velocidade Crítica para Fluidos Binghamianos, no interior de tubos e unidades de Campo
-    double Vel_critica_Bighamiano_it_UC(CPropiedadesReologicas& propriedade);
+    double Vel_critica_Binghamiano_it_UC();
     /// Metodo para o calculo da Velocidade Crítica para Fluidos Binghamianos, no espaço anular e unidades no Sistema Internacional
-    double Vel_critica_Bighamiano_ea_SI(CPropiedadesReologicas& propriedade);
+    double Vel_critica_Binghamiano_ea_SI();
     /// Metodo para o calculo da Velocidade Crítica para Fluidos Binghamianos, no espaço anular e unidades de Campo
-    double Vel_critica_Bighamiano_ea_UC(CPropiedadesReologicas& propriedade);
+    double Vel_critica_Binghamiano_ea_UC();
 
-    /// Metodo para o calculo da Velocidade Crítica para Fluidos de Potência, no interior de tubos e unidades no Sistema Internacional
-    double Vel_critica_Potencia_it_SI(CIndice& indice);
-    /// Metodo para o calculo da Velocidade Crítica para Fluidos de Potência, no interior de tubos e unidades de Campo
-    double Vel_critica_Potencia_it_UC(CIndice& indice);
-    /// Metodo para o calculo da Velocidade Crítica para Fluidos de Potência, no espaço anular e unidades no Sistema Internacional
-    double Vel_critica_Potencia_ea_SI(CIndice& indice);
-    /// Metodo para o calculo da Velocidade Crítica para Fluidos de Potência, no espaço anular e unidades de Campo
-    double Vel_critica_Potencia_ea_UC(CIndice& indice);
-
-};
+ };
 
 #endif // CVelCritica_h
