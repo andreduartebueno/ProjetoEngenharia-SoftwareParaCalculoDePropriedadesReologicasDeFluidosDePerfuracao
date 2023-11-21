@@ -9,7 +9,7 @@
 @brief Classe responsavel pelo calculo das propriedades para fluidos de Potência (Modelo de Ostwald de Waale)
 @class CIndice
 @file CIndice_h
-*/
+ */
 
 class CIndice : public CAmostraFluido { /// Herdeira da classe CAmostraFluido
 //Atributos

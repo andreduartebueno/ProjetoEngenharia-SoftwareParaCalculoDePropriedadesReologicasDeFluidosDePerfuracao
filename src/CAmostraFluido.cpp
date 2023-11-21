@@ -3,9 +3,9 @@
 #include <fstream>
 #include <vector>
 #include <iomanip>
+#include <fstream>
 
 #include "CAmostraFluido.h"
-#include "CGnuplot.h"
 
 /**
 @class CAmostraFluido
@@ -64,13 +64,12 @@ double CAmostraFluido::Gf(){return gf;}
 string linha = "_______________________________________________________________________________________ \n";
 
 
-void CAmostraFluido::EntradadeDados() {
+void CAmostraFluido::EntradaSaidadeDados() {
 
     cout << "Digite um nome para identificar o fluido de perfuracao: " << endl;
     cout << "[Sugestao --> Base do fluido_ + Numeracao_ + Parametros a serem analisados] " <<endl;
     cout << "Exemplo: FBA_07_Salinidade" << endl;
     cout << linha;
-    cin.ignore(); /// limpeza de caracteres residuais no buffer
     getline(cin, nomefluido);
     cout << linha;
 
@@ -183,7 +182,7 @@ void CAmostraFluido::EntradadeDados() {
     for(i = 0; i < 6; i++){tensaocisalhamento_si[i] = tensaocisalhamento_uc[i] * 478.8026;}
     cout << endl;
     cout << "Tensao de cisalhamento, (mPa): ";
-    for(i = 0; i < tensaocisalhamento_uc.size(); i++){cout << tensaocisalhamento_uc[i] << " ";}
+    for(i = 0; i < tensaocisalhamento_si.size(); i++){cout << tensaocisalhamento_si[i] << " ";}
     cout << endl;
     cout << linha;
 
@@ -198,9 +197,80 @@ void CAmostraFluido::EntradadeDados() {
     cout << endl;
     cout << linha;
 
+    /// Saida de dados
+    cout << "Deseja salvar os resultados em disco? [s/n] \n";
+    cout << linha;
+    cin >> salvar; cin.get();
+    cout << linha;
 
+    if ((salvar == 's') || (salvar == 'S')){
+        string nomearquivo;
+        cout << "Digite o nome do arquivo em que os resultados serao salvos: " << endl;
+        getline(cin, nomearquivo);
+        cout << linha;
 
+        nomearquivo += ".txt";
+
+        ofstream fout(nomearquivo.c_str());
+
+        fout << linha;
+        fout << "\n-------------------------------------- RESULTADOS -------------------------------------" << endl;
+        fout << linha;
+        fout << "Nome da amostra de fluido: " << nomefluido << endl;
+        fout << linha;
+        fout << "Valor do pH (Potencial Hidrogenioco): " << ph << endl;
+        fout << linha;
+        fout << "Valor da temperatura do fluido (em Fahrenheit): " << temp << endl;
+        fout << linha;
+        fout << "Valor da estabilidade eletrica do fluido (em Volts): " << eletrica << endl;
+        fout << linha;
+        fout << "Leitura das deflexoes: " << endl;
+        fout << linha;
+        fout << "Valor de Teta600: " << teta600 << endl;
+        fout << "Valor de Teta300: " << teta300 << endl;
+        fout << "Valor de Teta200: " << teta200 << endl;
+        fout << "Valor de Teta100: " << teta100 << endl;
+        fout << "Valor de Teta006: " << teta006 << endl;
+        fout << "Valor de Teta003: " << teta003 << endl;
+        fout << linha;
+        fout << "Leitura dos geis: " << endl;
+        fout << linha;
+        fout << "Valor do Gel inicial: " << gi << endl;
+        fout << "Valor do Gel Final:   " << gf << endl;
+        fout << linha;
+        fout << "REOLOGIA: Viscosimetro Fann modelo 35A " << endl;
+        fout << linha;
+        fout << "Rotacao, rpm   " ;
+        for(i = 0; i < rotacao.size(); i++){fout << right << setw(3) << rotacao[i] << " ";}
+        fout << endl;
+        fout << "Deflexao, grau ";
+        for(i = 0; i < teta.size(); i++){fout << right << setw(3) << teta[i] << " ";}
+        fout << endl;
+        fout << linha;
+        fout << "Taxa de cisalhamento, (1/s): ";
+        for(i = 0; i < taxacisalhamento.size(); i++){fout << taxacisalhamento[i] << " ";}
+        fout << endl;
+        fout << linha;
+        fout << "Tensao de cisalhamento, (lbf/100 ft^2): ";
+        for(i = 0; i < tensaocisalhamento_uc.size(); i++){fout << tensaocisalhamento_uc[i] << " ";}
+        fout << endl;
+        fout << linha;
+        fout << "Tensao de cisalhamento, (mPa): ";
+        for(i = 0; i < tensaocisalhamento_si.size(); i++){fout << tensaocisalhamento_si[i] << " ";}
+        fout << endl;
+        fout << linha;
+        fout << "Viscosidade, (mPa.s): ";
+        for(i = 0; i < visco_si.size(); i++){fout << visco_si[i] << " ";}
+        fout << endl;
+        fout << linha;
+
+        cout << "Os dados foram salvos no arquivo externo " << nomearquivo << endl;
+        cout << linha;
+        cout << "Aperte ENTER para continuar" << endl;
+        cout << linha;
+        cin.get();
+
+    }else {cout << endl;}
 
 }
-
 

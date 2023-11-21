@@ -8,7 +8,7 @@
 @brief Classe responsavel pelo calculo das propriedades reológicas para fluidos Binghamianos (Modelo de Bingham ou plastico ideal)
 @class CPropriedadesReologicas
 @file CPropriedadesReologicas.h
-*/
+ */
 
 class CPropriedadesReologicas : public CAmostraFluido { /// Herdeira da classe CAmostraFluido
 ///Atributos

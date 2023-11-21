@@ -6,7 +6,7 @@
 /**
 @class CIndice
 @file CIndice.cpp
-*/
+ */
 
 using namespace std;
 

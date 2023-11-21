@@ -1,0 +1,170 @@
+# depslib dependency file v1.0
+1699212796 source:c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\main.cpp
+	<iostream>
+	<string>
+	"CAmostraFluido.h"
+	"CPropriedadesReologicas.h"
+	"CIndice.h"
+	"CPoco.h"
+	"CPerdaCarga.h"
+
+1699132543 c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\camostrafluido.h
+	<iostream>
+	<string>
+	<vector>
+
+1699132331 source:c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\camostrafluido.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<vector>
+	<iomanip>
+	"CAmostraFluido.h"
+
+1699131840 c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cpropriedadesreologicas.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1699149632 source:c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cpropriedadesreologicas.cpp
+	<iostream>
+	"CPropriedadesReologicas.h"
+
+1699132587 c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cindice.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1699149598 source:c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cindice.cpp
+	<iostream>
+	<cmath>
+	"CIndice.h"
+
+1699232682 c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cpoco.h
+	<iostream>
+	<fstream>
+	<string>
+
+1699231932 source:c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cpoco.cpp
+	<iostream>
+	"CPoco.h"
+
+1699214677 c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cperdacarga.h
+	<iostream>
+	"CPropriedadesReologicas.h"
+	"CPoco.h"
+
+1699232026 source:c:\users\rober\desktop\codeblocks\projeto-programacao-pratica\cperdacarga.cpp
+	<iostream>
+	<cmath>
+	"CPerdaCarga.h"
+
+1699407294 source:d:\projeto-programacao-pratica\camostrafluido.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<vector>
+	<iomanip>
+	<fstream>
+	"CAmostraFluido.h"
+
+1700187996 d:\projeto-programacao-pratica\camostrafluido.h
+	<iostream>
+	<string>
+	<vector>
+	"CGnuplot.h"
+
+1699407440 source:d:\projeto-programacao-pratica\cindice.cpp
+	<iostream>
+	<cmath>
+	"CIndice.h"
+
+1699407462 d:\projeto-programacao-pratica\cindice.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1699149634 source:d:\projeto-programacao-pratica\cpropriedadesreologicas.cpp
+	<iostream>
+	"CPropriedadesReologicas.h"
+
+1699407450 d:\projeto-programacao-pratica\cpropriedadesreologicas.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1699405288 source:d:\projeto-programacao-pratica\main.cpp
+	<iostream>
+	<string>
+	"CAmostraFluido.h"
+	"CPropriedadesReologicas.h"
+	"CIndice.h"
+	"CPoco.h"
+	"CVelCritica.h"
+	"CVelCriticaPotencia.h"
+	"CPerdaCarga.h"
+	"CPerdaCargaPotencia.h"
+	"CGnuplot.h"
+
+1699239926 d:\projeto-programacao-pratica\cpoco.h
+	<iostream>
+	<fstream>
+	<string>
+
+1699270656 d:\projeto-programacao-pratica\cperdacarga.h
+	<iostream>
+	"CPropriedadesReologicas.h"
+	"CPoco.h"
+
+1699290544 d:\projeto-programacao-pratica\cperdacargapotencia.h
+	<iostream>
+	"CIndice.h"
+	"CPoco.h"
+
+1699241572 d:\projeto-programacao-pratica\cvelcritica.h
+	<iostream>
+	"CPropriedadesReologicas.h"
+	"CPoco.h"
+
+1699240236 source:d:\projeto-programacao-pratica\cpoco.cpp
+	<iostream>
+	"CPoco.h"
+
+1699233444 source:d:\projeto-programacao-pratica\cvelcritica.cpp
+	<iostream>
+	<cmath>
+	"CVelCritica.h"
+
+1699243210 source:d:\projeto-programacao-pratica\cvelcriticapotencia.cpp
+	<iostream>
+	<cmath>
+	"CVelCriticaPotencia.h"
+
+1699277078 d:\projeto-programacao-pratica\cvelcriticapotencia.h
+	<iostream>
+	"CIndice.h"
+	"CPoco.h"
+
+1699270764 source:d:\projeto-programacao-pratica\cperdacarga.cpp
+	<iostream>
+	<cmath>
+	"CPerdaCarga.h"
+
+1699290654 source:d:\projeto-programacao-pratica\cperdacargapotencia.cpp
+	<iostream>
+	<cmath>
+	"CPerdaCargaPotencia.h"
+
+1699291530 d:\projeto-programacao-pratica\cgnuplot.h
+	<iostream>
+	<string>
+	<vector>
+	<stdexcept>
+	<cstdio>
+
+1699291684 source:d:\projeto-programacao-pratica\cgnuplot.cpp
+	<fstream>
+	<sstream>
+	<list>
+	<cstdio>
+	<cstdlib>
+	"CGnuplot.h"
+	<io.h>
+	<unistd.h>
+

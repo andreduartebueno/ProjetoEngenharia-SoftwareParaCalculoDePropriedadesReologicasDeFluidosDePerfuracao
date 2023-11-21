@@ -4,9 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+/*
 #include "CGnuplot.h"
-
+*/
 /**
 @brief Classe responsavel pelo entrada de dados da amostra de fluido de perfuracao
 @class CAmostraFluido
@@ -40,14 +40,17 @@ public:
     double gf;
     /// Nome dado para identificar o fluido de perfuracao
     std::string nomefluido;
-    /// Nome do arquivo com os dados solicitados
+    /// Nome do arquivo com os dados de saida
     std::string nomearquivo;
+    /// Caractere
+    char salvar;
     /// Caractere
     char opcao;
     /// Caractere
     char resp;
     /// Contador
     int i;
+
     /// Vetor de velocidades de rotacao
     std::vector<double> rotacao;
     /// Vetor de deflexoes da mola (600, 300, 200, 100, 6 e 3 rpm)
@@ -103,9 +106,8 @@ public:
     double Gf();                        ///Get
 
 
-    ///Metodo que solicita a entrada de dados pelo teclado ou pelo disco
-    void EntradadeDados();
-
+    ///Metodo que solicita a entrada de dados pelo teclado e retorna a saida
+    void EntradaSaidadeDados();
 
 };
 

@@ -8,8 +8,8 @@
 #include "CVelCritica.h"
 #include "CVelCriticaPotencia.h"
 #include "CPerdaCarga.h"
-#include "CPerdaCargaPotencia.h"
-#include "CGnuplot.h"
+#include "CPerdaCargaPotencia.h"/*
+#include "CGnuplot.h"*/
 
 using namespace std;
 
@@ -58,7 +58,7 @@ int main()
     cout << "---------------------------------------------------------------------------------------" << endl;
 
     /// Pedimos ao usuario os dados de entrada referente a amostra de fluido
-    amostra.EntradadeDados();
+    amostra.EntradaSaidadeDados();
 
     char escolha;  /// Caractere que armazena a resposta para a escolha das propriedades
     char unidade;  /// Caractere que armazena a resposta para a escolha da unidade a ser utilizada
