@@ -128,9 +128,15 @@ thechapter - Documentação}
 \end_layout
 
 \begin_layout Standard
-Todo projeto de engenharia precisa ser bem documentado.
- Neste sentido, apresenta-se neste capítulo a documentação de uso do "software
- XXXX".
+Apresenta-se neste capítulo a documentação de uso do software 
+\begin_inset Quotes eld
+\end_inset
+
+PCPRFPVCPC
+\begin_inset Quotes erd
+\end_inset
+
+.
  Esta documentação tem o formato de uma apostila que explica passo a passo
  como usar o software.
  
@@ -141,14 +147,123 @@ Documentação do usuário
 \end_layout
 
 \begin_layout Standard
-O manual do usuário é apresentado no Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Manual-do-Usuário"
+A seguir encontra-se o manual do usuário, um guia que explica, passo a passo
+ a forma de instalação e uso do software desenvolvido.
+\end_layout
 
+\begin_layout Subsection
+Como rodar o software
+\end_layout
+
+\begin_layout Standard
+Abra o terminal, vá para o diretório onde está o código, compile o programa
+ e, depois, execute.
+ Logo após executar, siga os seguintes passos:
+\end_layout
+
+\begin_layout Enumerate
+O programa executará o menu de preenchimento de dados pelo teclado e as
+ instruções para a ordem de entrada serão dadas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Após a inserção dos dados o programa irá calcular a taxa de cisalhamento,
+ a tensão de cisalhamento em unidades de campo, a tensão de cisalhamento
+ no sistema internacional e a viscosidade aparente para cada velocidade
+ de rotação pré-definida (600, 300, 200, 100, 6 e 3 - rotações por minuto
+ - rpm).
+\end_layout
+
+\begin_layout Enumerate
+Os resultados serão apresentados na tela e aparecerá uma mensagem na qual
+ o usuário poderá escolher entre salvar os resultados em um arquivo de texto
+ ou não.
+\end_layout
+
+\begin_layout Enumerate
+Caso o usuário opte por salvar os resultados , uma nova mensagem será apresentad
+a, onde o usuário deverá definir um nome para o arquivo a ser salvo.
+ O arquivo será armazenado na mesma pasta do executável.
+\end_layout
+
+\begin_layout Enumerate
+Caso o usuário opte por não salvar os resultados, ou depois de salvar o
+ arquivo em arquivo de texto, o programa passará para a etapa seguinte.
+\end_layout
+
+\begin_layout Enumerate
+Aparecerá o menu com as opções dos propriedades a serem calculadas como
+ segue:
+\begin_inset Newline newline
 \end_inset
 
- - Manual do Usuário.
+Opção 1 - Fluidos Binghamianos - Viscosidade Aparente, Plastica e Limite
+ de Escoamento e Opção 2 - Fluidos de Potencia - Indice de Comportamento
+ e Consistencia
+\end_layout
+
+\begin_layout Enumerate
+Aparecerá um nome menu com a possibilidade do usuário calcular Velocidade
+ Critica e Perda de Carga.
+\end_layout
+
+\begin_layout Enumerate
+Caso o usuário opte por não calcular as propriedades o programa será finalizado.
+\end_layout
+
+\begin_layout Enumerate
+Caso o usuário opte por calcular as propriedades o programa solicitará as
+ unidades de medida que serão utilizadas no cálculo como segue:
+\begin_inset Newline newline
+\end_inset
+
+Opção 1 - [SI] Sistema Internacional e Opção 2 - [UC] Unidades de Campo
+\end_layout
+
+\begin_layout Enumerate
+Após a escolha o programa pedirá para o usuário inserir as variáveis necessárias
+ e relacionadas com o poço.
+\end_layout
+
+\begin_layout Enumerate
+Aparecerá o menu para escolha do local onde o fluido irá circular como segue:
+\begin_inset Newline newline
+\end_inset
+
+Opção 1 - Interior de Tubos e Opção 2 - Espaco Anular
+\end_layout
+
+\begin_layout Enumerate
+O programa calculará a velocidade critica considerando as opçoes anteriormente
+ escolhidas pelo usuário.
+\end_layout
+
+\begin_layout Enumerate
+Para calcular a perda de carga, o programa exibirá um novo menu com as opções
+ de fluxo como segue:
+\begin_inset Newline newline
+\end_inset
+
+Opção 1 - Fluxo Laminar e Opção 2 - Fluxo Turbulento
+\end_layout
+
+\begin_layout Enumerate
+O programa irá calcular a perda de carga considerando toas as opções escolhidas
+ pelo usuário anteriormente e será encerrado.
+\end_layout
+
+\begin_layout Enumerate
+Caso o usuário digite uma opção que não corresponda as sugeridas em quaisquer
+ que sejam os menus a mensagem 
+\begin_inset Quotes eld
+\end_inset
+
+Opção Inválida!
+\begin_inset Quotes erd
+\end_inset
+
+ aparecerá na tela e ele terá a opção de refazer a escolha.
 \end_layout
 
 \begin_layout Section
@@ -169,74 +284,115 @@ Para compilar o software é necessário atender as seguintes dependências:
 \end_layout
 
 \begin_layout Itemize
+No sistema operacional GNU/Linux:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 Instalar o compilador g++ da GNU disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-name "http://gcc.gnu.org"
-target "http://gcc.gnu.org"
-literal "false"
-
+\begin_inset Formula $http://gcc.gnu.org$
 \end_inset
 
-.
- Para instalar no GNU/Linux use o comando 
-\family typewriter
-yum install gcc
-\family default
 .
 \end_layout
 
 \begin_layout Itemize
-Biblioteca CGnuplot; os arquivos para acesso a biblioteca CGnuplot devem
- estar no diretório com os códigos do software;
+Para instalar no GNU/Linux use o comando: yum install gcc.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-O software 
-\family typewriter
-gnuplot
-\family default
-, disponível no endereço 
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.gnuplot.info/"
-literal "false"
-
+No sistema operacional Windows: 
+\begin_inset Separator latexpar
 \end_inset
 
-, deve estar instalado.
- É possível que haja necessidade de setar o caminho para execução do 
-\family typewriter
-gnuplot
-\family default
-.
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Instalar um compilador apropriado.
  
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Note Note
-status open
+Recomenda-se o Dev C++ disponível em 
+\begin_inset Formula $http://dev-c.softonic.com.br/$
+\end_inset
 
-\begin_layout Plain Layout
-Coloque aqui quaisquer dependências de arquivos com dados
+.
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+O software gnuplot, deve estar instalado.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gnuplot está disponível no endereço 
+\begin_inset Formula $http://www.gnuplot.info/$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Note Note
+É possível que haja necessidade de setar o caminho para execução do gnuplot.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Coloque aqui quaisquer dependências de softwares ou sistemas externos
+\begin_inset Graphics
+	filename imagens/Arquivo de disco.png
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Formato-arquivo-de"
+
+\end_inset
+
+Formato arquivo de dados armazenados no disco
 \end_layout
 
 \end_inset
 
-.
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -435,22 +591,6 @@ Apresenta-se a seguir algumas imagens com as telas das saídas geradas pelo
 doxygen
 \family default
 .
-\end_layout
-
-\begin_layout Description
-Nota: 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body

@@ -141,87 +141,22 @@ Todo projeto de engenharia passa por uma etapa de testes.
  apresentados (diagramas de caso de uso geral e específicos).
 \end_layout
 
-\begin_layout Standard
-Cada teste deve atender o seguinte:
-\end_layout
-
-\begin_layout Itemize
-O que esta sendo testado (relacione com os requisitos, quais requisitos
- serão testados neste teste)? 
-\end_layout
-
-\begin_layout Itemize
-Objetivo do teste?
-\end_layout
-
-\begin_layout Itemize
-Como o teste será realizado (estratégia)?
-\end_layout
-
-\begin_layout Itemize
-Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
- específica.
-\end_layout
-
-\begin_layout Itemize
-Resultados dos testes: registram os resultados do teste; se deu tudo certo
- ou se tem algum erro/falha;
-\end_layout
-
-\begin_layout Itemize
-Data/hora/responsável pelo teste;
-\end_layout
-
 \begin_layout Section
-Teste 1: Descrição
+Teste 1: Interface
 \end_layout
 
 \begin_layout Standard
-Sobre o teste:
-\end_layout
-
-\begin_layout Itemize
-O que esta sendo testado (relacione com os requisitos, quais requisitos
- serão testados neste teste)? 
-\end_layout
-
-\begin_layout Itemize
-Objetivo do teste?
-\end_layout
-
-\begin_layout Itemize
-Como o teste será realizado (estratégia)?
-\end_layout
-
-\begin_layout Itemize
-Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
- específica.
-\end_layout
-
-\begin_layout Itemize
-Resultados dos testes: registram os resultados do teste; se deu tudo certo
- ou se tem algum erro/falha;
-\end_layout
-
-\begin_layout Itemize
-Data/hora/responsável pelo teste;
-\end_layout
-
-\begin_layout Standard
-A seguir apresente texto explicando a sequência do teste e imagens do programa
- (captura de tela).
-\end_layout
-
-\begin_layout Standard
-coloque aqui texto falando do diagrama de pacotes, referencie a figura.
- Veja Figura 
+O presente trabalho apresenta interface no modo texto.
+ Veja na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Teste-TelaPrograma-Captura1"
 
 \end_inset
 
-.
+ o início dosoftware no qual o úsuário entra com os dados de entrada da
+ amostra de fluido, como o nome da amostra, o valor do pH, o valor da temperatur
+a, etc.
 \end_layout
 
 \begin_layout Standard
@@ -234,8 +169,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-Simulador-Transcal-Guilherme2.png
-	width 100text%
+	filename imagens/Teste1.png
+	width 75text%
 
 \end_inset
 
@@ -246,7 +181,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Tela do programa mostrando o início do software 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste-TelaPrograma-Captura1"
@@ -267,47 +202,15 @@ name "fig:Teste-TelaPrograma-Captura1"
 \end_layout
 
 \begin_layout Section
-Teste 2: Descrição
+Teste 2: Salvamento dos resultados em arquivo de disco
 \end_layout
 
 \begin_layout Standard
-Sobre o teste:
-\end_layout
-
-\begin_layout Itemize
-O que esta sendo testado (relacione com os requisitos, quais requisitos
- serão testados neste teste)? 
-\end_layout
-
-\begin_layout Itemize
-Objetivo do teste?
-\end_layout
-
-\begin_layout Itemize
-Como o teste será realizado (estratégia)?
-\end_layout
-
-\begin_layout Itemize
-Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
- específica.
-\end_layout
-
-\begin_layout Itemize
-Resultados dos testes: registram os resultados do teste; se deu tudo certo
- ou se tem algum erro/falha;
-\end_layout
-
-\begin_layout Itemize
-Data/hora/responsável pelo teste;
-\end_layout
-
-\begin_layout Standard
-A seguir apresente texto explicando a sequência do teste e imagens do programa
- (captura de tela).
-\end_layout
-
-\begin_layout Standard
-Coloque aqui texto falando do diagrama de pacotes, referencie a figura.
+Os cálculos são apresentados na tela em forma de vetores para a taxa de
+ cisalhamento, tensão de cisalhamento em unidades de campo, tensão de cisalhamen
+to no siatema internacional e viscosidade.
+ Ao final, o programa solicita ao usuário se deseja salvar os resultados
+ em disco.
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -317,7 +220,7 @@ reference "fig:Teste-TelaPrograma-1"
 
 .
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Na Figura simulador desenvolvido pelo aluno Tiago Schauwer
@@ -338,7 +241,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-Simulador-Tiago.png
+	filename imagens/Teste2.png
 	width 100text%
 
 \end_inset
@@ -350,7 +253,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Salvamento em disco 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste-TelaPrograma-1"
@@ -371,47 +274,14 @@ name "fig:Teste-TelaPrograma-1"
 \end_layout
 
 \begin_layout Section
-Teste 3: Descrição
+Teste 3: Teste de escolha de opção incorreta
 \end_layout
 
 \begin_layout Standard
-Sobre o teste:
-\end_layout
-
-\begin_layout Itemize
-O que esta sendo testado (relacione com os requisitos, quais requisitos
- serão testados neste teste)? 
-\end_layout
-
-\begin_layout Itemize
-Objetivo do teste?
-\end_layout
-
-\begin_layout Itemize
-Como o teste será realizado (estratégia)?
-\end_layout
-
-\begin_layout Itemize
-Casos de teste: descrever entradas e saídas esperadas e se tem alguma condição
- específica.
-\end_layout
-
-\begin_layout Itemize
-Resultados dos testes: registram os resultados do teste; se deu tudo certo
- ou se tem algum erro/falha;
-\end_layout
-
-\begin_layout Itemize
-Data/hora/responsável pelo teste;
-\end_layout
-
-\begin_layout Standard
-A seguir apresente texto explicando a sequência do teste e imagens do programa
- (captura de tela).
-\end_layout
-
-\begin_layout Standard
-coloque aqui texto falando do diagrama de pacotes, referencie a figura.
+Neste teste caso o usuário insira uma opção diferente daquelas apresentadas
+ na tela.
+ O programa informa ao usuário que a opção é inválida e retona ao looping
+ até que o usuário escolha uma opção válida.
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -432,7 +302,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-SimuladorTranscal-Nicholas.png
+	filename imagens/Teste3.png
 	lyxscale 25
 	width 100text%
 
@@ -445,7 +315,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Teste de opção incorreta 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste-TelaPrograma-Captura1-1"
@@ -465,25 +335,59 @@ name "fig:Teste-TelaPrograma-Captura1-1"
 
 \end_layout
 
-\begin_layout Description
-Nota: 
-\begin_inset space ~
+\begin_layout Section
+Teste 4: Teste de entrada de dados incorreta
+\end_layout
+
+\begin_layout Standard
+Neste teste caso o usuário insire dados irreais, como números negativos
+ e fora do padrão.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1-1-1"
+
 \end_inset
 
+.
+\end_layout
 
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
-\begin_inset Note Note
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-apague!
+\align center
+\begin_inset Graphics
+	filename imagens/Teste4.png
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Entrada de dados incorreta 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -492,141 +396,66 @@ apague!
 \end_layout
 
 \begin_layout Section
-Tabela Resumo
-\end_layout
-
-\begin_layout Itemize
-Monte uma tabela com a lista de requisitos e se os mesmos foram implementados
- e testados;
-\end_layout
-
-\begin_layout Itemize
-A ideia é correlacionar o requisito com sua implementação e teste;
-\end_layout
-
-\begin_layout Itemize
-Exemplo:
+Teste 5: Cálculo das propriedades
 \end_layout
 
 \begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="4">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-N
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Requisito
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Implementação
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Teste
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Gerar gráficos
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Sim
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Passou
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+Neste teste caso o usuário insire dados reais e escolhe opções válidas,
+ calculando as propriedades de forma correta.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1-1-1-1"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Float figure
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-note que no fundo temos de ter mecanismos de verificação das tarefas; check
- lists; 
+\align center
+\begin_inset Graphics
+	filename imagens/Teste5.png
+	lyxscale 25
+	width 75text%
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
-tinha de fazer gráfico
-\end_layout
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
-foi implementado
-\end_layout
+Cálculo das propriedades 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1-1-1-1"
 
-\begin_layout Plain Layout
-foi testado
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
-isto garante que não esquecemos nada; um controle mínimo das atividades
- feitas
+
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
