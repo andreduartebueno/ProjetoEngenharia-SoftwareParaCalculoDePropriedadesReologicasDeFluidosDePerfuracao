@@ -1,0 +1,37 @@
+#Exemplo de nome
+FBA_07_Salinidade
+
+#Valores tipicos de pH para fluidos de perfuração
+9-10
+
+#Valores tipicos de temperatura para ensaios de reologia de fluidos de perfuração (Fahrenheit)
+120
+
+#Valores tipicos de estabilidade elétrica para fluidos de perfuração (Volts)
+#Fluidos base água
+>1000           #fase inversa
+>1500           #fase direta
+#Fluidos base óleo
+>1500           #fase inversa
+>2000           #fase direta
+
+#Dados tipicos para leituras de deflexao
+40-110		# L600
+25-75		# L300
+18-55		# L200
+12-38		# L100
+7-19		# L6
+6-16		# L3
+
+#Dados tipicos para leituras de géis
+8-20		# Gi (gel inicial)
+10-25		# Gf (gel final)
+
+#Dados tipicos para geometria do poço
+4.276           #Diametro de tubo (in)
+8.5             #Diametro externo de tubo interno para anular (in)
+6.25            #Diametro interno de tubo externo para anular (in)
+6500            #Comprimento do poço (ft) ~aprox. 2000 m
+8.8             #Massa especifica (lbm/gal)
+
+
