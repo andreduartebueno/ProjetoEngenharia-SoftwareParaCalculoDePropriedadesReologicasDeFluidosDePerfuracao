@@ -102,6 +102,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -1380949907 "andre duarte bueno"
 \author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
@@ -130,7 +131,7 @@ space - Especificação}
 \begin_layout Chapter
 Especificação
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Concepção
@@ -138,6 +139,24 @@ Concepção
 
 \end_inset
 
+
+\change_inserted -1380949907 1700758781
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -1380949907 1700758786
+Especificação
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -196,7 +215,25 @@ Componentes principais
 
 \begin_layout Plain Layout
 Sistema para cálculo de parâmetros que devem ser rigorosamente controlados
- em uma operação de Perfuração de Poços de Petróleo.
+ em uma operação de 
+\change_deleted -1380949907 1700758812
+P
+\change_inserted -1380949907 1700758812
+p
+\change_unchanged
+erfuração de 
+\change_deleted -1380949907 1700758813
+P
+\change_inserted -1380949907 1700758813
+p
+\change_unchanged
+oços de 
+\change_deleted -1380949907 1700758815
+P
+\change_inserted -1380949907 1700758815
+p
+\change_unchanged
+etróleo.
 \end_layout
 
 \end_inset
@@ -218,11 +255,127 @@ Missão
 \begin_inset Text
 
 \begin_layout Plain Layout
-Determinação de parâmetros como Viscosidade Aparente, Viscosidade Plástica
- e Limite de Escoamento pra Fluidos Binghamianos.
- Determinação do Índice de Fluxo e do Índice de Consistência para Fluidos
- de Potência.
- Cálculo de Velocidade Crítica e Perdas de Carga na Circulação de Fluidos.
+Determinação de parâmetros como 
+\change_deleted -1380949907 1700758821
+V
+\change_inserted -1380949907 1700758821
+v
+\change_unchanged
+iscosidade 
+\change_deleted -1380949907 1700758822
+A
+\change_inserted -1380949907 1700758822
+a
+\change_unchanged
+parente,
+\change_deleted -1380949907 1700758823
+ 
+\change_inserted -1380949907 1700758824
+v
+\change_unchanged
+Viscosidade 
+\change_deleted -1380949907 1700758826
+P
+\change_inserted -1380949907 1700758826
+p
+\change_unchanged
+lástica e 
+\change_deleted -1380949907 1700758829
+L
+\change_inserted -1380949907 1700758829
+l
+\change_unchanged
+imite de 
+\change_deleted -1380949907 1700758830
+E
+\change_inserted -1380949907 1700758830
+e
+\change_unchanged
+scoamento pra 
+\change_deleted -1380949907 1700758834
+F
+\change_inserted -1380949907 1700758834
+f
+\change_unchanged
+luidos
+\change_deleted -1380949907 1700758832
+ 
+\change_unchanged
+Binghamianos.
+ Determinação do 
+\change_deleted -1380949907 1700758839
+Í
+\change_inserted -1380949907 1700758839
+í
+\change_unchanged
+ndice de 
+\change_deleted -1380949907 1700758840
+F
+\change_inserted -1380949907 1700758840
+f
+\change_unchanged
+luxo e do 
+\change_deleted -1380949907 1700758842
+Í
+\change_inserted -1380949907 1700758842
+í
+\change_unchanged
+ndice de 
+\change_deleted -1380949907 1700758844
+C
+\change_inserted -1380949907 1700758844
+c
+\change_unchanged
+onsistência para 
+\change_deleted -1380949907 1700758846
+F
+\change_inserted -1380949907 1700758846
+f
+\change_unchanged
+luidos de 
+\change_deleted -1380949907 1700758847
+P
+\change_inserted -1380949907 1700758847
+p
+\change_unchanged
+otência.
+ Cálculo de 
+\change_deleted -1380949907 1700758850
+V
+\change_inserted -1380949907 1700758850
+v
+\change_unchanged
+elocidade 
+\change_deleted -1380949907 1700758851
+C
+\change_inserted -1380949907 1700758851
+c
+\change_unchanged
+rítica e 
+\change_deleted -1380949907 1700758852
+P
+\change_inserted -1380949907 1700758853
+p
+\change_unchanged
+erdas de 
+\change_deleted -1380949907 1700758854
+C
+\change_inserted -1380949907 1700758854
+c
+\change_unchanged
+arga na 
+\change_deleted -1380949907 1700758856
+C
+\change_inserted -1380949907 1700758856
+c
+\change_unchanged
+irculação de 
+\change_deleted -1380949907 1700758857
+F
+\change_inserted -1380949907 1700758857
+f
+\change_unchanged
+luidos.
 \end_layout
 
 \end_inset
@@ -264,31 +417,188 @@ Apresenta-se a seguir a especificação do software.
 \end_layout
 
 \begin_layout Standard
-O software a ser desenvolvido deverá realizar o cálculo da 
+O software a ser desenvolvido deverá realizar o cálculo da
+\change_inserted -1380949907 1700758884
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted -1380949907 1700758905
+letras maisculas se forem nomes, início de frase ou indicação de sigla
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ 
+\change_deleted -1380949907 1700758908
+
 \emph on
-Viscosidade Aparente
+V
+\change_inserted -1380949907 1700758908
+v
+\change_unchanged
+iscosidade 
+\change_deleted -1380949907 1700758909
+A
+\change_inserted -1380949907 1700758909
+a
+\change_unchanged
+parente
 \emph default
 , 
+\change_deleted -1380949907 1700758911
+
 \emph on
-Viscosidade Plástica 
+V
+\change_inserted -1380949907 1700758911
+v
+\change_unchanged
+iscosidade 
+\change_deleted -1380949907 1700758913
+P
+\change_inserted -1380949907 1700758913
+p
+\change_unchanged
+lástica 
 \emph default
 e 
+\change_deleted -1380949907 1700758915
+
 \emph on
-Limite de Escoamento 
+L
+\change_inserted -1380949907 1700758915
+l
+\change_unchanged
+imite de 
+\change_deleted -1380949907 1700758917
+E
+\change_inserted -1380949907 1700758917
+e
+\change_unchanged
+scoamento 
 \emph default
-para Fluidos Binghamianos, do 
+para 
+\change_deleted -1380949907 1700758919
+F
+\change_inserted -1380949907 1700758919
+f
+\change_unchanged
+luidos 
+\change_deleted -1380949907 1700758923
+B
+\change_inserted -1380949907 1700758923
+b
+\change_unchanged
+inghamianos, do 
+\change_deleted -1380949907 1700758925
+
 \emph on
-Índice de Fluxo 
+Í
+\change_inserted -1380949907 1700758926
+í
+\change_unchanged
+ndice de 
+\change_deleted -1380949907 1700758927
+F
+\change_inserted -1380949907 1700758927
+f
+\change_unchanged
+luxo 
 \emph default
 e de 
+\change_deleted -1380949907 1700758929
+
 \emph on
-Índice de Consistência para Fluidos de Potência
+Í
+\change_inserted -1380949907 1700758929
+í
+\change_unchanged
+ndice de 
+\change_deleted -1380949907 1700758930
+C
+\change_inserted -1380949907 1700758930
+c
+\change_unchanged
+onsistência para 
+\change_deleted -1380949907 1700758933
+F
+\change_inserted -1380949907 1700758933
+f
+\change_unchanged
+luidos de 
+\change_deleted -1380949907 1700758934
+P
+\change_inserted -1380949907 1700758934
+p
+\change_unchanged
+otência
 \emph default
 .
- O programa será desenvolvido em linguagem C++, com orientação a objeto,
- e poderá ser usado nos sistemas operacionais GNU/Linux e Windows, sendo
- operado em modo texto e terá apenas uma janela.
- O usuário deverá informar as deflexões da mola de torção do viscosímetro
+ 
+\change_inserted -1380949907 1700758959
+
+\end_layout
+
+\begin_layout Standard
+O 
+\change_deleted -1380949907 1700758961
+programa
+\change_inserted -1380949907 1700758962
+software
+\change_unchanged
+ será desenvolvido em linguagem C++, com 
+\change_inserted -1380949907 1700758972
+uso do paradigma de 
+\change_unchanged
+orientação a objeto, e 
+\change_deleted -1380949907 1700758980
+poderá 
+\change_inserted -1380949907 1700758985
+será multiplataforma, podendo 
+\change_unchanged
+ser usado nos sistemas operacionais GNU/Linux
+\change_inserted -1380949907 1700758989
+,
+\change_unchanged
+ 
+\change_deleted -1380949907 1700758990
+e
+\change_unchanged
+ Windows
+\change_inserted -1380949907 1700758996
+ e Mac OS X
+\change_deleted -1380949907 1700758998
+,
+\change_inserted -1380949907 1700758998
+.
+
+\change_unchanged
+ 
+\change_deleted -1380949907 1700759001
+sendo 
+\change_inserted -1380949907 1700759007
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted -1380949907 1700759006
+O software poderá ser 
+\change_unchanged
+operado em modo texto e terá apenas uma janela.
+ 
+\change_inserted -1380949907 1700759013
+
+\end_layout
+
+\begin_layout Standard
+O usuário deverá informar as deflexões da mola de torção do viscosímetro
  para cada rotação pré-determinada (600, 300, 200, 100 
 \change_inserted 1635264300 1697978129
 
@@ -312,10 +622,22 @@ corrigir aqui, é 100, 6 e 3?
  Após a realização dos cálculos e apresentação dos resultados na tela principal,
  será oferecida a opção do usuário salvar os resultados obtidos em forma
  de relatório em modo texto.
- O usuário também poderá optar por gerar gráfico de velocidade de rotação
+ 
+\change_inserted -1380949907 1700759112
+
+\end_layout
+
+\begin_layout Standard
+O usuário também poderá optar por gerar gráfico de velocidade de rotação
  versus deflexão da mola no formato de imagem ou ter seus dados exportados
  em um arquivo de texto.
- O software terá lincença GPL 2.0, podendo ser livremente copiado, modificado
+ 
+\change_inserted -1380949907 1700759123
+
+\end_layout
+
+\begin_layout Standard
+O software terá lincença GPL 2.0, podendo ser livremente copiado, modificado
  e distribuído.
 \end_layout
 
@@ -904,6 +1226,8 @@ Etapas:
 \begin_layout Plain Layout
 3.
 
+\change_inserted -1380949907 1700759356
+ 
 \change_deleted 1635264300 1697978392
  
 \change_unchanged
@@ -944,7 +1268,11 @@ Cenários alternativos:
 \begin_layout Plain Layout
 Um cenário alternativo envolve uma entrada errada do usuário (por exemplo,
  um valor de leitura de deflexão da mola do viscosímetro negativa).
- O software apresentará um bug quando for determinar a propriedade calculada.
+ O software apresentará um 
+\emph on
+bug
+\emph default
+ quando for determinar a propriedade calculada.
 \end_layout
 
 \end_inset
@@ -964,6 +1292,8 @@ Um cenário alternativo envolve uma entrada errada do usuário (por exemplo,
 
 \begin_layout Subsection
 Diagrama de caso de uso geral
+\change_deleted -1380949907 1700759403
+
 \begin_inset Note Note
 status open
 
@@ -973,6 +1303,8 @@ status open
 
 \end_inset
 
+
+\change_unchanged
 
 \end_layout
 
@@ -1110,7 +1442,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/Diagrama-de-caso-de-uso-específico.png
-	lyxscale 70
 	width 100text%
 
 \end_inset
