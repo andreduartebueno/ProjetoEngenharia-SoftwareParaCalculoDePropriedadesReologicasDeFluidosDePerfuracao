@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Projeto-Programacao-Pratica" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Projeto-Programacao-Pratica" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Projeto-Programacao-Pratica" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="CAmostraFluido.cpp" />
+		<Unit filename="CAmostraFluido.h" />
+		<Unit filename="CGnuplot.cpp" />
+		<Unit filename="CGnuplot.h" />
+		<Unit filename="CIndice.cpp" />
+		<Unit filename="CIndice.h" />
+		<Unit filename="CPerdaCarga.cpp" />
+		<Unit filename="CPerdaCarga.h" />
+		<Unit filename="CPerdaCargaPotencia.cpp" />
+		<Unit filename="CPerdaCargaPotencia.h" />
+		<Unit filename="CPoco.cpp" />
+		<Unit filename="CPoco.h" />
+		<Unit filename="CPropriedadesReologicas.cpp" />
+		<Unit filename="CPropriedadesReologicas.h" />
+		<Unit filename="CVelCritica.cpp" />
+		<Unit filename="CVelCritica.h" />
+		<Unit filename="CVelCriticaPotencia.cpp" />
+		<Unit filename="CVelCriticaPotencia.h" />
+		<Unit filename="main.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

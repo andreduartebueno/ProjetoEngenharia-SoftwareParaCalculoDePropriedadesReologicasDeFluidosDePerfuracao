@@ -34,29 +34,29 @@ public:
     /// Destrutor
     ~CPoco(){};
 
-    /// Metodos set e get
-    void D(double _d);           ///Set
-    double D();                  ///Get
+    /// Definicao dos metodos set e get
+    void    D(double _d)            { d = _d; }
+    double  D()                     { return d; }
+    void    Di(double _di)          { di = _di; }
+    double Di()                     { return di; }
+    void    Df(double _df)          { df = _df; }
+    double  Df()                    { return df; }
+    void    L(double _l)            { l = _l; }
+    double  L()                     { return l; }
+    void    V(double _v)            { v = _v; }
+    double  V()                     { return v; }
+    void    Rho(double _rho)        { rho = _rho; }
+    double  Rho()                   { return rho; }
 
-    void Di(double _di);         ///Set
-    double Di();                 ///Get
+    /// Metodo que solicita a entrada de dados do objeto.
+    void EntradaDeDados(std::ostream& out, std::istream& in);
+    /// Método que mostra dados do objeto.
+    void SaidaDeDados(std::ostream& out);
+    /// Método que salva dados do objeto em disco.
+    void SaidaDeDadosDisco(std::ostream& out);
 
-    void Df(double _df);         ///Set
-    double Df();                 ///Get
-
-    void L(double _l);           ///Set
-    double L();                  ///Get
-
-    void V(double _v);           ///Set
-    double V();                  ///Get
-
-    void Rho(double _rho);       ///Set
-    double Rho();                ///Get
-
-
-    /// Sobrecarga de operadores >>, entrada de dados pelo teclado
-    friend std::istream& operator >> (std::istream& in, CPoco& poco);
-
+    // Classes amigas
+    friend class CModeloEscoamentoFluidoBinghamiano;
+    friend class CModeloEscoamentoFluidoDePotencia;
 };
-
 #endif // CPoco_h
