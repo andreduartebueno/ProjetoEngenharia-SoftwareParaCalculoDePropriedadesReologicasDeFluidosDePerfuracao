@@ -102,7 +102,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -1380949907 "andre duarte bueno"
 \author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
 \end_header
 
@@ -140,23 +139,15 @@ Concepção
 \end_inset
 
 
-\change_inserted -1380949907 1700758781
-
 \begin_inset Index idx
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted -1380949907 1700758786
 Especificação
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -215,25 +206,7 @@ Componentes principais
 
 \begin_layout Plain Layout
 Sistema para cálculo de parâmetros que devem ser rigorosamente controlados
- em uma operação de 
-\change_deleted -1380949907 1700758812
-P
-\change_inserted -1380949907 1700758812
-p
-\change_unchanged
-erfuração de 
-\change_deleted -1380949907 1700758813
-P
-\change_inserted -1380949907 1700758813
-p
-\change_unchanged
-oços de 
-\change_deleted -1380949907 1700758815
-P
-\change_inserted -1380949907 1700758815
-p
-\change_unchanged
-etróleo.
+ em uma operação de perfuração de poços de petróleo.
 \end_layout
 
 \end_inset
@@ -255,127 +228,11 @@ Missão
 \begin_inset Text
 
 \begin_layout Plain Layout
-Determinação de parâmetros como 
-\change_deleted -1380949907 1700758821
-V
-\change_inserted -1380949907 1700758821
-v
-\change_unchanged
-iscosidade 
-\change_deleted -1380949907 1700758822
-A
-\change_inserted -1380949907 1700758822
-a
-\change_unchanged
-parente,
-\change_deleted -1380949907 1700758823
- 
-\change_inserted -1380949907 1700758824
-v
-\change_unchanged
-Viscosidade 
-\change_deleted -1380949907 1700758826
-P
-\change_inserted -1380949907 1700758826
-p
-\change_unchanged
-lástica e 
-\change_deleted -1380949907 1700758829
-L
-\change_inserted -1380949907 1700758829
-l
-\change_unchanged
-imite de 
-\change_deleted -1380949907 1700758830
-E
-\change_inserted -1380949907 1700758830
-e
-\change_unchanged
-scoamento pra 
-\change_deleted -1380949907 1700758834
-F
-\change_inserted -1380949907 1700758834
-f
-\change_unchanged
-luidos
-\change_deleted -1380949907 1700758832
- 
-\change_unchanged
-Binghamianos.
- Determinação do 
-\change_deleted -1380949907 1700758839
-Í
-\change_inserted -1380949907 1700758839
-í
-\change_unchanged
-ndice de 
-\change_deleted -1380949907 1700758840
-F
-\change_inserted -1380949907 1700758840
-f
-\change_unchanged
-luxo e do 
-\change_deleted -1380949907 1700758842
-Í
-\change_inserted -1380949907 1700758842
-í
-\change_unchanged
-ndice de 
-\change_deleted -1380949907 1700758844
-C
-\change_inserted -1380949907 1700758844
-c
-\change_unchanged
-onsistência para 
-\change_deleted -1380949907 1700758846
-F
-\change_inserted -1380949907 1700758846
-f
-\change_unchanged
-luidos de 
-\change_deleted -1380949907 1700758847
-P
-\change_inserted -1380949907 1700758847
-p
-\change_unchanged
-otência.
- Cálculo de 
-\change_deleted -1380949907 1700758850
-V
-\change_inserted -1380949907 1700758850
-v
-\change_unchanged
-elocidade 
-\change_deleted -1380949907 1700758851
-C
-\change_inserted -1380949907 1700758851
-c
-\change_unchanged
-rítica e 
-\change_deleted -1380949907 1700758852
-P
-\change_inserted -1380949907 1700758853
-p
-\change_unchanged
-erdas de 
-\change_deleted -1380949907 1700758854
-C
-\change_inserted -1380949907 1700758854
-c
-\change_unchanged
-arga na 
-\change_deleted -1380949907 1700758856
-C
-\change_inserted -1380949907 1700758856
-c
-\change_unchanged
-irculação de 
-\change_deleted -1380949907 1700758857
-F
-\change_inserted -1380949907 1700758857
-f
-\change_unchanged
-luidos.
+Determinação de parâmetros como viscosidade aparente, viscosidade plástica
+ e limite de escoamento pra fluidos Binghamianos.
+ Determinação do índice de fluxo e do índice de consistência para fluidos
+ de potência.
+ Cálculo de velocidade crítica e perdas de carga na circulação de fluidos.
 \end_layout
 
 \end_inset
@@ -417,223 +274,53 @@ Apresenta-se a seguir a especificação do software.
 \end_layout
 
 \begin_layout Standard
-O software a ser desenvolvido deverá realizar o cálculo da
-\change_inserted -1380949907 1700758884
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -1380949907 1700758905
-letras maisculas se forem nomes, início de frase ou indicação de sigla
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- 
-\change_deleted -1380949907 1700758908
-
+O software a ser desenvolvido deverá realizar o cálculo da 
 \emph on
-V
-\change_inserted -1380949907 1700758908
-v
-\change_unchanged
-iscosidade 
-\change_deleted -1380949907 1700758909
-A
-\change_inserted -1380949907 1700758909
-a
-\change_unchanged
-parente
+viscosidade aparente
 \emph default
 , 
-\change_deleted -1380949907 1700758911
-
 \emph on
-V
-\change_inserted -1380949907 1700758911
-v
-\change_unchanged
-iscosidade 
-\change_deleted -1380949907 1700758913
-P
-\change_inserted -1380949907 1700758913
-p
-\change_unchanged
-lástica 
+viscosidade plástica 
 \emph default
 e 
-\change_deleted -1380949907 1700758915
-
 \emph on
-L
-\change_inserted -1380949907 1700758915
-l
-\change_unchanged
-imite de 
-\change_deleted -1380949907 1700758917
-E
-\change_inserted -1380949907 1700758917
-e
-\change_unchanged
-scoamento 
+limite de escoamento 
 \emph default
-para 
-\change_deleted -1380949907 1700758919
-F
-\change_inserted -1380949907 1700758919
-f
-\change_unchanged
-luidos 
-\change_deleted -1380949907 1700758923
-B
-\change_inserted -1380949907 1700758923
-b
-\change_unchanged
-inghamianos, do 
-\change_deleted -1380949907 1700758925
-
+para fluidos binghamianos, do 
 \emph on
-Í
-\change_inserted -1380949907 1700758926
-í
-\change_unchanged
-ndice de 
-\change_deleted -1380949907 1700758927
-F
-\change_inserted -1380949907 1700758927
-f
-\change_unchanged
-luxo 
+índice de fluxo 
 \emph default
 e de 
-\change_deleted -1380949907 1700758929
-
 \emph on
-Í
-\change_inserted -1380949907 1700758929
-í
-\change_unchanged
-ndice de 
-\change_deleted -1380949907 1700758930
-C
-\change_inserted -1380949907 1700758930
-c
-\change_unchanged
-onsistência para 
-\change_deleted -1380949907 1700758933
-F
-\change_inserted -1380949907 1700758933
-f
-\change_unchanged
-luidos de 
-\change_deleted -1380949907 1700758934
-P
-\change_inserted -1380949907 1700758934
-p
-\change_unchanged
-otência
+índice de consistência para fluidos de potência
 \emph default
 .
- 
-\change_inserted -1380949907 1700758959
-
 \end_layout
 
 \begin_layout Standard
-O 
-\change_deleted -1380949907 1700758961
-programa
-\change_inserted -1380949907 1700758962
-software
-\change_unchanged
- será desenvolvido em linguagem C++, com 
-\change_inserted -1380949907 1700758972
-uso do paradigma de 
-\change_unchanged
-orientação a objeto, e 
-\change_deleted -1380949907 1700758980
-poderá 
-\change_inserted -1380949907 1700758985
-será multiplataforma, podendo 
-\change_unchanged
-ser usado nos sistemas operacionais GNU/Linux
-\change_inserted -1380949907 1700758989
-,
-\change_unchanged
- 
-\change_deleted -1380949907 1700758990
-e
-\change_unchanged
- Windows
-\change_inserted -1380949907 1700758996
- e Mac OS X
-\change_deleted -1380949907 1700758998
-,
-\change_inserted -1380949907 1700758998
-.
-
-\change_unchanged
- 
-\change_deleted -1380949907 1700759001
-sendo 
-\change_inserted -1380949907 1700759007
-
+O software será desenvolvido em linguagem C++, com uso do paradigma de orientaçã
+o a objeto, e será multiplataforma, podendo ser usado nos sistemas operacionais
+ GNU/Linux, Windows e Mac OS X.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -1380949907 1700759006
-O software poderá ser 
-\change_unchanged
-operado em modo texto e terá apenas uma janela.
- 
-\change_inserted -1380949907 1700759013
-
+O software poderá ser operado em modo texto e terá apenas uma janela.
 \end_layout
 
 \begin_layout Standard
 O usuário deverá informar as deflexões da mola de torção do viscosímetro
- para cada rotação pré-determinada (600, 300, 200, 100 
-\change_inserted 1635264300 1697978129
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1635264300 1697978143
-corrigir aqui, é 100, 6 e 3?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-6 e 3 rpm) e algumas informações adicionais solicitadas ao usuário, quando
- forem necessárias, a depender da escolha de cálculo do utilizador.
+ para cada rotação pré-determinada (600, 300, 200, 100, 6 e 3 rpm) e algumas
+ informações adicionais solicitadas ao usuário, quando forem necessárias,
+ a depender da escolha de cálculo do utilizador.
  Após a realização dos cálculos e apresentação dos resultados na tela principal,
  será oferecida a opção do usuário salvar os resultados obtidos em forma
  de relatório em modo texto.
- 
-\change_inserted -1380949907 1700759112
-
 \end_layout
 
 \begin_layout Standard
 O usuário também poderá optar por gerar gráfico de velocidade de rotação
  versus deflexão da mola no formato de imagem ou ter seus dados exportados
  em um arquivo de texto.
- 
-\change_inserted -1380949907 1700759123
-
 \end_layout
 
 \begin_layout Standard
@@ -718,7 +405,7 @@ O usuário deve ser capaz de cadastrar informações básicas da amostra de
 \change_inserted 1635264300 1697978207
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -939,15 +626,8 @@ RF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-Deve permitir a escolha do usuário de cálcular adiciona
-\change_inserted 1635264300 1697978290
-l
-\change_unchanged
-mente 
-\change_inserted 1635264300 1697978293
-a 
-\change_unchanged
-velocidade crítica e perdas de carga.
+Deve permitir a escolha do usuário de cálcular adicionalmente a velocidade
+ crítica e perdas de carga.
 \end_layout
 
 \end_inset
@@ -968,8 +648,6 @@ velocidade crítica e perdas de carga.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1635264300 1697978423
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -981,8 +659,6 @@ velocidade crítica e perdas de carga.
 
 \begin_layout Plain Layout
 
-\change_inserted 1635264300 1697978426
-
 \series bold
 RF-06
 \end_layout
@@ -993,8 +669,6 @@ RF-06
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\change_inserted 1635264300 1697978436
 O software gera gráficos com os resultados.
 \end_layout
 
@@ -1009,8 +683,6 @@ O software gera gráficos com os resultados.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1635264300 1697978423
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1225,13 +897,7 @@ Etapas:
 
 \begin_layout Plain Layout
 3.
-
-\change_inserted -1380949907 1700759356
- 
-\change_deleted 1635264300 1697978392
- 
-\change_unchanged
-Escolher a propriedade a ser calculada
+ Escolher a propriedade a ser calculada.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1292,20 +958,6 @@ bug
 
 \begin_layout Subsection
 Diagrama de caso de uso geral
-\change_deleted -1380949907 1700759403
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- do software
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
