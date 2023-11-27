@@ -1,10 +1,12 @@
 #include <string_view>
 #include "CEquipamento.h"
 
-static std::string_view linha = "\n_______________________________________________________________________________________ \n";
+static std::string_view linha = "\n_________________________________\n";
 
 void CEquipamento::EntradaDeDados(std::ostream& out, std::istream& in){
-    out <<  linha << "Digite o tipo de equipamento: ";
+    out <<  linha
+		<<  "Atributos CEquipamento:\n";
+    out << "Digite o tipo de equipamento: ";
     getline(in, tipo);
     out  << "\nDigite a marca do equipamento: ";
     getline(in, marca);
@@ -13,6 +15,8 @@ void CEquipamento::EntradaDeDados(std::ostream& out, std::istream& in){
 }
 
 void CEquipamento::SaidaDeDados(std::ostream& out){
+    out <<  linha
+		<<  "Atributos CEquipamento:";
 	out <<  "\ntipo = " 	<<  tipo;
 	out <<  "\nmarca = " 	<<  marca;
 	out <<  "\nmodelo = " 	<<  modelo;

@@ -10,54 +10,56 @@
 
 using namespace std;
 
-static std::string_view linha = "\n_______________________________________________________________________________________ \n";
-
+static std::string_view linha = "\n_________________________________________\n";
 void CExperimentoViscosimetroFan35A::EntradaDeDados(std::ostream& out, std::istream& in) {
     //amostraFluido->EntradaDeDados();
+    out <<  linha
+		<<  "Atributos CExperimentoViscosimetroFan35A:\n";
 
-    out << linha << "Entre com os dados das leituras de deflexao da mola do viscosimetro\n" << linha;
-    out << "Entre com os valores das leituras conforme sequencia:\n";
+    out << "Entre com os dados das leituras de deflexao da mola do viscosimetro conforme sequencia:\n";
 
     /// Solicitando ao usuário os valores das leituras das deflexões
-    out << linha << "1 - Digite o valor de Teta600:\n";
+    out << linha << " 1 - Digite o valor de Teta600: ";
     in >> teta600;
-    out << " \n2 - Digite o valor de Teta300:\n";
+    out << " 2 - Digite o valor de Teta300: ";
     in >> teta300;
-    out << " \n3 - Digite o valor de Teta200:\n"  ;
+    out << " 3 - Digite o valor de Teta200: "  ;
     in >> teta200;
-    out << " \n4 - Digite o valor de Teta100:\n"  ;
+    out << " 4 - Digite o valor de Teta100: "  ;
     in >> teta100;
-    out << " \n5 - Digite o valor de Teta006:\n"  ;
+    out << " 5 - Digite o valor de Teta006: "  ;
     in >> teta006;
-    out << " \n6 - Digite o valor de Teta003:\n" ;
+    out << " 6 - Digite o valor de Teta003: " ;
     in >> teta003;
 
     /// Solicitando ao usuario os valores das leituras dos geis
-    out << linha << "Agora digite os valores lidos para os geis:\n"<< linha;
-    out << " \n7 - Digite o valor do Gel inicial:\n";
+    out << "Agora digite os valores lidos para os geis:\n";
+    out << " 7 - Digite o valor do Gel inicial:\n";
     in >> gi;
-    out << " \n8 - Digite o valor do Gel Final:\n";
+    out << " 8 - Digite o valor do Gel Final:\n";
     in >> gf;
-    out << linha;
 
     /// Criando vetor para armazenar os valores das velocidades de rotacao
     rotacao = {600, 300, 200, 100, 6, 3};
 
     /// Criando vetor para armazenar as leituras das deflexões
     teta = {teta600, teta300,  teta200,  teta100,  teta006,  teta003};
+    //  esta chamando a saida logo depois da entrada, então tem de calcular!
+    //  a saída deveria ser chamada somente se calculos realizados
+    CalculoPropriedades();
 }
 
 void CExperimentoViscosimetroFan35A::CalculoPropriedades() {
     /// Exibindo os vetores ao usuário em forma de tabela
-    cout << "REOLOGIA: Viscosimetro Fann modelo 35A)\n" << linha;
+    cout << "REOLOGIA: Viscosimetro Fann modelo 35A)\n" ;
 
-    cout << "Rotacao, rpm" ;
+    cout << "Rotacao, rpm: " ;
     for(int i = 0; i < rotacao.size(); i++)
-        {cout << right << setw(3) << rotacao[i] << ' ';}
+        {cout << '\n' << i << ' ' << rotacao[i] ;}
 
-    cout << "\nDeflexao, grau ";
+    cout << "\nDeflexao, grau: ";
     for(int i = 0; i < teta.size(); i++)
-        {cout << right << setw(3) << teta[i] << ' ';}
+        {cout << '\n' << i << ' ' << teta[i] ;}
     cout << endl << linha;
 
     /// Criando vetor para armazenar as taxas de cisalhamento
@@ -106,34 +108,36 @@ void CExperimentoViscosimetroFan35A::CalculoPropriedades() {
 }
 
 void CExperimentoViscosimetroFan35A::SaidaDeDados(ostream& os) {
-        os << "Leitura das deflexoes: \n" << linha;
-        os << "Valor de Teta600: " << teta600 << endl;
-        os << "Valor de Teta300: " << teta300 << endl;
-        os << "Valor de Teta200: " << teta200 << endl;
-        os << "Valor de Teta100: " << teta100 << endl;
-        os << "Valor de Teta006: " << teta006 << endl;
-        os << "Valor de Teta003: " << teta003 << endl << linha;
-        os << "Leitura dos geis: \n" << linha;
-        os << "Valor do Gel inicial: " << gi << endl;
-        os << "Valor do Gel Final:   " << gf << endl << linha;
+        os <<  linha
+           <<  "Atributos CExperimentoViscosimetroFan35A:\n";
+        os << " Leitura das deflexoes:" ;
+        os << "\n Teta600: " << teta600 ;
+        os << "\n Teta300: " << teta300 ;
+        os << "\n Teta200: " << teta200 ;
+        os << "\n Teta100: " << teta100 ;
+        os << "\n Teta006: " << teta006 ;
+        os << "\n Teta003: " << teta003 ;
+        os << "\n Leitura dos geis:" ;
+        os << "\n Gel inicial: " << gi ;
+        os << "\n Gel Final:   " << gf ;
 
-        os << "\nREOLOGIA: Viscosimetro Fann modelo 35A \n" << linha;
-        os <<  linha << "Rotacao, rpm" ;
+        os << "\n==> REOLOGIA:";
+        os << "\nRotacao, rpm:\n";
         for(auto& e: rotacao)
             { os << right << setw(3) << e << ' ';}
-        os <<  linha << "Deflexao, grau";
+        os  << "\nDeflexao, grau:\n";
         for(auto& e: teta)
             { os << right << setw(3) << e << ' ';}
-        os <<  linha << "Taxa de cisalhamento, (1/s): ";
+        os << "\nTaxa de cisalhamento, (1/s):\n";
         for(auto& e: taxacisalhamento)
             { os << right << setw(3) << e << ' ';}
-        os <<  linha << "Tensao de cisalhamento, (lbf/100 ft^2): ";
+        os <<  "\nTensao de cisalhamento, (lbf/100 ft^2):\n";
         for(auto& e: tensaocisalhamento_uc)
             { os << right << setw(3) << e << ' ';}
-        os <<  linha << "Tensao de cisalhamento, (mPa): ";
+        os  << "\nTensao de cisalhamento, (mPa):\n";
         for(auto& e: tensaocisalhamento_si)
             { os << right << setw(3) << e << ' ';}
-        os <<  linha << "Viscosidade, (mPa.s): ";
+        os << "\nViscosidade, (mPa.s):\n";
         for(auto& e: visco_si)
             { os << right << setw(3) << e << ' ';}
 
@@ -144,14 +148,14 @@ void CExperimentoViscosimetroFan35A::SaidaDeDados(ostream& os) {
         //     <<  setw(10) << "Tensao cisalhamento(mPa)"
         //     <<  setw(10) << "Viscosidade(mPa.s): ";
         os  <<  "\n   Rotacao  Deflexao  TaxaCisalhamento  TensaoCisalhamento  TensaoCisalhamento  Viscosidade"
-            <<  "\n     (rpm)    (grau)             (1/s)      (lbf/100 ft^2)               (mPa)      (mPa.s)";
+            <<  "\n     (rpm)    (grau)             (1/s)      (lbf/100 ft^2)               (mPa)      (mPa.s)\n";
         for(int i = 0; i < rotacao.size(); i++){
             os  << right << setw(10) << rotacao[i]
                 << right << setw(10) << teta[i]
                 << right << setw(18) << taxacisalhamento[i]
                 << right << setw(20) << tensaocisalhamento_uc[i]
                 << right << setw(20) << tensaocisalhamento_si[i]
-                << right << setw(13) << visco_si[i] << ' ';
+                << right << setw(13) << visco_si[i] << '\n';
         }
 }
 

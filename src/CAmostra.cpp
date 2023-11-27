@@ -1,18 +1,22 @@
 #include <string_view>
 #include "CAmostra.h"
 
-static std::string_view linha = "\n_______________________________________________________________________________________ \n";
+static std::string_view linha = "\n_________________________________\n";
 
 void CAmostra::EntradaDeDados(std::ostream& out, std::istream& in){
-    out <<  linha <<  "Entre com o identificador da amostra: ";
+    out <<  linha
+		<<  "Atributos CAmostra:\n"
+		<<  " Entre com o identificador da amostra (id): ";
     getline(in, id);
-	out <<  "\nEntre com o nome do pesquisador responsável pela descricao: ";
+	out <<  " Entre com o nome do responsável pela descricao (nomePesquisador): ";
     getline(in, nomePesquisador);
-	out <<  "\nEntre com a descricao da amostra: ";
+	out <<  " Entre com a descricao da amostra (descricao): ";
     getline(in, descricao);
 }
 
 void CAmostra::SaidaDeDados(std::ostream& out){
+    out <<  linha
+		<<  "Atributos CAmostra:";
 	out <<  "\nid = " <<  id;
 	out <<  "\nnomePesquisador = " <<  nomePesquisador;
 	out <<  "\ndescricao = " <<  descricao;

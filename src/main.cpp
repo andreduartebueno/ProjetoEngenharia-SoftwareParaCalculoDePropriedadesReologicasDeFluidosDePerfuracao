@@ -4,7 +4,7 @@
 /// funcao main,  cria simulador e executa a simulacao.
 int main() {
     CSimuladorPerdaCargaCirculacaoFluidos simulador;
-    while( simulador.ExecutarSimulacao() ){
+    while( simulador.Menu() ){
     };
     return 0;
 }
