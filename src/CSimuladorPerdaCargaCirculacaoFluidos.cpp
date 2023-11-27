@@ -7,7 +7,7 @@
 
 using namespace std;
 
-static std::string_view linha = "\n_______________________________________________________________________________________ \n";
+static std::string_view linha = "_______________________________________________________________________________________\n";
 
 void CSimuladorPerdaCargaCirculacaoFluidos::Cabecalho(ostream& os) {
     os <<
@@ -49,9 +49,12 @@ void CSimuladorPerdaCargaCirculacaoFluidos::CriarPoco() {                       
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluido() {
     char respUsuario = '1';
     do {
-        cout << linha << "Informe o modelo de escoamento:\n";
-        cout << "1 - Fluidos Binghamianos - Viscosidade Aparente, Plastica e Limite de Escoamento\n";
-        cout << "2 - Fluidos de Potencia  - Indice de Comportamento e Consistencia" << linha;
+        cout << linha
+             << "Informe o modelo de escoamento:\n"
+             << " Fluidos Binghamianos.......................................(1)\n"
+             << "  Viscosidade Aparente, Plastica e Limite de Escoamento\n"
+             << " Fluidos de Potencia........................................(2)\n"
+             << "  Indice de Comportamento e Consistencia                        : ";
         cin >> respUsuario;        cin.get(); // bueno - retira do teclado a tecla enter
         tipoFluido = static_cast<TipoFluido>(respUsuario);
     } while ((tipoFluido != TipoFluido::Binghamianos) && (tipoFluido != TipoFluido::DePotencia));
@@ -61,9 +64,10 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluido() {
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoCirculacao() {
     char respUsuario = '1';
     do {
-        cout << linha << "Informe onde calcular a perda de carga e a velocidades:\n";
-        cout << "1 - Interior de Tubos\n";
-        cout << "2 - Espaco Anular\n" ;
+        cout << linha
+             << "Informe onde calcular a perda de carga e a velocidades:\n"
+             << " Interior de Tubos.................(1)\n"
+             << " Espaco Anular.....................(2) : ";
         cin >> respUsuario; cin.get();
         tipoCirculacao = static_cast<TipoCirculacao>(respUsuario);
     } while ((tipoCirculacao != TipoCirculacao::InteriorDeTubos) && (tipoCirculacao!= TipoCirculacao::EspacoAnular));
@@ -72,9 +76,10 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoCirculacao() {
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoUnidade() {
    char respUsuario = '1';
      do {
-        cout <<  linha << "Informe a unidade que sera utilizada:\n";
-        cout << "1 - [SI] Sistema Internacional\n";
-        cout << "2 - [UC] Unidades de Campo\n";
+        cout <<  linha
+             << "Informe a unidade que sera utilizada:\n"
+             << " Sistema Internacional  [SI].......(1)\n"
+             << " Unidades de Campo      [UC].......(2) : ";
         cin >> respUsuario; cin.get();
         tipoUnidade = static_cast<TipoUnidade>(respUsuario);
     } while ((tipoUnidade != TipoUnidade::SI) && (tipoUnidade!= TipoUnidade::UC));
@@ -83,9 +88,10 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoUnidade() {
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluxo() {
     char respUsuario = '1';
     do {
-        cout << linha << "Informe o regime de fluxo do fluido de perfuracao para o calculo da Perda de Carga\n";
-        cout << "1 - Fluxo Laminar\n";
-        cout << "2 - Fluxo Turbulento\n" ;
+        cout << linha
+             << "Informe o regime de fluxo do fluido de perfuracao para o calculo da Perda de Carga\n"
+             << " Fluxo Laminar.....................(1)\n"
+             << " Fluxo Turbulento..................(2) :" ;
         cin >> respUsuario; cin.get();
         tipoFluxo = static_cast<TipoFluxo>(respUsuario);
     } while ((tipoFluxo != TipoFluxo::Laminar) && (tipoFluxo!= TipoFluxo::Turbulento));
@@ -119,6 +125,22 @@ void CSimuladorPerdaCargaCirculacaoFluidos::PrepararSimulacao() {
     SelecaoTipoFluido();
     SelecaoTipoCirculacao();
     CriarModeloEscoamento();
+    SelecaoTipoUnidade();
+    SelecaoTipoFluxo();
+}
+
+void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarDadosSimulacao() {
+    std::cout <<  '\n' << linha << "Dados Amostra: ";
+    amostra->SaidaDeDados(cout);
+    std::cout <<  '\n' << linha << "Dados Viscosimetro: ";
+    eviscosimetro->SaidaDeDados(cout);
+    std::cout <<  '\n' << linha << "Dados Poco: ";
+    poco->SaidaDeDados(cout);
+    std::cout   <<  '\n' << linha << "Dados Simulacao: "
+                <<  "\n Tipo Fluido      = " <<  modeloEscoamento->StringTipoFluido(tipoFluido)
+                <<  "\n Tipo Unidade     = " <<  modeloEscoamento->StringTipoUnidade(tipoUnidade)
+                <<  "\n Tipo Circulacao  = " <<  modeloEscoamento->StringTipoCirculacao(tipoCirculacao)
+                <<  "\n Tipo Fluxo       = " <<  modeloEscoamento->StringTipoFluxo(tipoFluxo) <<  std::endl;
 }
 
 bool CSimuladorPerdaCargaCirculacaoFluidos::ExecutarSimulacao() {
@@ -175,9 +197,9 @@ if ((calcularVelocidadeEPerdaDeCarga == 's') || (calcularVelocidadeEPerdaDeCarga
 }
 
 bool CSimuladorPerdaCargaCirculacaoFluidos::Menu() {
-    short int respUsuario = 8;
+    char respUsuario = 9;
     do {
-    cout    <<  linha <<  "Qual opcao?" <<  linha
+    cout    <<  linha <<  "Qual opcao?\n" <<  linha
             <<  "Criar Amostra.................................(1)\n"
             <<  "Criar Experimento Viscosimetro................(2)\n"
             <<  "Criar Poco....................................(3)\n"
@@ -186,21 +208,24 @@ bool CSimuladorPerdaCargaCirculacaoFluidos::Menu() {
             <<  "Selecao Tipo Unidade..........................(6)\n"
             <<  "Selecao Tipo Fluxo............................(7)\n"
             <<  "Preparar Simulacao(executa 1-7)...............(8)\n"
-            <<  "Executar Simulacao............................(9)\n"
-            <<  "Sair..........................................(0):\n";
+            <<  "Visualizar Dados Simulacao....................(9)\n"
+            <<  "Executar Simulacao............................(0)\n"
+            <<  "Sair..........................................(q): ";
     cin >> respUsuario; cin.get();
     switch (respUsuario) {
-            case 1: CriarAmostra();                 break;
-            case 2: CriarExperimentoViscosimetro(); break;
-            case 3: CriarPoco();                    break;
-            case 4: SelecaoTipoFluido();            break;
-            case 5: SelecaoTipoCirculacao();        break;
-            case 6: SelecaoTipoUnidade();           break;
-            case 7: SelecaoTipoFluxo();             break;
-            case 8: PrepararSimulacao();            break;
-            case 9: ExecutarSimulacao();            break;
-            case 0: return 0;                       break;
+            case '1': CriarAmostra();                 break;
+            case '2': CriarExperimentoViscosimetro(); break;
+            case '3': CriarPoco();                    break;
+            case '4': SelecaoTipoFluido();            break;
+            case '5': SelecaoTipoCirculacao();        break;
+            case '6': SelecaoTipoUnidade();           break;
+            case '7': SelecaoTipoFluxo();             break;
+            case '8': PrepararSimulacao();            break;
+            case '9': VisualizarDadosSimulacao();     break;
+            case '0': ExecutarSimulacao();            break;
+            case 'q':
+            case 'Q': return 0;                       break;
     }
-    } while (respUsuario !=  0);
+    } while (respUsuario != 'q' and respUsuario != 'Q');
     return 0;
 }

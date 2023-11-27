@@ -4,7 +4,7 @@
 
 #include "CModeloEscoamentoFluidoBinghamiano.h"
 
-static std::string_view linha = "\n_______________________________________________________________________________________ \n";
+static std::string_view linha = "_______________________________________________________________________________________ \n";
 
 using namespace std;
 

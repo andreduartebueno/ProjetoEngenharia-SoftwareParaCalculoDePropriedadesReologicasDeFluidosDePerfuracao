@@ -64,6 +64,24 @@ public:
     /// Metodo para o calculo da Velocidade Crítica para Fluidos de Potência, no espaço anular e unidades de Campo
     virtual double VelocidadeCritica_ea_UC() = 0;
 
+    ///  Tipo de fluido
+    std::string_view StringTipoFluido(TipoFluido& f) {
+        return ( f  ==  TipoFluido::Binghamianos ) ? "Binghamianos" : "DePotencia";
+    }
+
+    ///  Tipo de unidade
+    std::string_view StringTipoUnidade(TipoUnidade& u) {
+        return ( u == TipoUnidade::SI ) ? "SI" :  "UC";
+    }
+    ///  Tipo de circulacao
+    std::string_view StringTipoCirculacao(TipoCirculacao& c) {
+        return ( c == TipoCirculacao::InteriorDeTubos ) ? "InteriorDeTubos" : "EspacoAnular";
+    }
+    ///  Tipo de fluxo
+    std::string_view StringTipoFluxo(TipoFluxo& f) {
+        return ( f == TipoFluxo::Laminar ) ? "Laminar" : "Turbulento";
+    }
+
 protected:
 /// Construtor.
     CIModeloEscoamentoFluido(std::shared_ptr<CPoco> _poco, std::shared_ptr<CExperimentoViscosimetroFan35A> _eviscosimetro):

@@ -1,0 +1,14 @@
+
+add_executable(calculoPropriedadesReologicas
+CAmostra.cpp
+CAmostraFluido.cpp
+CEquipamento.cpp
+CExperimentoViscosimetroFan35A.cpp
+CGnuplot.cpp
+CModeloEscoamentoFluidoBinghamiano.cpp
+CModeloEscoamentoFluidoDePotencia.cpp
+CPoco.cpp
+CSimuladorPerdaCargaCirculacaoFluidos.cpp
+main.cpp
+)
+

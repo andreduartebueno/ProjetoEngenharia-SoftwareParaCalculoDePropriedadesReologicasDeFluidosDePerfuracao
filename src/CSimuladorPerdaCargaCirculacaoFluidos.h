@@ -43,6 +43,7 @@ class CSimuladorPerdaCargaCirculacaoFluidos {
 	void SelecaoTipoUnidade();
     void SelecaoTipoFluxo();
     void PrepararSimulacao();
+    void VisualizarDadosSimulacao();
 	bool ExecutarSimulacao();
 
 	bool Menu();

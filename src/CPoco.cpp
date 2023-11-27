@@ -12,36 +12,36 @@ using  namespace std;
 
 #ifndef linha_
 #define linha_
-std::string_view linha = "\n_______________________________________________________________________________________ \n";
+std::string_view linha = "_______________________________________________________________________________________ \n";
 #endif
 
 /// Metodo que solicita a entrada de dados do objeto.
 void CPoco::EntradaDeDados(std::ostream& out, std::istream& in) {
     out << "Entre com os valores das variaveis conforme sequencia:\n";
-    out << "Caso a variavel nao seja necessaria para o calculo, digitar 0 \n" << linha;
-    out << "1 - [d] Diametro de tubo (unidade: m ou in): \n";
+    out << "Caso a variavel nao seja necessaria para o calculo, digitar 0 \n" ;
+    out << " Entre com o diametro do tubo (d)(unidade: m ou in) : ";
     in >> d; in.get();
-    out << "\n2 - [di] Diametro externo de tubo interno para anular (unidade: m ou in): \n";
+    out << " Entre com o diametro externo de tubo (di) interno para anular, unidade: [m ou in]: ";
     in >> di; in.get();
-    out << "\n3 - [de] Diametro interno de tubo externo para anular (unidade: m ou in): \n";
+    out << " Entre com o diametro interno de tubo externo (df) para anular, unidade: [m ou in]: ";
     in >> df; in.get();
-    out << "\n4 - [l] Comprimento (unidade: m ou ft): \n";
+    out << " Entre com o diametro comprimento (l),  unidade: [m ou ft]: ";
     in >> l; in.get();
-    out << "\n5 - [v] Velocidade de fluxo (unidade: m/s ou ft/min): \n";
+    out << " Entre com a velocidade de fluxo (v),  unidade: [m/s ou ft/min]: ";
     in >> v; in.get();
-    out << "\n6 - [rho] Massa especifica ou densidade absoluta do fluido (unidade: kg/m^3 ou lbm/gal): \n";
+    out << " Entre com a massa especifica ou densidade absoluta do fluido (rho),  unidade: [kg/m^3 ou lbm/gal]: ";
     in >> rho; in.get();
     out << linha;
 }
 
 /// Método que mostra dados do objeto.
 void CPoco::SaidaDeDados(std::ostream& out) {
-    out <<  "\nDiametro de tubo (unidade: m ou in): " <<  d;
-    out <<  "\nDiametro externo de tubo interno para anular (unidade: m ou in): " <<  di;
-    out <<  "\nDiametro interno de tubo externo para anular (unidade: m ou in): " <<  df;
-    out <<  "\nComprimento (unidade: m ou ft): " <<  l;
-    out <<  "\nVelocidade de fluxo (unidade: m/s ou ft/min): " <<  v;
-    out <<  "\nMassa especifica ou densidade absoluta do fluido (unidade: kg/m^3 ou lbm/gal): " <<  rho;
+    out <<  "\nDiametro de tubo (d), unidade: [m ou in])[: " <<  d
+        <<  "\nDiametro externo de tubo interno para anular (di), unidade: [m ou in[: " <<  di
+        <<  "\nDiametro interno de tubo externo para anular (df), unidade: [m ou in]: " <<  df
+        <<  "\nComprimento (l), unidade: [m ou ft]: " <<  l
+        <<  "\nVelocidade de fluxo (v), unidade: [m/s ou ft/min]: " <<  v
+        <<  "\nMassa especifica ou densidade absoluta do fluido (rho), unidade: [kg/m^3 ou lbm/gal]: " <<  rho <<  std::endl;
 }
 
 /// Método que salva dados do objeto em disco.
