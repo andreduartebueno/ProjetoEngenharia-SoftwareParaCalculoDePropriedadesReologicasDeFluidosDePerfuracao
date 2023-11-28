@@ -1,3 +1,7 @@
+//  Dados inconsistentes estao travando o programa/bug;
+//  Tarefa: verificar cálculos e definir forma de tratamento deste bug.
+//  Hipótese inicial é criar uma funçao de saída alertando que dados inconsistentes geram bug.
+
 #include <string>
 #include <string_view>
 #include <tuple>
@@ -33,6 +37,9 @@ void CSimuladorPerdaCargaCirculacaoFluidos::CriarAmostraFluido() {
     amostraFluido = make_shared<CAmostraFluido>();
     amostraFluido->EntradaDeDados(cout, cin);
     amostraFluido->SaidaDeDados(cout);
+    //  Como alterou a amostra precisa invalidar a simulacaoReologiaAtualizada
+    simulacaoReologiaAtualizada = false;
+    simulacaoFluxoAtualizada = false;
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::CriarExperimentoViscosimetro() {
@@ -40,6 +47,9 @@ void CSimuladorPerdaCargaCirculacaoFluidos::CriarExperimentoViscosimetro() {
     eviscosimetro = make_shared<CExperimentoViscosimetroFan35A>();
     eviscosimetro->EntradaDeDados(cout, cin);
     eviscosimetro->SaidaDeDados(cout);
+    //  Como alterou o eviscosimetro precisa invalidar resultados simulacaoReologiaAtualizada
+    simulacaoReologiaAtualizada = false;
+    simulacaoFluxoAtualizada = false;
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::PrepararSimulacaoReologia() {
@@ -58,10 +68,18 @@ bool CSimuladorPerdaCargaCirculacaoFluidos::ExecutarSimulacaoReologia() {
     std::cout << "\n Calculando resultados reologia";
     eviscosimetro->CalcularResultadosReologia();
     eviscosimetro->SaidaDeDadosTabelaResultadosReologia(cout);
+    simulacaoReologiaAtualizada = true;
     return 1;
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarResultadosSimulacaoReologia() {
+    //  Se amostra ou Viscosimetro foram alterados precisa reexecutar a simulacao
+    if (simulacaoReologiaAtualizada == false) {
+        std::cout <<  "\n********************** Advertencia **********************"
+                      "\nApresenta-se a seguir os resultados de simulacao antiga,"
+                      "\npois o objeto amostraFluido ou eviscosimetro foi alterado.\n"
+                      "\nPara dados atualizados é necessário realizar a simulacao de reologia\n";
+    }
     eviscosimetro->SaidaDeDadosTabelaResultadosReologia(cout);
 }
 
@@ -70,12 +88,14 @@ void CSimuladorPerdaCargaCirculacaoFluidos::CriarPoco() {                       
     poco = make_shared<CPoco>();
     poco->EntradaDeDados(cout, cin);
     poco->SaidaDeDados(cout);
+    simulacaoFluxoAtualizada = false;
 }
 
 //  Solicita ao usuario a escolha do calculo de propriedades para fluidos Binghamianos ou de Potência
 //  Usa polimorfismo nesta definicao.
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluido() {
     char respUsuario = '1';
+    TipoFluido tipoFluidoAntes = tipoFluido;
     do {
         cout << linha
              << "Informe o modelo de escoamento:\n"
@@ -86,11 +106,14 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluido() {
         cin >> respUsuario;        cin.get(); // bueno - retira do teclado a tecla enter
         tipoFluido = static_cast<TipoFluido>(respUsuario);
     } while ((tipoFluido != TipoFluido::Binghamianos) && (tipoFluido != TipoFluido::DePotencia));
+    if( tipoFluidoAntes !=  tipoFluido)
+        simulacaoFluxoAtualizada = false;
 }
 
 ///  Solicita ao usuario a escolha do local onde irá calcular a perda de carga e velocidade.
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoCirculacao() {
     char respUsuario = '1';
+    TipoCirculacao tipoCirculacaoAntes = tipoCirculacao;
     do {
         cout << linha
              << "Informe onde calcular a perda de carga e a velocidades:\n"
@@ -99,10 +122,13 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoCirculacao() {
         cin >> respUsuario; cin.get();
         tipoCirculacao = static_cast<TipoCirculacao>(respUsuario);
     } while ((tipoCirculacao != TipoCirculacao::InteriorDeTubos) && (tipoCirculacao!= TipoCirculacao::EspacoAnular));
+    if( tipoCirculacaoAntes !=  tipoCirculacao)
+        simulacaoFluxoAtualizada = false;
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoUnidade() {
-   char respUsuario = '1';
+    char respUsuario = '1';
+    TipoUnidade tipoUnidadeAntes = tipoUnidade;
      do {
         cout <<  linha
              << "Informe a unidade que sera utilizada:\n"
@@ -111,10 +137,13 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoUnidade() {
         cin >> respUsuario; cin.get();
         tipoUnidade = static_cast<TipoUnidade>(respUsuario);
     } while ((tipoUnidade != TipoUnidade::SI) && (tipoUnidade!= TipoUnidade::UC));
+    if( tipoUnidadeAntes !=  tipoUnidade)
+        simulacaoFluxoAtualizada = false;
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluxo() {
     char respUsuario = '1';
+    TipoFluxo tipoFluxoAntes = tipoFluxo;
     do {
         cout << linha
              << "Informe o regime de fluxo do fluido de perfuracao para o calculo da Perda de Carga\n"
@@ -123,19 +152,28 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluxo() {
         cin >> respUsuario; cin.get();
         tipoFluxo = static_cast<TipoFluxo>(respUsuario);
     } while ((tipoFluxo != TipoFluxo::Laminar) && (tipoFluxo!= TipoFluxo::Turbulento));
+    if( tipoFluxoAntes !=  tipoFluxo)
+        simulacaoFluxoAtualizada = false;
 }
 
 
 void CSimuladorPerdaCargaCirculacaoFluidos::CriarModeloEscoamento() {
-    if(poco ==  nullptr)
+    if( amostraFluido == nullptr )
+        CriarAmostraFluido();
+    if( poco == nullptr )
         CriarPoco();
-    if(eviscosimetro ==  nullptr)
+    if( eviscosimetro == nullptr )
         CriarExperimentoViscosimetro();
-    // Cria objeto modelo escoamento
-    if(tipoFluido == TipoFluido::Binghamianos)
+        // CalcularResultadosReologia();
+    //  Destroi objeto modelo antigo se existia
+    if( modeloEscoamento !=  nullptr )
+        modeloEscoamento.reset();
+    // Cria objeto modelo escoamento de acordo com tipo de fluido
+    if( tipoFluido == TipoFluido::Binghamianos )
         modeloEscoamento = make_shared<CModeloEscoamentoFluidoBinghamiano>(poco, eviscosimetro);
-    else if(tipoFluido == TipoFluido::DePotencia)
+    else if( tipoFluido == TipoFluido::DePotencia )
         modeloEscoamento = make_shared<CModeloEscoamentoFluidoDePotencia>(poco, eviscosimetro, tipoCirculacao);
+    simulacaoFluxoAtualizada = false;
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::PrepararSimulacaoFluxo() {
@@ -155,6 +193,8 @@ void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarDadosSimulacaoFluxo() {
     amostraFluido->SaidaDeDados(cout);
     std::cout <<  '\n' << linha << "Dados Viscosimetro:\n";
     eviscosimetro->SaidaDeDados(cout);
+    //eviscosimetro->CalcularResultadosReologia();
+    //eviscosimetro->SaidaDeDadosTabelaResultadosReologia(cout);
     std::cout <<  '\n' << linha << "Dados Poco:\n";
     poco->SaidaDeDados(cout);
     std::cout   <<  '\n' << linha << "Dados Simulacao:\n"
@@ -211,6 +251,16 @@ bool CSimuladorPerdaCargaCirculacaoFluidos::ExecutarSimulacaoFluxo() {
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarResultadosSimulacaoFluxo() {
+    if ( simulacaoFluxoAtualizada == false) {
+        std::cout <<  "\n********************** Advertencia **********************"
+                      "\nApresenta-se a seguir os dados de simulacao antiga,"
+                      "\npois ocorreram alterações em dados usados na simulacao."
+                      "\nObjetos utilizados:"
+                      "\n amostraFluido, eviscosimetro,  poco"
+                      "\nPropriedades utilizadas:"
+                      "\n tipoFluido,  tipoUnidade,  tipoCirculacao,  tipoFluxo"
+                      "\nPara dados atualizados é necessário realizar a simulacao de fluxo\n";
+    }
     std::cout   <<  "\nResultados da simulacao de fluxo para:"
                 <<  "\n Tipo Fluido      = " <<  modeloEscoamento->StringTipoFluido(tipoFluido)
                 <<  "\n Tipo Unidade     = " <<  modeloEscoamento->StringTipoUnidade(tipoUnidade)
@@ -283,7 +333,7 @@ bool CSimuladorPerdaCargaCirculacaoFluidos::Menu() {
     do {
         Cabecalho(cout);
         cout<<  linha <<  "Menu :\n" <<  linha
-            <<  "# === Etapa 1: Simulacao Reologia === \n"
+            <<  "# === Etapa 1: Simulacao Reologia                         === \n"
             <<  "# Objetos - Criar/Alterar:\n"
             <<  "       Amostra Fluido..........................(1)\n"
             <<  "       Experimento Viscosimetro................(2)\n"
@@ -302,7 +352,7 @@ bool CSimuladorPerdaCargaCirculacaoFluidos::Menu() {
             <<  "       Tipo Unidade............................(10)\n"
             <<  "       Tipo Fluxo..............................(11)\n"
             <<  "# Simulacao Fluxo:\n"
-            <<  "       Preparar (executa 1-7)..................(12)\n"
+            <<  "       Preparar (executa 1,2,7,8,9,10,11)......(12)\n"
             <<  "       Visualizar Dados........................(13)\n"
             <<  "       Executar................................(14)\n"
             <<  "       Visualizar Resultados...................(15)\n"

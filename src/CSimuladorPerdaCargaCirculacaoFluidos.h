@@ -31,6 +31,10 @@ class CSimuladorPerdaCargaCirculacaoFluidos {
     /// Objeto CPoco.
     std::shared_ptr<CPoco> poco;
 
+    bool simulacaoReologiaAtualizada = false;
+    bool simulacaoFluxoAtualizada = false;
+
+
  public:
 	CSimuladorPerdaCargaCirculacaoFluidos() = default;
     bool Menu();
