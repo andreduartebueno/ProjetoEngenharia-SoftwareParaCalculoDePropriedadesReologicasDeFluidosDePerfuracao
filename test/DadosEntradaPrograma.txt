@@ -16,16 +16,16 @@ FBA_07_Salinidade
 >2000           #fase direta
 
 #Dados tipicos para leituras de deflexao
-40-110		# L600
-25-75		# L300
-18-55		# L200
-12-38		# L100
-7-19		# L6
-6-16		# L3
+40-110		    # L600
+25-75		    # L300
+18-55		    # L200
+12-38		    # L100
+7-19		    # L6
+6-16		    # L3
 
 #Dados tipicos para leituras de géis
-8-20		# Gi (gel inicial)
-10-25		# Gf (gel final)
+8-20		    # Gi (gel inicial)
+10-25		    # Gf (gel final)
 
 #Dados tipicos para geometria do poço
 4.276           #Diametro de tubo (in)

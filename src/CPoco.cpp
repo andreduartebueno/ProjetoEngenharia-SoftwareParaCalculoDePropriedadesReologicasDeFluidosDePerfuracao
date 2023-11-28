@@ -17,9 +17,11 @@ std::string_view linha = "______________________________________________________
 
 /// Metodo que solicita a entrada de dados do objeto.
 void CPoco::EntradaDeDados(std::ostream& out, std::istream& in) {
-    out << "Entre com os valores das variaveis conforme sequencia:\n";
-    out << "Caso a variavel nao seja necessaria para o calculo, digitar 0 \n" ;
-    out << " Entre com o diametro do tubo (d)(unidade: m ou in) : ";
+    out <<  linha
+		<<  "Entrada atributos CAmostraFluido:\n"
+        << " Entre com os valores das variaveis conforme sequencia:\n"
+        << " Caso a variavel nao seja necessaria para o calculo, digitar 0\n"
+        << " Entre com o diametro do tubo (d)(unidade: m ou in) : ";
     in >> d; in.get();
     out << " Entre com o diametro externo de tubo (di) interno para anular, unidade: [m ou in]: ";
     in >> di; in.get();
@@ -36,8 +38,9 @@ void CPoco::EntradaDeDados(std::ostream& out, std::istream& in) {
 
 /// Método que mostra dados do objeto.
 void CPoco::SaidaDeDados(std::ostream& out) {
-    out <<  "\nDiametro de tubo (d), unidade: [m ou in])[: " <<  d
-        <<  "\nDiametro externo de tubo interno para anular (di), unidade: [m ou in[: " <<  di
+    out <<  "Atributos CPoco:"
+        <<  "\nDiametro de tubo (d), unidade: [m ou in]: " <<  d
+        <<  "\nDiametro externo de tubo interno para anular (di), unidade: [m ou in]: " <<  di
         <<  "\nDiametro interno de tubo externo para anular (df), unidade: [m ou in]: " <<  df
         <<  "\nComprimento (l), unidade: [m ou ft]: " <<  l
         <<  "\nVelocidade de fluxo (v), unidade: [m/s ou ft/min]: " <<  v

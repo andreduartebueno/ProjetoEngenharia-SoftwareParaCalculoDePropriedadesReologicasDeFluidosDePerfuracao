@@ -7,28 +7,32 @@
 
 using namespace std;
 
-static std::string_view linha = "_______________________________________________________________________________________\n";
+static std::string_view linha =
+    "-------------------------------------------------------------------------------------------\n";
+
+static std::string_view cabecalho =
+     "-------------------------------------------------------------------------------------------\n"
+     "|               UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE - DARCY RIBEIRO                  |\n"
+     "|                         CENTRO DE CIENCIAS E TECNOLOGIA - CCT                            |\n"
+     "|               LABORATORIO DE ENGENHARIA E EXPLORACAO DE PETROLEO - LENEP                 |\n"
+     "|                       DISCIPLINA: PROPRAMACAO PRATICA - PROJETO C++                      |\n"
+     "|                             PROFESSOR: ANDRE DUARTE BUENO                                |\n"
+     "|                          ALUNO: ROBERT ALEPHY SOUZA DA SILVA                             |\n"
+     "|       SIMULADOR PARA CALCULO DE PROPRIEDADES REOLOGICAS DE FLUIDOS DE PERFURACAO,        |\n"
+     "|                VELOCIDADE CRITICA E PERDAS DE CARGA EM POCOS DE PETROLEO                 |\n"
+     "|                                       Versao: 0.8                                        |\n"
+     "-------------------------------------------------------------------------------------------" ;
 
 void CSimuladorPerdaCargaCirculacaoFluidos::Cabecalho(ostream& os) {
-    os <<
-     "---------------------------------------------------------------------------------------\n"
-     "|             UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE - DARCY RIBEIRO               |\n"
-     "|                       CENTRO DE CIENCIAS E TECNOLOGIA - CCT                         |\n"
-     "|             LABORATORIO DE ENGENHARIA E EXPLORACAO DE PETROLEO - LENEP              |\n"
-     "|                     DISCIPLINA: PROPRAMACAO PRATICA - PROJETO C++                   |\n"
-     "|                           PROFESSOR: ANDRE DUARTE BUENO                             |\n"
-     "|                        ALUNO: ROBERT ALEPHY SOUZA DA SILVA                          |\n"
-     "|     PROGRAMA PARA CALCULO DE PROPRIEDADES REOLOGICAS DE FLUIDOS DE PERFURACAO,      |\n"
-     "|              VELOCIDADE CRITICA E PERDAS DE CARGA EM POCOS DE PETROLEO              |\n"
-     "|                                     Versao: 0.8                                     |\n"
-     "---------------------------------------------------------------------------------------" << endl;
+    os << cabecalho << endl;
 }
 
-void CSimuladorPerdaCargaCirculacaoFluidos::CriarAmostra() {
+//  ============================================================== Simulacao reologia
+void CSimuladorPerdaCargaCirculacaoFluidos::CriarAmostraFluido() {
     /// Objeto CAmostraFluido.
-    amostra = make_shared<CAmostraFluido>();
-    amostra->EntradaDeDados(cout, cin);
-    amostra->SaidaDeDados(cout);
+    amostraFluido = make_shared<CAmostraFluido>();
+    amostraFluido->EntradaDeDados(cout, cin);
+    amostraFluido->SaidaDeDados(cout);
 }
 
 void CSimuladorPerdaCargaCirculacaoFluidos::CriarExperimentoViscosimetro() {
@@ -38,6 +42,30 @@ void CSimuladorPerdaCargaCirculacaoFluidos::CriarExperimentoViscosimetro() {
     eviscosimetro->SaidaDeDados(cout);
 }
 
+void CSimuladorPerdaCargaCirculacaoFluidos::PrepararSimulacaoReologia() {
+    CriarAmostraFluido();
+    CriarExperimentoViscosimetro();
+}
+
+void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarDadosSimulacaoReologia() {
+    std::cout <<  '\n' << linha << "Dados Amostra:\n";
+    amostraFluido->SaidaDeDados(cout);
+    std::cout <<  '\n' << linha << "Dados Viscosimetro:\n";
+    eviscosimetro->SaidaDeDados(cout);
+}
+
+bool CSimuladorPerdaCargaCirculacaoFluidos::ExecutarSimulacaoReologia() {
+    std::cout << "\n Calculando resultados reologia";
+    eviscosimetro->CalcularResultadosReologia();
+    eviscosimetro->SaidaDeDadosTabelaResultadosReologia(cout);
+    return 1;
+}
+
+void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarResultadosSimulacaoReologia() {
+    eviscosimetro->SaidaDeDadosTabelaResultadosReologia(cout);
+}
+
+//  ==============================================================  Simulacao fluxo
 void CSimuladorPerdaCargaCirculacaoFluidos::CriarPoco() {                                         /// Objeto CPoco.
     poco = make_shared<CPoco>();
     poco->EntradaDeDados(cout, cin);
@@ -97,6 +125,7 @@ void CSimuladorPerdaCargaCirculacaoFluidos::SelecaoTipoFluxo() {
     } while ((tipoFluxo != TipoFluxo::Laminar) && (tipoFluxo!= TipoFluxo::Turbulento));
 }
 
+
 void CSimuladorPerdaCargaCirculacaoFluidos::CriarModeloEscoamento() {
     if(poco ==  nullptr)
         CriarPoco();
@@ -107,19 +136,11 @@ void CSimuladorPerdaCargaCirculacaoFluidos::CriarModeloEscoamento() {
         modeloEscoamento = make_shared<CModeloEscoamentoFluidoBinghamiano>(poco, eviscosimetro);
     else if(tipoFluido == TipoFluido::DePotencia)
         modeloEscoamento = make_shared<CModeloEscoamentoFluidoDePotencia>(poco, eviscosimetro, tipoCirculacao);
-    // switch(tipoFluido ) {
-    //     case TipoFluido::Binghamianos:
-    //         modeloEscoamento = make_shared<CIModeloEscoamentoFluidoBinghamiano>();
-    //         break;
-    //     case TipoFluido::DePotencia:
-    //         modeloEscoamento = make_shared<CIModeloEscoamentoFluidoDePotencia>();
-    //         break;
-    // }
 }
 
-void CSimuladorPerdaCargaCirculacaoFluidos::PrepararSimulacao() {
-    Cabecalho(cout);
-    CriarAmostra();
+void CSimuladorPerdaCargaCirculacaoFluidos::PrepararSimulacaoFluxo() {
+    //Cabecalho(cout);
+    CriarAmostraFluido();
     CriarExperimentoViscosimetro();
     CriarPoco();
     SelecaoTipoFluido();
@@ -129,91 +150,117 @@ void CSimuladorPerdaCargaCirculacaoFluidos::PrepararSimulacao() {
     SelecaoTipoFluxo();
 }
 
-void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarDadosSimulacao() {
-    std::cout <<  '\n' << linha << "Dados Amostra: ";
-    amostra->SaidaDeDados(cout);
-    std::cout <<  '\n' << linha << "Dados Viscosimetro: ";
+void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarDadosSimulacaoFluxo() {
+    std::cout <<  '\n' << linha << "Dados Amostra:\n";
+    amostraFluido->SaidaDeDados(cout);
+    std::cout <<  '\n' << linha << "Dados Viscosimetro:\n";
     eviscosimetro->SaidaDeDados(cout);
-    std::cout <<  '\n' << linha << "Dados Poco: ";
+    std::cout <<  '\n' << linha << "Dados Poco:\n";
     poco->SaidaDeDados(cout);
-    std::cout   <<  '\n' << linha << "Dados Simulacao: "
+    std::cout   <<  '\n' << linha << "Dados Simulacao:\n"
                 <<  "\n Tipo Fluido      = " <<  modeloEscoamento->StringTipoFluido(tipoFluido)
                 <<  "\n Tipo Unidade     = " <<  modeloEscoamento->StringTipoUnidade(tipoUnidade)
                 <<  "\n Tipo Circulacao  = " <<  modeloEscoamento->StringTipoCirculacao(tipoCirculacao)
                 <<  "\n Tipo Fluxo       = " <<  modeloEscoamento->StringTipoFluxo(tipoFluxo) <<  std::endl;
 }
 
-bool CSimuladorPerdaCargaCirculacaoFluidos::ExecutarSimulacao() {
-    //Cabecalho(cout);
+bool CSimuladorPerdaCargaCirculacaoFluidos::ExecutarSimulacaoFluxo() {
     //PrepararSimulacao();                                  //  cria objetos e define seleções
-    eviscosimetro->CalculoPropriedades();                   //  calcula propriedades do Viscosimetro
+    cout << "\n -> Calculando propriedades reologicas usando Viscosimetro Fann modelo 35A\n";
+    eviscosimetro->CalcularResultadosReologia();                 //  calcula propriedades do Viscosimetro
+    //eviscosimetro->SaidaDeDados(cout);
+    //eviscosimetro->SaidaDeDadosTabelaResultadosReologia(cout);
+
     // realiza o pré processamto,  cálculo de variáveis necessárias de acordo com o modelo escolhido
-    modeloEscoamento->PreProcessamento();                   //  passar tipoCirculacao?
+    cout << "\n -> Calculando propriedades auxiliares do modelo de escoamento\n";
+    modeloEscoamento->PreProcessamento();
 
-    char calcularVelocidadeEPerdaDeCarga = 's';
-    do {
-        cout << linha << "Informe se deseja calcular a Velocidade Critica e a Perda de Carga? [s/n]\n" ;
-        cin >> calcularVelocidadeEPerdaDeCarga; cin.get();
-    } while ( (calcularVelocidadeEPerdaDeCarga != 'n') && (calcularVelocidadeEPerdaDeCarga != 'N')
-            && (calcularVelocidadeEPerdaDeCarga != 's') && (calcularVelocidadeEPerdaDeCarga != 'S'));
-
-if ((calcularVelocidadeEPerdaDeCarga == 's') || (calcularVelocidadeEPerdaDeCarga == 'S')) {
-    SelecaoTipoUnidade();
-    SelecaoTipoFluxo();
-
+    cout << "\n -> Calculando velocidade crítica e perda de carga\n";
     std::tuple<TipoCirculacao,TipoUnidade> tuplaRespostas = std::make_tuple(tipoCirculacao, tipoUnidade );
     /// Calculando a Velocidade Critica para fluidos Binghamianos e de Potencia
-    cout << linha <<  "Resultados para: " <<  modeloEscoamento->StringTipoFluido() << linha ;
     if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::InteriorDeTubos, TipoUnidade::SI)) {
-        cout << "\nVelocidade Critica, interior de tubos, SI: " << modeloEscoamento->VelocidadeCritica_it_SI() << " m/s";
+        modeloEscoamento->VelocidadeCritica_it_SI();
         if (tipoFluxo == TipoFluxo::Laminar)
-            cout << "\nPerda de Carga, fluxo laminar, interior de tubos, SI: " << modeloEscoamento->PerdaDeCarga_fl_it_SI() << " Pa\n";
+            modeloEscoamento->PerdaDeCarga_fl_it_SI();
         else                                                //Turbulento
-            cout << "\nPerda de Carga, fluxo turbulento, interior de tubos, SI: " << modeloEscoamento->PerdaDeCarga_ft_it_SI() << " Pa\n";
+            modeloEscoamento->PerdaDeCarga_ft_it_SI();
         }
     if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::InteriorDeTubos, TipoUnidade::UC)) {
-        cout << "\nVelocidade Critica, interior de tubos, UC: " << modeloEscoamento->VelocidadeCritica_it_UC() << " ft/min";
+        modeloEscoamento->VelocidadeCritica_it_UC();
         if (tipoFluxo == TipoFluxo::Laminar)
-            cout << "\nPerda de Carga, fluxo laminar, interior de tubos, UC: " << modeloEscoamento->PerdaDeCarga_fl_it_UC() << " psi\n";
+            modeloEscoamento->PerdaDeCarga_fl_it_UC();
         else                                                //Turbulento
-            cout << "\nPerda de Carga, fluxo turbulento, interior de tubos, UC: " << modeloEscoamento->PerdaDeCarga_ft_it_UC() << " psi\n";
+            modeloEscoamento->PerdaDeCarga_ft_it_UC();
         }
     if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::EspacoAnular, TipoUnidade::SI)) {
-        cout << "\nVelocidade Critica, interior de tubos, SI: " << modeloEscoamento->VelocidadeCritica_ea_SI() << " m/s";
+        modeloEscoamento->VelocidadeCritica_ea_SI();
         if (tipoFluxo == TipoFluxo::Laminar)
-            cout << "\nPerda de Carga, fluxo laminar, interior de tubos, SI: " << modeloEscoamento->PerdaDeCarga_fl_ea_SI() << " Pa\n";
+            modeloEscoamento->PerdaDeCarga_fl_ea_SI();
         else                                                //Turbulento
-            cout << "\nPerda de Carga, fluxo turbulento, interior de tubos, SI: " << modeloEscoamento->PerdaDeCarga_ft_ea_SI() << " Pa\n";
+            modeloEscoamento->PerdaDeCarga_ft_ea_SI();
         }
     if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::EspacoAnular, TipoUnidade::UC)) {
-        cout << "\nVelocidade Critica, interior de tubos, UC: " << modeloEscoamento->VelocidadeCritica_ea_UC() << " ft/min";
+        modeloEscoamento->VelocidadeCritica_ea_UC() ;
         if (tipoFluxo == TipoFluxo::Laminar)
-            cout << "\nPerda de Carga, fluxo laminar, interior de tubos, UC: " << modeloEscoamento->PerdaDeCarga_fl_ea_UC() << " psi\n";
+            cout << modeloEscoamento->PerdaDeCarga_fl_ea_UC();
         else                                                //Turbulento
-            cout << "\nPerda de Carga, fluxo turbulento, interior de tubos, UC: " << modeloEscoamento->PerdaDeCarga_ft_ea_UC() << " psi\n";
+            cout << modeloEscoamento->PerdaDeCarga_ft_ea_UC();
         }
-    }
+    VisualizarResultadosSimulacaoFluxo();
     return 0;
 }
 
+void CSimuladorPerdaCargaCirculacaoFluidos::VisualizarResultadosSimulacaoFluxo() {
+    std::cout   <<  "\nResultados da simulacao de fluxo para:"
+                <<  "\n Tipo Fluido      = " <<  modeloEscoamento->StringTipoFluido(tipoFluido)
+                <<  "\n Tipo Unidade     = " <<  modeloEscoamento->StringTipoUnidade(tipoUnidade)
+                <<  "\n Tipo Circulacao  = " <<  modeloEscoamento->StringTipoCirculacao(tipoCirculacao)
+                <<  "\n Tipo Fluxo       = " <<  modeloEscoamento->StringTipoFluxo(tipoFluxo) <<  std::endl;
+
+    std::tuple<TipoCirculacao,TipoUnidade> tuplaRespostas = std::make_tuple(tipoCirculacao, tipoUnidade );
+
+    if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::InteriorDeTubos, TipoUnidade::SI)) {
+        cout << "\n Velocidade Critica = " << modeloEscoamento->VelocidadeCriticaInterior()  << " m/s";
+        cout << "\n Perda de Carga     = " << modeloEscoamento->PerdaDeCargaInterior()       << " Pa\n";
+        }
+    else if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::InteriorDeTubos, TipoUnidade::UC)) {
+        cout << "\n Velocidade Critica = " << modeloEscoamento->VelocidadeCriticaInterior()  << " ft/min";
+        cout << "\n Perda de Carga     = " << modeloEscoamento->PerdaDeCargaInterior()       << " psi\n";
+        }
+    else if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::EspacoAnular, TipoUnidade::SI)) {
+        cout << "\n Velocidade Critica = " << modeloEscoamento->VelocidadeCriticaAnular()    << " m/s";
+        cout << "\n Perda de Carga    = "  << modeloEscoamento->PerdaDeCargaAnular()         << " Pa\n";
+        }
+    else if ( tuplaRespostas  == std::make_tuple( TipoCirculacao::EspacoAnular, TipoUnidade::UC)) {
+        cout << "\n Velocidade Critica = " << modeloEscoamento->VelocidadeCriticaAnular()    << " ft/min";
+        cout << "\n Perda de Carga    = "  << modeloEscoamento->PerdaDeCargaAnular()         << " psi\n";
+        }
+}
+
+/*
 bool CSimuladorPerdaCargaCirculacaoFluidos::Menu() {
     char respUsuario = 9;
     do {
-    cout    <<  linha <<  "Qual opcao?\n" <<  linha
-            <<  "Criar Amostra.................................(1)\n"
-            <<  "Criar Experimento Viscosimetro................(2)\n"
-            <<  "Criar Poco....................................(3)\n"
-            <<  "Selecao Tipo Fluido...........................(4)\n"
-            <<  "Selecao Tipo Circulacao.......................(5)\n"
-            <<  "Selecao Tipo Unidade..........................(6)\n"
-            <<  "Selecao Tipo Fluxo............................(7)\n"
-            <<  "Preparar Simulacao(executa 1-7)...............(8)\n"
-            <<  "Visualizar Dados Simulacao....................(9)\n"
-            <<  "Executar Simulacao............................(0)\n"
-            <<  "Sair..........................................(q): ";
+        Cabecalho(cout);
+        cout<<  linha <<  "Menu simulacao:\n" <<  linha
+            <<  "# Objetos - Criar/Alterar:\n"
+            <<  "       Amostra.................................(1)\n"
+            <<  "       Experimento Viscosimetro................(2)\n"
+            <<  "       Poco....................................(3)\n"
+            <<  "# Propriedades simulacao - Selecionar/Alterar:\n"
+            <<  "       Tipo Fluido.............................(4)\n"
+            <<  "       Tipo Circulacao.........................(5)\n"
+            <<  "       Tipo Unidade............................(6)\n"
+            <<  "       Tipo Fluxo..............................(7)\n"
+            <<  "# Simulacao:\n"
+            <<  "       Preparar (executa 1-7)..................(8)\n"
+            <<  "       Visualizar Dados........................(9)\n"
+            <<  "       Executar................................(0)\n"
+            <<  "# Sair.........................................(q):\n"
+            <<  "Qual opcao? : ";
     cin >> respUsuario; cin.get();
     switch (respUsuario) {
-            case '1': CriarAmostra();                 break;
+            case '1': CriarAmostraFluido();                 break;
             case '2': CriarExperimentoViscosimetro(); break;
             case '3': CriarPoco();                    break;
             case '4': SelecaoTipoFluido();            break;
@@ -228,4 +275,63 @@ bool CSimuladorPerdaCargaCirculacaoFluidos::Menu() {
     }
     } while (respUsuario != 'q' and respUsuario != 'Q');
     return 0;
+}*/
+
+
+bool CSimuladorPerdaCargaCirculacaoFluidos::Menu() {
+    short int respUsuario = 9;
+    do {
+        Cabecalho(cout);
+        cout<<  linha <<  "Menu :\n" <<  linha
+            <<  "# === Etapa 1: Simulacao Reologia === \n"
+            <<  "# Objetos - Criar/Alterar:\n"
+            <<  "       Amostra Fluido..........................(1)\n"
+            <<  "       Experimento Viscosimetro................(2)\n"
+            <<  "# Simulacao Reologia:\n"
+            <<  "       Preparar (executa 1-2)..................(3)\n"
+            <<  "       Visualizar Dados .......................(4)\n"
+            <<  "       Executar................................(5)\n"
+            <<  "       Visualizar Resultados ..................(6)\n"
+            <<  "\n"
+            <<  "# === Etapa 2: Simulacao Fluxo - perda carga e velocidade === \n"
+            <<  "# Objetos - Criar/Alterar:\n"
+            <<  "       Poco....................................(7)\n"
+            <<  "# Propriedades - Selecionar/Alterar:\n"
+            <<  "       Tipo Fluido.............................(8)\n"
+            <<  "       Tipo Circulacao.........................(9)\n"
+            <<  "       Tipo Unidade............................(10)\n"
+            <<  "       Tipo Fluxo..............................(11)\n"
+            <<  "# Simulacao Fluxo:\n"
+            <<  "       Preparar (executa 1-7)..................(12)\n"
+            <<  "       Visualizar Dados........................(13)\n"
+            <<  "       Executar................................(14)\n"
+            <<  "       Visualizar Resultados...................(15)\n"
+            <<  "# Sair.........................................(16):\n"
+            <<  "Qual opcao? : ";
+    cin >> respUsuario; cin.get();
+    switch (respUsuario) {
+        //  Simulacao reologia
+            case  1: CriarAmostraFluido();                break;
+            case  2: CriarExperimentoViscosimetro();      break;
+            case  3: PrepararSimulacaoReologia();         break;
+            case  4: VisualizarDadosSimulacaoReologia();  break;
+            case  5: ExecutarSimulacaoReologia();         break;
+            case  6: VisualizarResultadosSimulacaoReologia();break;
+        // Simulacao fluxo
+            case  7: CriarPoco();                         break;
+            case  8: SelecaoTipoFluido();                 break;
+            case  9: SelecaoTipoCirculacao();             break;
+            case 10: SelecaoTipoUnidade();                break;
+            case 11: SelecaoTipoFluxo();                  break;
+            case 12: PrepararSimulacaoFluxo();            break;
+            case 13: VisualizarDadosSimulacaoFluxo();     break;
+            case 14: ExecutarSimulacaoFluxo();            break;
+            case 15: VisualizarDadosSimulacaoFluxo();     break;
+            case 16: return 0;                            break;
+    }
+    } while (respUsuario != 'q' and respUsuario != 'Q');
+    return 0;
 }
+
+
+

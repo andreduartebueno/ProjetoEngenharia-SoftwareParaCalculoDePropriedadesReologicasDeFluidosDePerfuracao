@@ -9,7 +9,7 @@ static std::string_view linha = "_______________________________________________
 using namespace std;
 
 /// Realiza procedimento de pré-processamento,  calculando variaveis necessárias.
-void CModeloEscoamentoFluidoBinghamiano::PreProcessamento(){
+void CModeloEscoamentoFluidoBinghamiano::PreProcessamento() {
     cout << linha <<  "Propriedades para Fluidos Binghamianos:\n" << linha;
     ViscosidadeAparente();
     cout << "Viscosidade aparente: "  << viscosidadeAparente    << " cP\n";

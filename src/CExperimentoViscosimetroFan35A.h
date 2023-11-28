@@ -2,7 +2,7 @@
 #define CExperimentoViscosimetroFan35A_h
 
 #include <iostream>
-#include <string>
+//#include <string>
 #include <vector>
 #include "CEquipamento.h"
 
@@ -13,6 +13,7 @@ class CViscosimetroFan35A :  CEquipamento{
 
 /// Representa um experimento específico usando o viscosimetro fan 35A
 // Tarefa: ver as propriedades de outros viscosimetros e generatlizar se possível
+// Tarefa: eliminar os atributos teta600... usar dados do vetor teta diretamente
 class CExperimentoViscosimetroFan35A  {
     /// Valor lido da deflexao da mola do viscosimetro em 600 rpm
     double teta600;
@@ -74,6 +75,8 @@ public:
     /// Método que salva dados do objeto em disco.
     void SaidaDeDadosDisco(std::ostream& out);
     ///  Calculo das propriedades
-    void CalculoPropriedades();
+    void CalcularResultadosReologia();
+    /// Método tabela resultados reologia.
+    void SaidaDeDadosTabelaResultadosReologia(std::ostream& out);
 };
 #endif

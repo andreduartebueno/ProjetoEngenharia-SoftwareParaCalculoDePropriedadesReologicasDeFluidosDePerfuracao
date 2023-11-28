@@ -23,7 +23,7 @@ class CSimuladorPerdaCargaCirculacaoFluidos {
 	TipoFluxo 		tipoFluxo;
 
     /// Objeto CAmostraFluido.
-    std::shared_ptr<CAmostraFluido> amostra;
+    std::shared_ptr<CAmostraFluido> amostraFluido;
     /// Objeto CExperimentoViscosimetroFan35A.
     std::shared_ptr<CExperimentoViscosimetroFan35A> eviscosimetro;
 	/// Objeto modelo de escoamento.
@@ -33,20 +33,27 @@ class CSimuladorPerdaCargaCirculacaoFluidos {
 
  public:
 	CSimuladorPerdaCargaCirculacaoFluidos() = default;
+    bool Menu();
+ private:
 	void Cabecalho(std::ostream& out);
-    void CriarAmostra();
+    //  Simulacao reologia
+    void CriarAmostraFluido();
     void CriarExperimentoViscosimetro();
+    void PrepararSimulacaoReologia();
+    void VisualizarDadosSimulacaoReologia();
+	bool ExecutarSimulacaoReologia();
+    void VisualizarResultadosSimulacaoReologia();
+
+    //  Simulacao fluxo
     void CriarPoco();
     void SelecaoTipoFluido();
-    void CriarModeloEscoamento();
     void SelecaoTipoCirculacao();
 	void SelecaoTipoUnidade();
     void SelecaoTipoFluxo();
-    void PrepararSimulacao();
-    void VisualizarDadosSimulacao();
-	bool ExecutarSimulacao();
-
-	bool Menu();
-	//  Tarefa get/set,  operadores,  E/S
+    void CriarModeloEscoamento();
+    void PrepararSimulacaoFluxo();
+    void VisualizarDadosSimulacaoFluxo();
+	bool ExecutarSimulacaoFluxo();
+    void VisualizarResultadosSimulacaoFluxo();
 };
 # endif

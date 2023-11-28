@@ -81,6 +81,14 @@ public:
     std::string_view StringTipoFluxo(TipoFluxo& f) {
         return ( f == TipoFluxo::Laminar ) ? "Laminar" : "Turbulento";
     }
+    ///  Retorna a perda de carga no interior da tubulacao.
+	double PerdaDeCargaInterior()      { return perdaDeCargaInterior; }
+	///  Retorna a perda de carga no anular da tubulacao.
+	double PerdaDeCargaAnular()        { return perdaDeCargaAnular; }
+	///  Retorna a velocidade critica no interior da tubulacao.
+	double VelocidadeCriticaInterior() { return  velocidadeCriticaInterior; }
+	///  Retorna a velocidade critica no anular da tubulacao.
+	double VelocidadeCriticaAnular()   { return   velocidadeCriticaAnular; }
 
 protected:
 /// Construtor.
