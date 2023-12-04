@@ -75,6 +75,14 @@ int main(int argc, char* argv[])
   // Seta o terminal padrao para visualizacao dos graficos  (normalmente nao necessario),
   // Usuarios de Mac devem usar a opcao "aqua", e nao x11.
   // Gnuplot::set_terminal_std("x11");
+  //  Para ver os tipos de terminais execute o gnuplot e digite: set terminal,  vai aparecer lista dos terminais disponíveis.
+  // Available terminal types:
+  //                qt  Qt cross-platform interactive terminal
+  //               x11  X11 Window System interactive terminal
+  //          pngcairo  png terminal based on cairo
+  //               png  PNG images using libgd and TrueType fonts
+  //               fig  FIG graphics language V3.2 for XFIG graphics editor
+
   cout << "-------------------------------------------------------------\n"
        << "--> Plotando graficos do gnuplot usando a classe CGnuplot <--\n"
        << "--> Exemplo de controle do gnuplot usando C++             <--\n" 
@@ -88,7 +96,7 @@ int main(int argc, char* argv[])
       // Teste geral
       // Terminal padrao do gnuplot no fedora 9
       // Se nao funcionar em seu sistema, comente a linha
-      Gnuplot::Terminal("wxt");       
+      Gnuplot::Terminal("qt");
 
       // ------------- Graficos 2D ----------------
       Gnuplot g2d = Gnuplot("lines"); // Construtor
