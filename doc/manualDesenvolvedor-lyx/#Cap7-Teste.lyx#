@@ -1,0 +1,640 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Teste
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Teste"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter - Teste} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todo projeto de engenharia passa por uma etapa de testes.
+ Neste capítulo apresentamos alguns testes do software desenvolvido.
+ Estes testes devem dar resposta aos diagramas de caso de uso inicialmente
+ apresentados (diagramas de caso de uso geral e específicos).
+\end_layout
+
+\begin_layout Section
+Teste 1: Interface
+\end_layout
+
+\begin_layout Standard
+O presente trabalho apresenta interface no modo texto.
+ Veja na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma"
+
+\end_inset
+
+ o início dosoftware no qual o úsuário entra com os dados de entrada da
+ amostra de fluido, como o nome da amostra, o valor do pH, o valor da temperatur
+a, etc.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Teste1.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa mostrando o início do software 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 2: Salvamento dos resultados em arquivo de disco
+\end_layout
+
+\begin_layout Standard
+Os cálculos são apresentados na tela em forma de vetores para a taxa de
+ cisalhamento, tensão de cisalhamento em unidades de campo, tensão de cisalhamen
+to no siatema internacional e viscosidade.
+ Ao final, o programa solicita ao usuário se deseja salvar os resultados
+ em disco.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-salvar-em-disco"
+
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Na Figura simulador desenvolvido pelo aluno Tiago Schauwer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Teste2.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Salvamento em disco 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-salvar-em-disco"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 3: Teste de escolha de opção incorreta
+\end_layout
+
+\begin_layout Standard
+Neste teste caso o usuário insira uma opção diferente daquelas apresentadas
+ na tela.
+ O programa informa ao usuário que a opção é inválida e retona ao looping
+ até que o usuário escolha uma opção válida.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-opcao-incorreta"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Teste3.png
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Teste de opção incorreta 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-opcao-incorreta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 4: Teste de entrada de dados incorreta
+\end_layout
+
+\begin_layout Standard
+Neste teste caso o usuário insire dados irreais, como números negativos
+ e fora do padrão.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:entrada-dados-incorreta"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Teste4.png
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Entrada de dados incorreta 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:entrada-dados-incorreta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 5: Cálculo das propriedades
+\end_layout
+
+\begin_layout Standard
+Neste teste caso o usuário insire dados reais e escolhe opções válidas,
+ calculando as propriedades de forma correta.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:calculo-propriedades"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Teste5.png
+	lyxscale 25
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cálculo das propriedades 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:calculo-propriedades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 6: Gráfico Reograma
+\end_layout
+
+\begin_layout Standard
+Neste teste a construção do primeiro gráfico foi testada, contrui-se o reograma
+ do fluido.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:reograma-fluido"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Reograma.png
+	lyxscale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reograma do fluido 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:reograma-fluido"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 7: Gráfico Curva de Fluxo
+\end_layout
+
+\begin_layout Standard
+Neste teste a construção do segundo gráfico foi testada, contrui-se acurva
+ de fluxo do fluido.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:curva-fluxo"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/CurvaDeFluxo-loglog.png
+	lyxscale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de fluxo 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curva-fluxo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 8: Gráfico Curva de Viscosidade
+\end_layout
+
+\begin_layout Standard
+Neste teste caso o usuário insire dados reais e escolhe opções válidas,
+ calculando as propriedades de forma correta.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:curva-viscosidade"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/CurvaDeViscosidade.png
+	lyxscale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de viscosidade 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curva-viscosidade"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

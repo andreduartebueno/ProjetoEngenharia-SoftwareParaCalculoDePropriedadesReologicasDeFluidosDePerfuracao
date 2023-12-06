@@ -101,7 +101,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
+\author 273446399 "rober"
 \end_header
 
 \begin_body
@@ -212,13 +212,7 @@ O software receberá dados via teclado ou através de arquivo de texto.
 \end_layout
 
 \begin_layout Itemize
-A inter
-\change_deleted 1635264300 1698093844
-d
-\change_inserted 1635264300 1698093844
-f
-\change_unchanged
-ace utilizada será em modo texto.
+A interface utilizada será em modo texto.
 \end_layout
 
 \end_deeper
@@ -255,10 +249,16 @@ A linguagem utilizada, C++, torna o programa multiplataforma tendo suporte
 Para a geração de gráficos será utilizado o software livre 
 \family typewriter
 Gnuplot
-\change_inserted 1635264300 1698093903
-
 \family default
- (
+ 
+\change_inserted 273446399 1701577000
+
+\begin_inset Newline newline
+\end_inset
+
+
+\change_unchanged
+(
 \begin_inset CommandInset href
 LatexCommand href
 target "http://www.gnuplot.info/"
@@ -266,9 +266,7 @@ literal "false"
 
 \end_inset
 
-)
-\change_unchanged
-.
+).
 \end_layout
 
 \end_deeper
@@ -286,25 +284,23 @@ Será utilizada a biblioteca padrão da linguagem C++.
 \end_layout
 
 \begin_layout Itemize
-O software será desenvolvido com a interface Code::Blocks 20.03.
-\change_inserted 1635264300 1698093918
+O software será desenvolvido com a interface Code::Blocks 20.03 
+\change_inserted 273446399 1701577025
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1635264300 1698093920
-link?
-\change_unchanged
-
-\end_layout
-
+\begin_inset Newline newline
 \end_inset
 
 
 \change_unchanged
+(
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.codeblocks.org/"
+literal "false"
 
+\end_inset
+
+).
 \end_layout
 
 \end_deeper
@@ -318,14 +314,8 @@ Controle
 
 \begin_deeper
 \begin_layout Itemize
-Não haverá necessidade de grande espa
-\change_deleted 1635264300 1698093926
-c
-\change_inserted 1635264300 1698093926
-ç
-\change_unchanged
-o na memoria visto que o programa e seus componentes trabalham com dados
- relativamente pequenos.
+Não haverá necessidade de grande espaço na memoria visto que o programa
+ e seus componentes trabalham com dados relativamente pequenos.
 \end_layout
 
 \begin_layout Itemize
@@ -347,24 +337,6 @@ Ambiente de desenvolvimento
 O programa será desenvolvido e testado em um notebook Samsung com Windows
  11 64-bits, processador 11th Gen Intel Core i3-1115G4 e 4GB de memória
  RAM.
-\change_inserted 1635264300 1698093943
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1635264300 1698093955
-se aumentar para 8gb melhora muito
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -416,26 +388,22 @@ os durante a análise.
  Como o projeto não alterou os diagramas apresentados na análise orientada
  a objeto, não houve necessidade de descrever os ítens abaixo relacionados:
  
-\change_inserted 1635264300 1698093980
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 1635264300 1698094049
 na análise normalmente definimos que vamos gerar gráficos; no projeto é
  feita a escolha pelo gnuplot por ser multiplataforma e gratuíto; e por
  termos a classe CGnuplot para comuniucação com o programa gnuplot; então
- os diagramas antes não citam o gnuplot e aqui irão citar; 
+ os diagramas antes não citam o gnuplot e aqui irão citar;
+\change_deleted 273446399 1701576841
+ 
 \change_unchanged
 
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -462,32 +430,26 @@ name "subsec:Efeito-do-projeto-no-modelo-estrutural"
 
 \begin_layout Itemize
 Não houve a necessidade de rever o projeto nesta etapa.
-\change_inserted 1635264300 1698094120
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
+os diagramas de classe devem acrescentar a classe CGnuplot;
+\change_deleted 273446399 1701576830
+ 
+\change_unchanged
 
-\change_inserted 1635264300 1698094133
-os diagramas de classe devem acrescentar a classe CGnuplot; 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1635264300 1698094207
 se for acvessar arquivos de disco temos de usar a biblioteca filesystem,
  então entra no diagrama o pacote filesystem e as classes associadas (veja
  https://en.cppreference.com/w/cpp/filesystem; usamos principalmente a classe
  path)
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -605,24 +567,16 @@ Heranças
 
 \begin_layout Itemize
 Não houve a necessidade de rever o projeto nesta etapa.
-\change_inserted 1635264300 1698094222
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 1635264300 1698094268
 idealmente CGrafico deve ter as funcionalidades principais de CGnuplot;
  na análise falamos de CGrafico e no projeto trocamos por CGnuplot
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -717,24 +671,16 @@ reference "cap:Diagrama-de-implantação."
 \end_inset
 
  mostra diagrama de implantação utilizado.
-\change_inserted 1635264300 1698094283
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 1635264300 1698094312
 tire a aquisição de dados; processador e disco rigido devem estar numa caixa;
  dentro da caixa;
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -748,7 +694,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Diagrama_implantacao.png
+	filename imagens/DiagramaImpantacao.png
 	lyxscale 90
 	width 100text%
 

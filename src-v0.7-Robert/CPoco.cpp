@@ -4,7 +4,7 @@
 
 /**
 @class CPoco
-@file CPoco.h
+@file CPoco.cpp
 */
 
 using  namespace std;

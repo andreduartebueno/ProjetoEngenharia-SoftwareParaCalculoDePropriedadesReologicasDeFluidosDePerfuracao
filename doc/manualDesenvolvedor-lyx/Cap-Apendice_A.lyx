@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass extbook
 \begin_preamble
 \usepackage {graphicx}
@@ -31,16 +33,18 @@
 \language_package auto
 \inputencoding utf8
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -83,6 +87,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -97,7 +102,10 @@
 \tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -111,7 +119,7 @@
 \begin_body
 
 \begin_layout Chapter
-Título do Apêndice
+Modelos de fluidos
 \end_layout
 
 \begin_layout Standard
@@ -133,54 +141,312 @@ thepage}
 
 \end_inset
 
-Descreve-se neste apêndice ...
-\end_layout
-
-\begin_layout Itemize
-Os anexos ou apêndices contém material auxiliar.
- Por exemplo, tabelas, gráficos, resultados de experimentos, algoritmos,
- códigos e simulações.
-\end_layout
-
-\begin_layout Itemize
-Um apêndice pode incluir assuntos mais gerais (geral demais para estar no
- núcleo do trabalho) ou mais específicos (detalhado demais para estar no
- núcleo do trabalho).
-\end_layout
-
-\begin_layout Itemize
-Pode conter um artigo de auxílio fundamental ao trabalho.
- 
-\end_layout
-
-\begin_layout Itemize
-Pode conter artigos publicados.
-\end_layout
-
-\begin_layout Itemize
-[tudo aquilo que for importante para a tese mas não essencial, deve ser
- colocado em apêndices]
-\end_layout
-
-\begin_layout Itemize
-[como exemplo, revisão de metodologias, técnicas, modelos matemáticos, ítens
- desenvolvidos por terceiros]
-\end_layout
-
-\begin_layout Itemize
-[algoritmos e programas devem ser colocados no apêndice]
-\end_layout
-
-\begin_layout Itemize
-[imagens detalhadas de programas desenvolvidos devem ser colocados no apêndice]
+Descreve-se neste apêndice as curvas de fluxo e de viscosidade teóricas
+ para os dois modelos de fluidos de perfuração simulados (Bingham e Potência).
 \end_layout
 
 \begin_layout Section
-Sub-Titulo do Apêndice
+Equações para cálculo de taxa de cisalhamento, tensão de cisalhamento e
+ viscosidade aparente.
 \end_layout
 
 \begin_layout Standard
-.....conteúdo..
+As taxas de cisalhamento, em 
+\begin_inset Formula $s^{-1}$
+\end_inset
+
+ , podem ser calculadas através da Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, em que 
+\begin_inset Formula $𝑁$
+\end_inset
+
+ é a velocidade de rotação em 
+\begin_inset Formula $𝑟𝑝𝑚$
+\end_inset
+
+.
+ As tensões de cisalhamento experimentais podem ser calculadas, em 
+\begin_inset Formula $𝑚𝑃𝑎$
+\end_inset
+
+, através da Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, em que 𝑒 são as deflexões, em graus, observadas no viscosímetro Fann 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "adb-mec-fluidos"
+literal "false"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+𝛾=N*1.703\label{eq:3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+𝜏=𝑒*1.066*478,8026\label{eq:4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os valores de viscosidade aparente, em 
+\begin_inset Formula $𝑚𝑃𝑎.𝑠$
+\end_inset
+
+ 𝑜𝑢 
+\begin_inset Formula $𝑐𝑃$
+\end_inset
+
+, são calculados a partir da Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, dividindo-se os valores de tensão de cisalhamento pela taxa de cisalhamento.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+𝜇_{a}=\frac{𝜏}{𝛾}\label{eq:5}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sendo: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $𝛾$
+\end_inset
+
+ = 𝑡𝑎𝑥𝑎 𝑑𝑒 𝑐𝑖𝑠𝑎𝑙ℎ𝑎𝑚𝑒𝑛𝑡𝑜 (1/𝑠); 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $𝑁$
+\end_inset
+
+ = 𝑟𝑜𝑡𝑎çã𝑜 (600, 300, 200, 100, 6 𝑒 3 𝑟𝑝𝑚); 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $𝜏$
+\end_inset
+
+ = 𝑡𝑒𝑛𝑠ã𝑜 𝑑𝑒 𝑐𝑖𝑠𝑎𝑙ℎ𝑎𝑚𝑒𝑛𝑡𝑜 (𝑚𝑃𝑎); 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $𝑒$
+\end_inset
+
+ = â𝑛𝑔𝑢𝑙𝑜 𝑑𝑎 𝑑𝑒𝑓𝑜𝑟𝑚𝑎çã𝑜 𝑑𝑎 𝑚𝑜𝑙𝑎 (𝑙𝑖𝑑𝑜 𝑎𝑡𝑟𝑎𝑣é𝑠 𝑑𝑜 𝑣𝑖𝑠𝑐𝑜𝑠í𝑚𝑒𝑡𝑟𝑜); 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $𝜇$
+\end_inset
+
+ = 𝑣𝑖𝑠𝑐𝑜𝑠𝑖𝑑𝑎𝑑𝑒 𝑎𝑝𝑎𝑟𝑒𝑛𝑡𝑒 (𝑚𝑃𝑎.
+ 𝑠).
+ 
+\end_layout
+
+\begin_layout Section
+Modelo de Bingham ou plático ideal
+\end_layout
+
+\begin_layout Standard
+O modelo de Bingham, fluido Binghamiano ou plástico ideal requer a aplicação
+ de uma tensão mínima, denominada de limite de escoamento, para que haja
+ alguma deformação cisalhante.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/curvas-bingham.jpeg
+	lyxscale 75
+	width 100text%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curvas de fluxo (A) e de viscosidade (B) do fluido binghamiano ou plástico
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curvas-fluxo-viscosidade-bingham"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A 
+\shape italic
+viscosidade aparente
+\shape default
+ é aquela que mediante a ação de uma tensão cisalhante constante, é medida
+ em um único ponto.
+\end_layout
+
+\begin_layout Itemize
+A 
+\shape italic
+viscosidade plástica
+\shape default
+ é a medida da resistência interna exercida pelo fluido para que esle escoe.
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+limite de escoamento
+\shape default
+ é a tensão mínima para colocar o fluido em fluxo.
+\end_layout
+
+\begin_layout Section
+Modelo de Ostwald Waale ou potência
+\end_layout
+
+\begin_layout Standard
+O modelo de potência não se aplica a todo e qualquer fluido, tampouco a
+ todo intervalo de taxa de cisalhamento.
+ Entretanto, um número razoável de fluidos não Newtonianos apresentam comportame
+nto de potência para grandes intervalos de taxa de cisalhamento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/curvas-potencia.jpeg
+	lyxscale 75
+	width 75text%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curvas de fluxo (A) e de viscosidade (B) do fluido de potência 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curvas-fluxo-viscosidade-potencia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+índice de comportamento
+\shape default
+ indica fisicamento o afstamento do fluido do modelo Newtoniano.
+ Se o seu valor se aproxiam de um, então o fluido está próximo do comportamento
+ Newtoniano.
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+índice de consistência
+\shape default
+ indica o grau de resistência do fluido diante do escoamento.
 \end_layout
 
 \end_body

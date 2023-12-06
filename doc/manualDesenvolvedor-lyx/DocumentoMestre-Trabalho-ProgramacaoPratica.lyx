@@ -137,16 +137,6 @@ filename "Cap0-Introducao-Escopo-Objetivos-Metodologia.lyx"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Robert, preencher o capítulo 0
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -187,17 +177,6 @@ filename "Cap3-AnaliseOrientadaAObjeto.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap4-Projeto.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap5-Ciclos-Planejamento-Detalhamento.lyx"
 
 \end_inset
 
@@ -268,21 +247,6 @@ options "apalike"
 \end_layout
 
 \begin_layout Standard
-\align block
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-os arquivos a seguir contém informações para ajudar quem esta fazendo o
- trabalho; você deve apagá-los.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -302,44 +266,7 @@ appendix
 \align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap9-Documentacao-ManualUsuario.lyx"
-
-\end_inset
-
-
-\begin_inset CommandInset include
-LatexCommand include
 filename "Cap-Apendice_A.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap-Apendice_B.lyx"
-
-\end_inset
-
-
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap-Apendice_C-CriandoProjetoGithub.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset index_print
-LatexCommand printindex
-type "idx"
-name "Índice"
-literal "true"
 
 \end_inset
 

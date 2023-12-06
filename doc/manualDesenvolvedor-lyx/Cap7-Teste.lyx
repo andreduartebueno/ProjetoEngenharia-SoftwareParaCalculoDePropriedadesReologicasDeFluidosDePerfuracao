@@ -150,7 +150,7 @@ O presente trabalho apresenta interface no modo texto.
  Veja na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1"
+reference "fig:Teste-TelaPrograma"
 
 \end_inset
 
@@ -184,7 +184,7 @@ status open
 Tela do programa mostrando o início do software 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1"
+name "fig:Teste-TelaPrograma"
 
 \end_inset
 
@@ -214,7 +214,7 @@ to no siatema internacional e viscosidade.
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-1"
+reference "fig:Teste-salvar-em-disco"
 
 \end_inset
 
@@ -256,7 +256,7 @@ status open
 Salvamento em disco 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-1"
+name "fig:Teste-salvar-em-disco"
 
 \end_inset
 
@@ -285,7 +285,7 @@ Neste teste caso o usuário insira uma opção diferente daquelas apresentadas
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1-1"
+reference "fig:Teste-opcao-incorreta"
 
 \end_inset
 
@@ -303,7 +303,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/Teste3.png
-	lyxscale 25
+	lyxscale 75
 	width 100text%
 
 \end_inset
@@ -318,7 +318,7 @@ status open
 Teste de opção incorreta 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1-1"
+name "fig:Teste-opcao-incorreta"
 
 \end_inset
 
@@ -345,7 +345,7 @@ Neste teste caso o usuário insire dados irreais, como números negativos
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1-1-1"
+reference "fig:entrada-dados-incorreta"
 
 \end_inset
 
@@ -363,7 +363,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/Teste4.png
-	lyxscale 25
+	lyxscale 75
 	width 100text%
 
 \end_inset
@@ -378,7 +378,7 @@ status open
 Entrada de dados incorreta 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1-1-1"
+name "fig:entrada-dados-incorreta"
 
 \end_inset
 
@@ -405,7 +405,7 @@ Neste teste caso o usuário insire dados reais e escolhe opções válidas,
  Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1-1-1-1"
+reference "fig:calculo-propriedades"
 
 \end_inset
 
@@ -423,7 +423,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/Teste5.png
-	lyxscale 25
+	lyxscale 75
 	width 75text%
 
 \end_inset
@@ -438,7 +438,181 @@ status open
 Cálculo das propriedades 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1-1-1-1"
+name "fig:calculo-propriedades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 6: Gráfico Reograma
+\end_layout
+
+\begin_layout Standard
+Neste teste a construção do primeiro gráfico foi testada, contrui-se o reograma
+ do fluido.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:reograma-fluido"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Reograma.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reograma do fluido 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:reograma-fluido"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 7: Gráfico Curva de Fluxo
+\end_layout
+
+\begin_layout Standard
+Neste teste a construção do segundo gráfico foi testada, contrui-se acurva
+ de fluxo do fluido.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:curva-fluxo"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/CurvaDeFluxo-loglog.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de fluxo 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curva-fluxo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 8: Gráfico Curva de Viscosidade
+\end_layout
+
+\begin_layout Standard
+Neste teste a construção do terceiro gráfico foi testada, contrui-se a curva
+ de viscosidade do fluido.
+ Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:curva-viscosidade"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/CurvaDeViscosidade.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de viscosidade 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curva-viscosidade"
 
 \end_inset
 

@@ -57,7 +57,7 @@
 	<cmath>
 	"CPerdaCarga.h"
 
-1699407294 source:d:\projeto-programacao-pratica\camostrafluido.cpp
+1700933770 source:d:\projeto-programacao-pratica\camostrafluido.cpp
 	<iostream>
 	<string>
 	<fstream>
@@ -66,7 +66,7 @@
 	<fstream>
 	"CAmostraFluido.h"
 
-1700187996 d:\projeto-programacao-pratica\camostrafluido.h
+1700829742 d:\projeto-programacao-pratica\camostrafluido.h
 	<iostream>
 	<string>
 	<vector>
@@ -89,7 +89,7 @@
 	<iostream>
 	"CAmostraFluido.h"
 
-1699405288 source:d:\projeto-programacao-pratica\main.cpp
+1700829618 source:d:\projeto-programacao-pratica\main.cpp
 	<iostream>
 	<string>
 	"CAmostraFluido.h"
@@ -158,7 +158,7 @@
 	<stdexcept>
 	<cstdio>
 
-1699291684 source:d:\projeto-programacao-pratica\cgnuplot.cpp
+1700934082 source:d:\projeto-programacao-pratica\cgnuplot.cpp
 	<fstream>
 	<sstream>
 	<list>
@@ -167,4 +167,138 @@
 	"CGnuplot.h"
 	<io.h>
 	<unistd.h>
+
+1701697722 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\camostrafluido.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<vector>
+	<iomanip>
+	<fstream>
+	"CAmostraFluido.h"
+
+1701697788 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\camostrafluido.h
+	<iostream>
+	<string>
+	<vector>
+	"CGnuplot.h"
+
+1701697852 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cgnuplot.h
+	<iostream>
+	<string>
+	<vector>
+	<stdexcept>
+	<cstdio>
+
+1701697822 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cgnuplot.cpp
+	<fstream>
+	<sstream>
+	<list>
+	<cstdio>
+	<cstdlib>
+	"CGnuplot.h"
+	<io.h>
+	<unistd.h>
+
+1701697888 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cindice.cpp
+	<iostream>
+	<cmath>
+	"CIndice.h"
+
+1701697924 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cindice.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1701697958 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cperdacarga.cpp
+	<iostream>
+	<cmath>
+	"CPerdaCarga.h"
+
+1701812848 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cperdacarga.h
+	<iostream>
+	"CFluidoBinghamiano.h"
+	"CPoco.h"
+
+1701812198 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cpropriedadesreologicas.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1701698254 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cpoco.h
+	<iostream>
+	<fstream>
+	<string>
+
+1701698062 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cperdacargapotencia.cpp
+	<iostream>
+	<cmath>
+	"CPerdaCargaPotencia.h"
+
+1701813391 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cperdacargapotencia.h
+	<iostream>
+	"CFluidoPotencia.h"
+	"CPoco.h"
+
+1701698198 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cpoco.cpp
+	<iostream>
+	"CPoco.h"
+
+1701698368 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cvelcritica.cpp
+	<iostream>
+	<cmath>
+	"CVelCritica.h"
+
+1701812849 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cvelcritica.h
+	<iostream>
+	"CFluidoBinghamiano.h"
+	"CPoco.h"
+
+1701698566 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cvelcriticapotencia.cpp
+	<iostream>
+	<cmath>
+	"CVelCriticaPotencia.h"
+
+1701813353 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cvelcriticapotencia.h
+	<iostream>
+	"CFluidoPotencia.h"
+	"CPoco.h"
+
+1701812295 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cfluidobinghamiano.cpp
+	<iostream>
+	"CFluidoBinghamiano.h"
+
+1701812198 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cfluidobinghamiano.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1701812072 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\main.cpp
+	<iostream>
+	<string>
+	"CAmostraFluido.h"
+	"CFluidoBinghamiano.h"
+	"CIndice.h"
+	"CPoco.h"
+	"CVelCritica.h"
+	"CVelCriticaPotencia.h"
+	"CPerdaCarga.h"
+	"CPerdaCargaPotencia.h"
+	"CGnuplot.h"
+
+1701812970 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cfluidopotencia.h
+	<iostream>
+	"CAmostraFluido.h"
+
+1701813071 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cfluidopotencia.cpp
+	<iostream>
+	<cmath>
+	"CFluidoPotencia.h"
+
+1701814169 source:c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cvelcriticabinghamiano.cpp
+	<iostream>
+	<cmath>
+	"CVelCriticaBinghamiano.h"
+
+1701814105 c:\users\rober\workdir\projetoengenharia-softwareparacalculodepropriedadesreologicasdefluidosdeperfuracao\src-v0.7-robert\cvelcriticabinghamiano.h
+	<iostream>
+	"CFluidoBinghamiano.h"
+	"CPoco.h"
 

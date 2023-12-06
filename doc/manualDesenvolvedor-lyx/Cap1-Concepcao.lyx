@@ -182,8 +182,8 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-Software para cálculo de parâmetros reológicos de amostras de Fluidos de
- Perfuração.
+Software para cálculo de propriedades reológicas de amostras de fluidos
+ de perfuração, velocidade crítica e perdas de carga em poços de petróleo.
 \end_layout
 
 \end_inset
@@ -229,7 +229,7 @@ Missão
 
 \begin_layout Plain Layout
 Determinação de parâmetros como viscosidade aparente, viscosidade plástica
- e limite de escoamento pra fluidos Binghamianos.
+ e limite de escoamento pra fluidos binghamianos.
  Determinação do índice de fluxo e do índice de consistência para fluidos
  de potência.
  Cálculo de velocidade crítica e perdas de carga na circulação de fluidos.
@@ -292,9 +292,12 @@ para fluidos binghamianos, do
 \emph default
 e de 
 \emph on
-índice de consistência para fluidos de potência
+índice de consistência
 \emph default
-.
+ para fluidos de potência.
+ O usuário também poderá visualizar os seguintes gráficos: reograma do fluido,
+ curva de fluxo (em escala log-log) e curva de viscosidade do fluido de
+ perfuração analisado.
 \end_layout
 
 \begin_layout Standard
@@ -308,19 +311,13 @@ O software poderá ser operado em modo texto e terá apenas uma janela.
 \end_layout
 
 \begin_layout Standard
-O usuário deverá informar as deflexões da mola de torção do viscosímetro
- para cada rotação pré-determinada (600, 300, 200, 100, 6 e 3 rpm) e algumas
+O usuário deverá informar as deflexões da mola de deflexão da mola do viscosímet
+ro para cada rotação pré-determinada (600, 300, 200, 100, 6 e 3 rpm) e algumas
  informações adicionais solicitadas ao usuário, quando forem necessárias,
  a depender da escolha de cálculo do utilizador.
- Após a realização dos cálculos e apresentação dos resultados na tela principal,
- será oferecida a opção do usuário salvar os resultados obtidos em forma
- de relatório em modo texto.
-\end_layout
-
-\begin_layout Standard
-O usuário também poderá optar por gerar gráfico de velocidade de rotação
- versus deflexão da mola no formato de imagem ou ter seus dados exportados
- em um arquivo de texto.
+ Após a realização dos cálculos iniciais e apresentação dos resultados na
+ tela principal, será oferecida a opção do usuário salvar os resultados
+ obtidos em forma de relatório em modo texto.
 \end_layout
 
 \begin_layout Standard
@@ -581,10 +578,20 @@ RF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário poderá plotar um gráfico de velocidade de rotação versus deflexão
- da mola.
- O gráfico poderá ser salvo como imagem ou ter seus dados exportados como
- texto.
+O software irá plotar um gráfico de velocidade de rotação 
+\shape italic
+versus
+\shape default
+ deflexão da mola (reograma), um gráfico de taxa de cisalhamento 
+\shape italic
+versus
+\shape default
+ tensão de cisalhamento (curva de fluxo) e um gráfico de taxa de cisalhamento
+ 
+\shape italic
+versus
+\shape default
+ viscosidade aparente (curva de viscosidade).
 \end_layout
 
 \end_inset
@@ -907,11 +914,6 @@ Etapas:
 
 \begin_layout Plain Layout
 5.
- Gerar gráfico.
-\end_layout
-
-\begin_layout Plain Layout
-6.
  Analisar resultado.
 \end_layout
 
@@ -933,12 +935,8 @@ Cenários alternativos:
 
 \begin_layout Plain Layout
 Um cenário alternativo envolve uma entrada errada do usuário (por exemplo,
- um valor de leitura de deflexão da mola do viscosímetro negativa).
- O software apresentará um 
-\emph on
-bug
-\emph default
- quando for determinar a propriedade calculada.
+ uma opção diferente das propostas).
+ O software apresentará uma mensagem de opção inválida.
 \end_layout
 
 \end_inset
@@ -968,28 +966,11 @@ reference "cap:Diagrama-caso-uso-geral"
 
 \end_inset
 
- mostra o usuário utilizando o sistema, onde ele cadastra as amostras, realiza
- o experimento físico, insere os dados no sitema, escolhe a propriedade
- a ser calculada, salva os resultados e os analisa.
- 
-\change_inserted 1635264300 1697978459
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1635264300 1697978490
-esta faltando a geração do gráfico que é obrigatória
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+ mostra o usuário utilizando o sistema, onde ele realiza o experimento físico
+ no viscosímetro, cadastra as amostras insere os dados obtidos no sitema,
+ as taxas, temsões e viscosidade são calculadas, são gerados os gráficos,
+ salva os resultados, escolhe a propriedade a ser calculada, a propriedade
+ é calculada e por fim ele salva os resultados e os analisa.
 \end_layout
 
 \begin_layout Standard
@@ -1001,7 +982,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Diagrama-de-caso-de-uso-geral.png
+	filename imagens/Diagrama-caso-uso-geral.png
 	lyxscale 70
 	width 100text%
 
@@ -1054,7 +1035,7 @@ Este diagrama de caso de uso específico ilustra as etapas a serem executadas
  Veja a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+reference "cap:Diagrama-de-caso-de-uso-especifico"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1062,25 +1043,17 @@ noprefix "false"
 \end_inset
 
 .
-
-\change_inserted 1635264300 1697978518
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 1635264300 1697978539
 como existe um cadastro o mesmo deve ser salvo em disco; quando reabre o
  programa ele reabre os dados já catastrados
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1093,8 +1066,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Diagrama-de-caso-de-uso-específico.png
-	width 100text%
+	filename imagens/Diagrama-caso-uso-especifico.png
+	width 90text%
 
 \end_inset
 
@@ -1105,10 +1078,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso específico – Título
+Diagrama de caso de uso - Caso de uso específico
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+name "cap:Diagrama-de-caso-de-uso-especifico"
 
 \end_inset
 

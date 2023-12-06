@@ -1,0 +1,1354 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+\end_preamble
+\use_default_options false
+\master /home2/andreduartebueno/workdir/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica/doc/manualDesenvolvedor-lyx/DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes true
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author 1635264300 "andreduartebueno" andreduartebueno@gmail.com
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Análise Orientada a Objeto}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+AOO
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+AOO
+\end_layout
+
+\end_inset
+
+ – Análise Orientada a Objeto
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Análise orientada a objeto
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:AOO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se neste capítulo a Análise Orientada a Objeto – AOO, as relações
+ entre os pacotes, as classes, os atributos, os métodos, as heranças, as
+ associações, as agregações, as composições e as dependências.
+ A análise consiste em modelos estruturais dos objetos e seus relacionamentos,
+ apresentando as modificações do objeto com o tempo.
+ O resultado da análise é um conjunto de diagramas que identificam os objetos
+ e seus relacionamentos.
+\end_layout
+
+\begin_layout Section
+Diagramas de classes
+\end_layout
+
+\begin_layout Standard
+O diagrama de classes do software desenvolvido é composto por 8 classes
+ e é apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-classes"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+vamos marcar aula em que você me apresenta este diagrama abaixo; acho que
+ teremos de corrigir;
+\end_layout
+
+\begin_layout Plain Layout
+Aqui não fazemos referencia a CGnuplot; esta é uma decisão de projeto; a
+ classe CGnuplot vai aparecer na revisão dos diagramas; lá no projeto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagramaDeClasse.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-classes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dicionário de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Dicionário-de-classes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Classe CAmostraFluido: classe responsável por armazenar dados importantes
+ a respeito das amostras de fluidos de perfuração que serão usados nos cálculos
+ das propriedades, sendo responsável também por calcular taxa de cisalhamento,
+ tensões de cisalhamento e viscosidade aparente, além de gerar gráficos
+ com os resultados obtidos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo pH: armazena um valor para o pH do fluido.
+\end_layout
+
+\begin_layout Itemize
+atributo temp: armazena um valor para a temperatura do fluido no momento
+ do ensaio de reologia.
+\end_layout
+
+\begin_layout Itemize
+atributo eletrica: armazena um valor para a estabilidade eletrica do fluido.
+\end_layout
+
+\begin_layout Itemize
+atributo teta600: armazena um valor para a leitura de deflexao da mola do
+ viscosimetro na rotacao de 600 rpm.
+\end_layout
+
+\begin_layout Itemize
+atributo teta300: armazena um valor para a leitura de deflexao da mola do
+ viscosimetro na rotacao de 300 rpm.
+\end_layout
+
+\begin_layout Itemize
+atributo teta200: armazena um valor para a leitura de deflexao da mola do
+ viscosimetro na rotacao de 200 rpm.
+\end_layout
+
+\begin_layout Itemize
+atributo teta100: armazena um valor para a leitura de deflexao da mola do
+ viscosimetro na rotacao de 100 rpm.
+\end_layout
+
+\begin_layout Itemize
+atributo teta006: armazena um valor para a leitura de deflexao da mola do
+ viscosimetro na rotacao de 6 rpm.
+\end_layout
+
+\begin_layout Itemize
+atributo teta003: armazena um valor para a leitura de deflexao da mola do
+ viscosimetro na rotacao de 3 rpm.
+\end_layout
+
+\begin_layout Itemize
+atributo gi: armazena um valor para o gel inicial do fluido.
+\end_layout
+
+\begin_layout Itemize
+atributo gf: armazena um valor para o gel final do fluido.
+\end_layout
+
+\begin_layout Itemize
+atributo nomedofluido: armazena um texto para identificar o fluido.
+\end_layout
+
+\begin_layout Itemize
+atributo nomearquivo: armazena um texto para identificar o nome do arquivo
+ em que os resultados serão salvos.
+\end_layout
+
+\begin_layout Itemize
+atributo salvar: armazena um caractere para identificar se o usuário gostaria
+ de salvar os resultados em disco.
+\end_layout
+
+\begin_layout Itemize
+atributo i: armazena um valor para o contador da estrutura de repetição.
+\end_layout
+
+\begin_layout Itemize
+atributo rotacao: vetor que armazena as velocidades de rotacao do viscosimetro.
+\end_layout
+
+\begin_layout Itemize
+atributo teta: vetor que armazena as deflexoes da mola do viscosimetro lidas
+ para as rotacoes determinadas.
+\end_layout
+
+\begin_layout Itemize
+atributo teta: vetor que armazena as deflexoes da mola do viscosimetro lidas
+ para as rotacoes determinadas.
+\end_layout
+
+\begin_layout Itemize
+atributo taxacisalhamento: vetor que armazena as taxas de cisalhamento calculada
+s para as rotacoes determinadas.
+\end_layout
+
+\begin_layout Itemize
+atributo tensaocisalhamento_uc: vetor que armazena as tensoes de cisalhamento
+ em unidades de campo calculadas para as rotacoes determinadas.
+\end_layout
+
+\begin_layout Itemize
+atributo tensaocisalhamento_si: vetor que armazena as tensoes de cisalhamento
+ em unidades do sistema internacional calculadas para as rotacoes determinadas.
+\end_layout
+
+\begin_layout Itemize
+atributo visco_si: vetor que armazena as viscosidades aparente em unidades
+ do sistema internacional calculadas para as rotacoes determinadas.
+\end_layout
+
+\begin_layout Itemize
+método CAmostraFluido(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CAmostraFluido(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método Ph(): método que retorna a referência do valor do pH.
+\end_layout
+
+\begin_layout Itemize
+método Temp(): método que retorna a referência do valor da temperatura.
+\end_layout
+
+\begin_layout Itemize
+método Eletrica(): método que retorna a referência do valor da estabilidade
+ elétrica.
+\end_layout
+
+\begin_layout Itemize
+método Teta600(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 600 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta300(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 300 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta200(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 200 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta100(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 100 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta006(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 6 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta003(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 3 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Gi(): método que retorna a referência do valor do gel inicial.
+\end_layout
+
+\begin_layout Itemize
+método Gf(): método que retorna a referência do valor do gel final.
+\end_layout
+
+\begin_layout Itemize
+método EntradaSaidadeDados(): método que recebe a entrada de dados, faz
+ os cálculos necessários, gera os gráficos e a saída de dados.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CFluidoBinghamiano: classe reponsável pelos cálculos das propriedades
+ reológicas para os fluidos binghamianos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo visco_aparente: armazena um valor para a viscosidade aparente do
+ fluido.
+\end_layout
+
+\begin_layout Itemize
+atributo visco_plastica: armazena um valor para a viscosidade plástica do
+ fluido.
+\end_layout
+
+\begin_layout Itemize
+atributo limite_escoamento: armazena um valor para o limite de escoamento
+ do fluido.
+\end_layout
+
+\begin_layout Itemize
+método CFluidoBinghamiano(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CFluidoBinghamiano(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método Teta600(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 600 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta300(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 300 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Visco_aparente: método que calcula a viscosidade aparente do fluido.
+\end_layout
+
+\begin_layout Itemize
+método Visco_plastica: método que calcula a viscosidade plástica do fluido.
+\end_layout
+
+\begin_layout Itemize
+método Limite_escoamento: método que calcula o limite de escoamneto do fluido.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CFluidoPotencia: classe reponsável pelos cálculos das propriedades
+ reológicas para os fluidos de potência.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo x: armazena o valor da divisão de teta600 por teta300.
+\end_layout
+
+\begin_layout Itemize
+atributo y: armazena o valor da divisão de teta300 por teta003.
+\end_layout
+
+\begin_layout Itemize
+atributo n_it: armazena o valor calculado para o índice de comportamento
+ do fluido no interior de tubos.
+\end_layout
+
+\begin_layout Itemize
+atributo n_ea: armazena o valor calculado para o índice de comportamento
+ do fluido no espaço anular.
+\end_layout
+
+\begin_layout Itemize
+atributo k_it: armazena o valor calculado para o índice de consistência
+ do fluido no interior de tubos.
+\end_layout
+
+\begin_layout Itemize
+atributo k_ea: armazena o valor calculado para o índice de consistência
+ do fluido no espaço anular.
+\end_layout
+
+\begin_layout Itemize
+método CFluidoPotencia(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CFluidoPotencia(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método Teta600(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 600 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta300(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 300 rpm.
+\end_layout
+
+\begin_layout Itemize
+método Teta003(): método que retorna a referência do valor da leitura da
+ deflexao da mola na velocidade de 3 rpm.
+\end_layout
+
+\begin_layout Itemize
+método N_it: método que calcula o índice de comportamento do fluido para
+ o interior de tubos.
+\end_layout
+
+\begin_layout Itemize
+método N_ea: método que calcula o índice de comportamento do fluido para
+ o espaço anular.
+\end_layout
+
+\begin_layout Itemize
+método K_it: método que calcula o índice de consistência do fluido para
+ o interior de tubos.
+\end_layout
+
+\begin_layout Itemize
+método K_ea: método que calcula o índice de consistência do fluido para
+ o espaço anular.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CPoco: classe responsável pelo armazenamento dos dados referentes
+ ao poço necessários para os cálculos de velocidade crítica e perdas de
+ carga.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo d: armazena um valor para o diâmetro de tubo.
+\end_layout
+
+\begin_layout Itemize
+atributo di: armazena um valor para o diâmetro externo de tubo interno para
+ anular.
+\end_layout
+
+\begin_layout Itemize
+atributo df: armazena um valor para o diâmetro interno de tubo externo para
+ anular.
+\end_layout
+
+\begin_layout Itemize
+atributo l: armazena um valor para o comprimento do poço.
+\end_layout
+
+\begin_layout Itemize
+atributo v: armazena um valor para a velocidade de fluxo.
+\end_layout
+
+\begin_layout Itemize
+atributo rho: armazena um valor para a massa específica do fluido.
+\end_layout
+
+\begin_layout Itemize
+método CPoco(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CPoco(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método D(): método que retorna a referência do valor do diâmetro de tubo.
+\end_layout
+
+\begin_layout Itemize
+método Di(): método que retorna a referência do valor do diâmetro externo
+ de tubo interno para anular.
+\end_layout
+
+\begin_layout Itemize
+método Df(): método que retorna a referência do valor do diâmetro interno
+ de tubo externo para anular.
+\end_layout
+
+\begin_layout Itemize
+método L(): método que retorna a referência do valor do comprimento do poço.
+\end_layout
+
+\begin_layout Itemize
+método V(): método que retorna a referência do valor da velocidade de fluxo.
+\end_layout
+
+\begin_layout Itemize
+método Rho(): método que retorna a referência do valor da massa específica
+ do fluido.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CVelCriticaBinghamiano: classe responsável pelo cálculo da velocidade
+ crítica para fluidos binghamianos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo vel_critica_Binghamiano_it_SI: armazena um valor para a velocidade
+ crítica calculada para o interior de tubos em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo vel_critica_Binghamiano_it_UC: armazena um valor para a velocidade
+ crítica calculada para o interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo vel_critica_Binghamiano_ea_SI: armazena um valor para a velocidade
+ crítica calculada para o espaço anular em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo vel_critica_Binghamiano_ea_UC: armazena um valor para a velocidade
+ crítica calculada para o espaço anular em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo ppropriedade: armazena ponteiro para objeto da classe CFluidoBinghamian
+o.
+\end_layout
+
+\begin_layout Itemize
+atributo ppoco: armazena ponteiro para objeto da classe CPoco.
+\end_layout
+
+\begin_layout Itemize
+método CVelCriticaBinghamiano(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CVelCriticaBinghamiano(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Binghamiano_it_SI: método que calcula a velocidade crítica
+ do fluido para o interior de tubos em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Binghamiano_it_UC: método que calcula a velocidade crítica
+ do fluido para o interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Binghamiano_ea_SI: método que calcula a velocidade crítica
+ do fluido para o espaço anular em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Binghamiano_ea_UC: método que calcula a velocidade crítica
+ do fluido para o espaço anular em unidades de campo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CVelCriticaPotencia: classe responsável pelo cálculo da velocidade
+ crítica para fluidos de potência.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo vel_critica_Potencia_it_SI: armazena um valor para a velocidade
+ crítica calculada para o interior de tubos em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo vel_critica_Potencia_it_UC: armazena um valor para a velocidade
+ crítica calculada para o interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo vel_critica_Potencia_ea_SI: armazena um valor para a velocidade
+ crítica calculada para o espaço anular em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo vel_critica_Potencia_ea_UC: armazena um valor para a velocidade
+ crítica calculada para o espaço anular em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo pindice: armazena ponteiro para objeto da classe CFluidoPotencia.
+\end_layout
+
+\begin_layout Itemize
+atributo ppoco: armazena ponteiro para objeto da classe CPoco.
+\end_layout
+
+\begin_layout Itemize
+método CVelCriticaPotencia(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CVelCriticaPotencia(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Potencia_it_SI: método que calcula a velocidade crítica
+ do fluido para o interior de tubos em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Potencia_it_UC: método que calcula a velocidade crítica
+ do fluido para o interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Potencia_ea_SI: método que calcula a velocidade crítica
+ do fluido para o espaço anular em unidades do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+método Vel_critica_Potencia_ea_UC: método que calcula a velocidade crítica
+ do fluido para o espaço anular em unidades de campo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CPerdaCargaBinghamiano: classe responsável pelo cálculo da perda
+ de carga para fluidos binghamianos.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_fl_it_SI: armazena um valor para a perda
+ de carga calculada para o fluxo laminar no interior de tubos em unidades
+ do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_fl_it_UC: armazena um valor para a perda
+ de carga calculada para o fluxo laminar no interior de tubos em unidades
+ de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_fl_ea_SI: armazena um valor para a perda
+ de carga calculada para o fluxo laminar no espaço anular em unidades do
+ sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_fl_ea_UC: armazena um valor para a perda
+ de carga calculada para o fluxo laminar no espaço anular em unidades de
+ campo.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_ft_it_SI: armazena um valor para a perda
+ de carga calculada para o fluxo turbulento no interior de tubos em unidades
+ do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_ft_it_UC: armazena um valor para a perda
+ de carga calculada para o fluxo turbulento no interior de tubos em unidades
+ de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_ft_ea_SI: armazena um valor para a perda
+ de carga calculada para o fluxo turbulento no espaço anular em unidades
+ do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Binghamiano_ft_ea_UC: armazena um valor para a perda
+ de carga calculada para o fluxo turbulento no espaço anular em unidades
+ de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo ppropriedade: armazena ponteiro para objeto da classe CFluidoBinghamian
+o.
+\end_layout
+
+\begin_layout Itemize
+atributo ppoco: armazena ponteiro para objeto da classe CPoco.
+\end_layout
+
+\begin_layout Itemize
+método CPerdaCargaBinghamiano(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CPerdaCargaBinghamiano(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_fl_it_SI: método que calcula a perda de carga
+ do fluido para o fluxo laminar no interior de tubos em unidades do sistema
+ internacional.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_fl_it_UC: método que calcula a perda de carga
+ do fluido para o fluxo laminar no interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_fl_ea_SI: método que calcula a velocidade
+ perda de carga para o fluxo laminar no espaço anular em unidades do sistema
+ internacional.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_fl_ea_UC: método que calcula a velocidade
+ perda de carga para o fluxo laminar no espaço anular em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_ft_it_SI: método que calcula a perda de carga
+ do fluido para o fluxo turbulento no interior de tubos em unidades do sistema
+ internacional.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_ft_it_UC: método que calcula a perda de carga
+ do fluido para o fluxo turbulento no interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_ft_ea_SI: método que calcula a velocidade
+ perda de carga para o fluxo turbulento no espaço anular em unidades do
+ sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Binghamiano_ft_ea_UC: método que calcula a velocidade
+ perda de carga para o fluxo fluxo turbulento no espaço anular em unidades
+ de campo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe CPerdaCargaPotencia: classe responsável pelo cálculo da perda de
+ carga para fluidos de potência.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+atributo perda_carga_Potencia_fl_it_SI: armazena um valor para a perda de
+ carga calculada para o fluxo laminar no interior de tubos em unidades do
+ sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Potencia_fl_it_UC: armazena um valor para a perda de
+ carga calculada para o fluxo laminar no interior de tubos em unidades de
+ campo.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Potencia_fl_ea_SI: armazena um valor para a perda de
+ carga calculada para o fluxo laminar no espaço anular em unidades do sistema
+ internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Potencia_fl_ea_UC: armazena um valor para a perda de
+ carga calculada para o fluxo laminar no espaço anular em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Potencia_ft_it_SI: armazena um valor para a perda de
+ carga calculada para o fluxo turbulento no interior de tubos em unidades
+ do sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Potencia_ft_it_UC: armazena um valor para a perda de
+ carga calculada para o fluxo turbulento no interior de tubos em unidades
+ de campo.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Potencia_ft_ea_SI: armazena um valor para a perda de
+ carga calculada para o fluxo turbulento no espaço anular em unidades do
+ sistema internacional.
+\end_layout
+
+\begin_layout Itemize
+atributo perda_carga_Potencia_ft_ea_UC: armazena um valor para a perda de
+ carga calculada para o fluxo turbulento no espaço anular em unidades de
+ campo.
+\end_layout
+
+\begin_layout Itemize
+atributo pindice: armazena ponteiro para objeto da classe CFluidoPotencia.
+\end_layout
+
+\begin_layout Itemize
+atributo ppoco: armazena ponteiro para objeto da classe CPoco.
+\end_layout
+
+\begin_layout Itemize
+método CPerdaCargaPotencia(): método construtor da classe.
+\end_layout
+
+\begin_layout Itemize
+método ~CPerdaCargaPotencia(): método destrutor da classe.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_fl_it_SI: método que calcula a perda de carga
+ do fluido para o fluxo laminar no interior de tubos em unidades do sistema
+ internacional.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_fl_it_UC: método que calcula a perda de carga
+ do fluido para o fluxo laminar no interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_fl_ea_SI: método que calcula a velocidade perda
+ de carga para o fluxo laminar no espaço anular em unidades do sistema internaci
+onal.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_fl_ea_UC: método que calcula a velocidade perda
+ de carga para o fluxo laminar no espaço anular em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_ft_it_SI: método que calcula a perda de carga
+ do fluido para o fluxo turbulento no interior de tubos em unidades do sistema
+ internacional.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_ft_it_UC: método que calcula a perda de carga
+ do fluido para o fluxo turbulento no interior de tubos em unidades de campo.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_ft_ea_SI: método que calcula a velocidade perda
+ de carga para o fluxo turbulento no espaço anular em unidades do sistema
+ internacional.
+\end_layout
+
+\begin_layout Itemize
+método Perda_carga_Potencia_ft_ea_UC: método que calcula a velocidade perda
+ de carga para o fluxo fluxo turbulento no espaço anular em unidades de
+ campo.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Diagrama de sequência – eventos
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Eventos
+\end_layout
+
+\end_inset
+
+ e mensagens
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Mensagens
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de sequência"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+\emph on
+Nesta seção é apresentado o diagrama de sequência na
+\shape default
+\emph default
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-sequencia"
+
+\end_inset
+
+, observe que 
+\shape italic
+\emph on
+o mesmo enfatiza a troca de eventos e mensagens respeitando sua ordem temporal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-sequencia-geral.png
+	lyxscale 85
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-sequencia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de comunicação
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+comunicação
+\end_layout
+
+\end_inset
+
+ – colaboração
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+colaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Diagrama-de-Comunicação"
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de colaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Diagrama-de-colaboração:"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+No diagrama de comunicação o foco é a interação e a troca de mensagens e
+ dados entre os objetos.
+ Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Diagrama-de-Comunicação"
+
+\end_inset
+
+, o diagrama de comunicação mostra a sequência para determinação da velocidade
+ crítica para fluido binghamiano.
+ Observe que as trocas de mensagem estão numeradas em sequência temporal.
+\change_inserted 1635264300 1698093695
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1635264300 1698093703
+gráfico precisa ser corrigido
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/Diagrama_comunicacao.png
+	lyxscale 85
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de comunicação
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-comunicação"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de máquina de estado
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de estados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um diagrama de máquina de estado representa os diversos estados que o objeto
+ assume e os eventos que ocorrem ao longo de sua vida ou mesmo ao longo
+ de um processo (histórico do objeto).
+ É usado para modelar aspectos dinâmicos do objeto.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-maquina-de-estado"
+
+\end_inset
+
+ demonstra o diagrama de máquina de estado para a classe CFluidoBinghamiano.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-maquina-estado.png
+	lyxscale 85
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado para classe CFluidoBinghamiano 
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-maquina-de-estado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de atividades
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-atividades"
+
+\end_inset
+
+ é apresentado o diagrama de atividades correspondente a uma atividade específic
+a do diagrama de máguina de estado, onde calcula-se as propriedades reológicas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-atividades.png
+	lyxscale 85
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de atividades: método N_it() da classe CFluidoPotencia 
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-atividades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

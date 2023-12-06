@@ -1,0 +1,381 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\options normaltoc, sumarioincompleto
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "Título da Monografia - Dissertação - Tese"
+\pdf_author "Nome do Autor"
+\pdf_subject "Descrever assunto"
+\pdf_keywords "Copiar do resumo"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Modelos de fluidos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{Apêndice 
+\backslash
+thechapter: Titulo do Apêndice}
+\backslash
+rhead{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+Descreve-se neste apêndice as curvas de fluxo e de viscosidade teóricas
+ para os dois modelos de fluidos de perfuração simulados (Bingham e Potência).
+\end_layout
+
+\begin_layout Section
+Modelo de Bingham ou plático ideal
+\end_layout
+
+\begin_layout Standard
+O modelo de Bingham, fluido Binghamiano ou plástico ideal requer a aplicação
+ de uma tensão mínima, denominada de limite de escoamento, para que haja
+ alguma deformação cisalhante.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/curvas-bingham.jpeg
+	lyxscale 25
+	width 100text%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curvas de fluxo (A) e de viscosidade (B) do fluido binghamiano ou plástico
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curvas-fluxo-viscosidade-bingham"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A 
+\shape italic
+viscosidade aparente
+\shape default
+ é aquela que mediante a ação de uma tensão cisalhante constante, é medida
+ em um único ponto.
+\end_layout
+
+\begin_layout Itemize
+A 
+\shape italic
+viscosidade plástica
+\shape default
+ é a medida da resistência interna exercida pelo fluido para que esle escoe.
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+limite de escoamento
+\shape default
+ é a tensão mínima para colocar o fluido em fluxo.
+\end_layout
+
+\begin_layout Section
+Modelo de Ostwald Waale ou potência
+\end_layout
+
+\begin_layout Standard
+O modelo de potência não se aplica a todo e qualquer fluido, tampouco a
+ todo intervalo de taxa de cisalhamento.
+ Entretanto, um número razoável de fluidos não Newtonianos apresentam comportame
+nto de potência para grandes intervalos de taxa de cisalhamento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/curvas-potencia.jpeg
+	lyxscale 25
+	width 75text%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curvas de fluxo (A) e de viscosidade (B) do fluido de potência 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:curvas-fluxo-viscosidade-potencia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+índice de comportamento
+\shape default
+ indica fisicamento o afstamento do fluido do modelo Newtoniano.
+ Se o seu valor se aproxiam de um, então o fluido está próximo do comportamento
+ Newtoniano.
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+índice de consistência
+\shape default
+ indica o grau de resistência do fluido diante do escoamento.
+\end_layout
+
+\begin_layout Section
+Equações para cálculo de taxa de cisalhamento, tensão de cisalhamento e
+ viscosidade aparente.
+\end_layout
+
+\begin_layout Standard
+As taxas de cisalhamento, em 𝑠 −1 , podem ser calculadas através da Equação
+ 4.1, em que 𝑁 é a velocidade de rotação em 𝑟𝑝𝑚.
+ As tensões de cisalhamento experimentais podem ser calculadas, em 𝑚𝑃𝑎,
+ através da Equação 4.2, em que 𝑒 são as deflexões, em graus, observadas
+ no viscosímetro Fann (Bird et al, 1992): 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+𝛾=N*1.703
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+𝜏=𝑒*1.066*478
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+𝜏 = 𝑒 ∗ 1,066 ∗ 478,8026 (4.2) 
+\end_layout
+
+\begin_layout Standard
+Os valores de viscosidade aparente, em 𝑚𝑃𝑎.
+ 𝑠 𝑜𝑢 𝑐𝑃, são calculados a partir da Equação 4.3, dividindo-se os valores
+ de tensão de cisalhamento pela taxa de cisalhamento.
+ 
+\end_layout
+
+\begin_layout Standard
+𝜇𝑎 = 𝜏 / 𝛾 (4.3) 
+\end_layout
+
+\begin_layout Standard
+Sendo: 
+\end_layout
+
+\begin_layout Standard
+𝛾 = 𝑡𝑎𝑥𝑎 𝑑𝑒 𝑐𝑖𝑠𝑎𝑙ℎ𝑎𝑚𝑒𝑛𝑡𝑜 (𝑠 −1 ); 
+\end_layout
+
+\begin_layout Standard
+𝑁 = 𝑟𝑜𝑡𝑎çã𝑜 (600, 300, 200, 100, 6 𝑒 3 𝑟𝑝𝑚); 
+\end_layout
+
+\begin_layout Standard
+𝜏 = 𝑡𝑒𝑛𝑠ã𝑜 𝑑𝑒 𝑐𝑖𝑠𝑎𝑙ℎ𝑎𝑚𝑒𝑛𝑡𝑜 (𝑚𝑃𝑎); 
+\end_layout
+
+\begin_layout Standard
+𝑒 = â𝑛𝑔𝑢𝑙𝑜 𝑑𝑎 𝑑𝑒𝑓𝑜𝑟𝑚𝑎çã𝑜 𝑑𝑎 𝑚𝑜𝑙𝑎 (𝑙𝑖𝑑𝑜 𝑎𝑡𝑟𝑎𝑣é𝑠 𝑑𝑜 𝑣𝑖𝑠𝑐𝑜𝑠í𝑚𝑒𝑡𝑟𝑜); 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+𝜇 = 𝑣𝑖𝑠𝑐𝑜𝑠𝑖𝑑𝑎𝑑𝑒 𝑎𝑝𝑎𝑟𝑒𝑛𝑡𝑒 (𝑚𝑃𝑎.
+ 𝑠).
+ 
+\end_layout
+
+\end_body
+\end_document

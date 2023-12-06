@@ -3,11 +3,11 @@
 
 #include <iostream>
 
-#include "CIndice.h"
+#include "CFluidoPotencia.h"
 #include "CPoco.h"
 
 /**
-@brief Classe que calcula a velocidade crítica do fluido de perfuração no poço para fluidos de Potencia
+@brief Classe que calcula a velocidade critica do fluido de perfuração no poço para fluidos de Potencia
 @class CVelCriticaPotemcia
 @file CVelCriticaPotencia.h
 */
@@ -15,23 +15,23 @@
  class CVelCriticaPotencia{
  /// Atributos
  public:
-      /// Velocidade Crítica para Fluidos de Potência, no interior de tubos e unidades no Sistema Internacional
+      /// Velocidade Critica para Fluidos de Potencia, no interior de tubos e unidades no Sistema Internacional
      double vel_critica_Potencia_it_SI;
-     /// Velocidade Crítica para Fluidos de Potência, no interior de tubos e unidades de Campo
+     /// Velocidade Critica para Fluidos de Potencia, no interior de tubos e unidades de Campo
      double vel_critica_Potencia_it_UC;
-     /// Velocidade Crítica para Fluidos de Potência, no espaço anular e unidades no Sistema Internacional
+     /// Velocidade Critica para Fluidos de Potencia, no espaço anular e unidades no Sistema Internacional
      double vel_critica_Potencia_ea_SI;
-     /// Velocidade Crítica para Fluidos de Potência, no espaço anular e unidades de Campo
+     /// Velocidade Critica para Fluidos de Potencia, no espaço anular e unidades de Campo
      double vel_critica_Potencia_ea_UC;
-     /// Ponteiro para objeto da classe CIndice
-    CIndice* pindice;
+     /// Ponteiro para objeto da classe CFluidoPotencia
+    CFluidoPotencia* pindice;
     /// Ponteiro para objeto da classe CPoco
     CPoco* ppoco;
 
 /// Metodos
  public:
     /// Construtor
-    CVelCriticaPotencia(CIndice* _pindice, CPoco* _ppoco) : pindice(_pindice), ppoco(_ppoco){};
+    CVelCriticaPotencia(CFluidoPotencia* _pindice, CPoco* _ppoco) : pindice(_pindice), ppoco(_ppoco){};
     /// Destrutor
     CVelCriticaPotencia();
 

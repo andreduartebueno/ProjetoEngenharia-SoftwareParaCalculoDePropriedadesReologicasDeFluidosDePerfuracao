@@ -1,0 +1,2365 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes true
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author 273446399 "rober"
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Elaboração}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Elaboração
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Elaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elaboração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capítulo será apresentada a elaboração do software a ser desenvolvido.
+ Serão definidas suas áreas de atuação e as equações utilizadas no cálculo
+ das propriedade reológicas de fluidos de perfuração.
+ Por fim, monta-se o diagrama de pacotes para mostrar o relacionamento dos
+ assuntos.
+\end_layout
+
+\begin_layout Section
+Análise de domínio
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Análise-de-domínio"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Após estudo dos requisitos/especificações do sistema, algumas entrevistas
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Entrevistados: Cleysson Correa, André Bueno e Emídio Almeida
+\end_layout
+
+\end_inset
+
+, estudos na biblioteca e disciplinas do curso foi possível identificar
+ o domínio de trabalho:
+\end_layout
+
+\begin_layout Itemize
+O software envolverá disciplinas de Matemática, Física, Química, Geometria,
+ Engenharia de Poços, Mecânica dos Fluidos, Cálculo numérico e Programação.
+\end_layout
+
+\begin_layout Itemize
+O programa será desenvolvido em ambiente universitário e contará com o auxílio
+ de professores e técnicos com amplo conhecimento do tema.
+\end_layout
+
+\begin_layout Itemize
+A duração de desenvolvimento do software ocorrerá em (1) um período letivo,
+ seguindo a proposta especificada no calendário acadêmico.
+\end_layout
+
+\begin_layout Section
+Formulação teórica
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Formulação-teórica"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Serão apresentadas e descritas nesta seção as equações e medidas necessárias
+ para a realização dos cálculos no software.
+\end_layout
+
+\begin_layout Standard
+A hidráulica de perfuração têm papel fundamental na construção de poços
+ de petróleo.
+ A mesma é utilizada para prever o comportamento dos fluidos de perfuração.
+ O estudo dos seus parâmetros nos permite viabilizar mecanismos para a correta
+ limpeza e controle do poço.
+\end_layout
+
+\begin_layout Standard
+Seu entendimento passa pelo conhecimento dos parâmetros reológicos que são
+ propriedades dos fluidos que podem ser cálculadas e aproximadas a partir
+ de resultados de ensaios com viscosímetro em laboratório (viscosimetria).
+\end_layout
+
+\begin_layout Standard
+Os resultados dos ensaios realizados com o viscosímetro Fann 35A, de mais
+ largo uso na indústria, disponível no Laboratório de Fluidos e Mecânica
+ das Rochas no LENEP (Labóratório de Engenharia e Exploração de Petróleo)
+ são apresentados na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Nomenclatura-dos-ensaios"
+
+\end_inset
+
+, com seis pares de rotação e deflexão da mola.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nomenclatura dos ensaios com viscosímetro Fann 35A
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Nomenclatura-dos-ensaios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rotação (N), rpm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+600
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Deflexão (𝜃), graus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+003
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+006
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+200
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+300
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+600
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Equações-para-cálculo-propriedades-reologicas"
+
+\end_inset
+
+ constam as equações que permitem uma aproximação dos parametrôs reológicos
+ dos fluidos de perfuração com base nos resultados do ensaio com viscosímetro
+ Fann 35A, na configuração R1B1.
+ Está aproximação é considerada relativamente precisa para cálculos de campo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Equações para cálculo das propriedades reológicas a partir de ensaios com
+ viscosímetro Fann 35A 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Equações-para-cálculo-propriedades-reologicas"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fluidos Binghamianos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade Aparente
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜇
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+= 𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+600
+\end_layout
+
+\end_inset
+
+/2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade Plástica
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜇
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+p
+\end_layout
+
+\end_inset
+
+= 𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+600
+\end_layout
+
+\end_inset
+
+ - 𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+300
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Limite de Escoamento
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝜏
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+L
+\end_layout
+
+\end_inset
+
+= 𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+300
+\end_layout
+
+\end_inset
+
+ - 𝜇
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+p
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fluidos de Potência
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Índice de Comportamento
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interior da coluna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+p
+\end_layout
+
+\end_inset
+
+ = 3,32 * log(𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+600
+\end_layout
+
+\end_inset
+
+/𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+300
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Espaço anular
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+ = 0,5 * log(𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+300
+\end_layout
+
+\end_inset
+
+/𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+003
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Índice de Consistência
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interior da coluna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+K
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+p
+\end_layout
+
+\end_inset
+
+ = 1,067 * 𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+600
+\end_layout
+
+\end_inset
+
+/(1022n
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+p
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Espaço anular
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+K
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+ = 1,067 * 𝜃
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+300
+\end_layout
+
+\end_inset
+
+/(511n
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir da vazão, dos parâmetros reológicos do fluido e da geometria de
+ cada trecho do poço, deve-se calcular a velocidade do fluxo em cada ponto,
+ com as equações abaixo:
+\begin_inset Formula 
+\begin{equation}
+v_{p}=24,51*Q/D^{2}\:(Interior\:de\:tubos,\:unidades\:de\:campo)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v_{a}=24,51*Q/(D_{0}^{2}-D_{i}^{2})\:(Espaços\:anulares,\:unidades\:de\:campo)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+onde as velocidades (
+\begin_inset Formula $v$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+note que nas equações os termos estão em itático, quando foir citar um termo
+ selecione o mesmo e pressione ctrl+m para inserir equação inline
+\end_layout
+
+\end_inset
+
+) estão expressas em 
+\begin_inset Formula $ft/min$
+\end_inset
+
+, a vazão (
+\begin_inset Formula $Q$
+\end_inset
+
+) em gal/min e os diâmetros (
+\begin_inset Formula $D$
+\end_inset
+
+) em polegadas.
+\end_layout
+
+\begin_layout Standard
+As velocidades calculadas pelas equações devem ser comparadas com as velocidades
+ críticas de fluxo, que são função da geometria do poço e dos parâmetros
+ reológicos.
+ Caso o fluido esteja escoando a velocidades menores do que as críticas,
+ o padrão de fluxo é laminar, ao passo que, em velocidades maiores do que
+ as críticas o padrão de fluxo é turbulento.
+\end_layout
+
+\begin_layout Standard
+De posse do padrão de fluxo em cada trecho, pode-se selecionar as equações
+ de perda de carga adequadas para cada modelo reológico.
+\end_layout
+
+\begin_layout Standard
+Na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Equações para cálculo de velocidades críticas Binghamianos"
+
+\end_inset
+
+ constam as equações de velocidades críticas e perdas de carga para o interior
+ de colunas e espaços anulares de fluidos binghamianos em regime laminar
+ e turbulento, para unidades do Sitema Internacional (SI) ou Unidades de
+ campo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement p
+wide true
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Equações para cálculo de velocidades críticas e perdas de carga na circulação
+ de fluidos Binghamianos (MACHADO, 2002)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Equações para cálculo de velocidades críticas Binghamianos"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Circulação de Fluidos Binghamianos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro calculado
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interior de tubos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Espaço anular
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Internacional (SI)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidade de campo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Internacional (SI)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidade de campo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝛥P (Laminar)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{32𝜇_{p}Lv}{D^{2}}$
+\end_inset
+
++
+\begin_inset Formula $\frac{4𝜏_{L}L}{D}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{𝜇_{p}Lv}{89775D^{2}}$
+\end_inset
+
++
+\begin_inset Formula $\frac{𝜏_{L}L}{300D}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{48𝜇_{p}Lv}{(D_{0}^{2}-D_{i}^{2})}$
+\end_inset
+
++
+\begin_inset Formula $\frac{4𝜏_{L}L}{(D_{0}-D_{i})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{𝜇_{p}Lv}{59851(D_{0}^{2}-D_{i}^{2})}$
+\end_inset
+
++
+\begin_inset Formula $\frac{𝜏_{L}L}{300(D_{0}-D_{i})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝛥P (Turbulento)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0,1L𝜌^{0,8}v^{1,8}𝜇_{p}^{0,2}}{D^{1,2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{L𝜌^{0,8}v^{1,8}𝜇_{p}^{0,2}}{3212923D^{1,2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{0,1275L𝜌^{0,8}v^{1,8}𝜇_{p}^{0,2}}{(D_{0}-D_{i})^{1,2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{L𝜌^{0,8}v^{1,8}𝜇_{p}^{0,2}}{2519939(D_{0}-D_{i})^{1,2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vc
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interior de tubos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidades SI
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidade de campo
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1050}{D𝜌}\left[𝜇_{p}+\sqrt{𝜇_{p}^{2}+\frac{𝜏_{L}D^{2}𝜌}{4200}}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{67,91}{D𝜌}\left[𝜇_{p}+\sqrt{𝜇_{p}^{2}+8,816𝜏_{L}D^{2}𝜌}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vc
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Espaço anular
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidades SI
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidade de campo
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1286}{(D_{0}-D_{i})𝜌}\left[𝜇_{p}+\sqrt{𝜇_{p}^{2}+\frac{𝜏_{L}(D_{0}-D_{i})𝜌}{7716}}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{93,17}{(D_{0}-D_{i})𝜌}\left[𝜇_{p}+\sqrt{𝜇_{p}^{2}+4,8𝜏_{L}(D_{0}-D_{i})𝜌}\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Caso o modelo reológico de fluido seja de potência, deve-se utilizar as
+ equações constantes na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Equações para cálculo de velocidades críticas Potencia"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement p
+wide true
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Equações para cálculo de velocidades críticas e de perdas de carga na circulação
+ de fluidos de Potência (MACHADO, 2002)
+\begin_inset CommandInset label
+LatexCommand label
+name "Equações para cálculo de velocidades críticas Potencia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Circulação de Fluidos de Potência
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro calculado
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interior do tubo
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Internacional (SI)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidades de campo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vc
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\frac{(3470-1370n)K}{8𝜌}\right]^{1/(2-n)}$
+\end_inset
+
+
+\begin_inset Formula $\left[\frac{6n+2}{Dn}\right]^{n/(2-n)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1,969\left[\frac{5(3470-1370n)K}{𝜌}\right]^{1/(2-n)}$
+\end_inset
+
+
+\begin_inset Formula $\left[\frac{3n+1}{1,27Dn}\right]^{n/(2-n)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝛥P (Laminar)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{4KL}{D}\left(\frac{v}{D}\frac{6n+2}{n}\right)^{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{KL}{300D}\left(\frac{0,4v}{D}\frac{3n+1}{n}\right)^{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝛥P (Turbulento)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{\left(log\,n+2,5\right)𝜌v^{2}L}{25D}\left[\frac{K\left(\frac{v}{D}\frac{6n+2}{n}\right)}{8𝜌v^{2}}\right]^{\left(1,4-log\,n\right)/7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{\left(log\,n+2,5\right)𝜌v^{2}L}{4645029D}\left[\frac{19,36K\left(\frac{0,4v}{D}\frac{3n+1}{n}\right)}{𝜌v^{2}}\right]^{\left(1,4-log\,n\right)/7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro calculado
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Espaço anular
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema Internacional (SI)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unidades de campo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vc
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left[\frac{(3470-1370n)K}{9,788𝜌}\right]^{1/(2-n)}$
+\end_inset
+
+
+\begin_inset Formula $\left[\frac{8n+4}{(D_{0}-D_{i})n}\right]^{n/(2-n)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1,969\left[\frac{4,08(3470-1370n)K}{𝜌}\right]^{1/(2-n)}$
+\end_inset
+
+
+\begin_inset Formula $\left[\frac{2n+1}{0,64(D_{0}-D_{i})n}\right]^{n/(2-n)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝛥P (Laminar)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{4KL}{(D_{0}-D_{i})}\left(\frac{v}{(D_{0}-D_{i})}\frac{n+4}{n}\right)^{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{KL}{300(D_{0}-D_{i})}\left(\frac{0,8v}{(D_{0}-D_{i})}\frac{2n+1}{n}\right)^{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+𝛥P (Turbulento)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{\left(log\,n+2,5\right)𝜌v^{2}L}{20,4125(D_{0}-D_{i})}\left[\frac{K\left(\frac{v}{(D_{0}-D_{i})}\frac{8n+4}{n}\right)}{9,798𝜌v^{2}}\right]^{\left(1,4-log\,n\right)/7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{\left(log\,n+2,5\right)𝜌v^{2}L}{3792669(D_{0}-D_{i})}\left[\frac{15,81K\left(\frac{0,8v}{(D_{0}-D_{i})}\frac{2n+1}{n}\right)}{𝜌v^{2}}\right]^{\left(1,4-log\,n\right)/7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Indica-se os livros 
+\begin_inset Quotes eld
+\end_inset
+
+Reologia e Escoamento de Fluidos - Ênfase na Indústria do Petróleo
+\begin_inset Quotes erd
+\end_inset
+
+ de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "adb-livro-fluidos"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Perfuração Direcional
+\begin_inset Quotes erd
+\end_inset
+
+ de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "adb-livro-perfuracao"
+literal "false"
+
+\end_inset
+
+e 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Composition and Properties of Drilling and Completion Fluids
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "adb-livro-fluido-perfuracao-completacao"
+literal "false"
+
+\end_inset
+
+, para a consulta de informações a cerca do assunto abordado neste projeto.
+ Assim como outros materiais disponíveis nas plataformas digitais de pesquisa.
+\end_layout
+
+\begin_layout Section
+Identificação de pacotes – assuntos
+\end_layout
+
+\begin_layout Standard
+Apresentados os conceitos físico-matatemáticos relacionados ao software
+ a ser desenvolvido, pode-se montar a lista de assuntos (pacotes).
+\end_layout
+
+\begin_layout Itemize
+Fluido: o fluido de perfuração é um dos elemento que compõem o sistema de
+ circulação de fluidos em uma operação de perfuração de poços de petróleo.
+ São uma mistura complexa de sólidos, líquidos e até gases que são usados
+ para resfriar, lubrificar e limpar a broca de perfuração.
+ Eles também são usados para controlar a pressão do poço e prevenir o colapso
+ das paredes do poço
+\end_layout
+
+\begin_layout Itemize
+CFluido: representa o tipo de base de fluido de perfuração a ser analisado
+ no ensaio (podendo ser: base água, óleo, sintético ou gás).
+\end_layout
+
+\begin_layout Itemize
+CFluido Binghamiano: representa o modelo de fluido binghamiano a ser considerado
+ na simulação.
+\end_layout
+
+\begin_layout Itemize
+CFluidoPotencia:
+\change_inserted 273446399 1701867634
+ representa o modelo de fluido a ser considerado na simulação.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Diagrama de pacotes – assuntos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Diagrama de pacotes – assuntos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-Pacotes"
+
+\end_inset
+
+ representa o diagrama de pacotes do sistema.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+o diagrama de pacotes esta errado; um pacote é algo grande com classes dentro;
+ modelo de fluido é uma enumeração; tipo de fluido é uma enumeração; propriedade
+s são as propriedades dos fluidos dentro da classe CFluido; Propriedades
+ do Poço estarão na classe CPoco; ENTRE OS PACOTES DE SEU PROJETO PODEMOS
+ TER PACOTES QUE REPRESENTEM CONJUNTO DE CLASSES; POR EXEMPLO, pacotte Fluido
+ representando as diversas classes CFluido e derivadas; pacote Poço representand
+o as diversas classes de poço; Pacote Graficos, representando as classes
+ que geram gráficos, como CGnuplot e QCustomPlot; Se utiliza estatística
+ pacote estatística; se usa métodos numéricos pacote métodos numéricos;
+ enfim, um pacote é um conjunto de classes e funções que estão fortememtne
+ relacionadas entre sí;
+\change_deleted 273446399 1701827561
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-pacotes-assuntos.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Pacotes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-Pacotes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

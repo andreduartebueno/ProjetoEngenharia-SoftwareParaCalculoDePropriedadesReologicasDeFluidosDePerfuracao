@@ -5,7 +5,7 @@
 
 /**
 @class CPerdaCargaPotencia
-@file CPerdaCargaPotencia.h
+@file CPerdaCargaPotencia.cpp
 */
 
 using namespace std;

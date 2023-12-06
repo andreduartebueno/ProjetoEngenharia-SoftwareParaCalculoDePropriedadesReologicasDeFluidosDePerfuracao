@@ -9,7 +9,7 @@
 
 /**
 @class CAmostraFluido
-@file CAmostraFluido.h
+@file CAmostraFluido.cpp
 */
 
 using namespace std;
@@ -93,7 +93,7 @@ void CAmostraFluido::EntradaSaidadeDados() {
     cout << "Entre com os valores das leituras conforme sequencia:\n";
     cout << linha;
 
-    /// Solicitando ao usuário os valores das leituras das deflexões
+    /// Solicitando ao usuario os valores das leituras das deflexoes
     cout << "1 - Digite o valor de Teta600: \n" << endl;
     cin >> teta600;
 
@@ -128,7 +128,7 @@ void CAmostraFluido::EntradaSaidadeDados() {
     /// Criando vetor para armazenar os valores das velocidades de rotacao
     vector<double> rotacao = {600, 300, 200, 100, 6, 3};
 
-    /// Criando vetor para armazenar as leituras das deflexões
+    /// Criando vetor para armazenar as leituras das deflexoes
     vector<double> teta;
 
 
@@ -140,7 +140,7 @@ void CAmostraFluido::EntradaSaidadeDados() {
     teta.push_back(teta006);
     teta.push_back(teta003);
 
-    /// Exibindo os vetores ao usuário em forma de tabela
+    /// Exibindo os vetores ao usuario em forma de tabela
     cout << "REOLOGIA: Viscosimetro Fann modelo 35A)" << endl;
     cout << linha;
 
@@ -196,6 +196,43 @@ void CAmostraFluido::EntradaSaidadeDados() {
     for(i = 0; i < visco_si.size(); i++){cout << visco_si[i] << " ";}
     cout << endl;
     cout << linha;
+    cin.get();
+
+    CGnuplot fig1;
+    fig1.Title("Reograma");
+    fig1.XLabel("Rotacao (rpm)");
+    fig1.YLabel("Deflexao (graus)");
+    fig1.Style("lines");
+    fig1.XAutoscale();
+    fig1.YAutoscale();
+    fig1.Grid();
+    fig1.PlotVector(rotacao, teta);
+    cin.get();
+
+    CGnuplot fig2;
+    fig2.Title("Curva de fluxo");
+    fig2.XLabel("Taxa de Cisalhamento (1/s)");
+    fig2.YLabel("Tensao de Cisalhamento (mPa)");
+    fig2.Style("lines");
+    fig2.XLogscale();
+    fig2.YLogscale();
+    fig2.Grid();
+    fig2.Replot();
+    fig2.PlotVector(taxacisalhamento, tensaocisalhamento_si);
+    cin.get();
+
+    Gnuplot fig3;
+    fig3.Title("Curva de viscosidade");
+    fig3.XLabel("Taxa de Cisalhamento (1/s)");
+    fig3.YLabel("Viscosidade Aparente (mPa.s)");
+    fig3.Style("lines");
+    fig3.XAutoscale();
+    fig3.YAutoscale();
+    fig3.Grid();
+    fig3.Replot();
+    fig3.PlotVector(taxacisalhamento, visco_si);
+    cin.get();
+
 
     /// Saida de dados
     cout << "Deseja salvar os resultados em disco? [s/n] \n";

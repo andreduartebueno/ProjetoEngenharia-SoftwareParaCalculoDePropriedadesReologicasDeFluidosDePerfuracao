@@ -4,9 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-/*
+
 #include "CGnuplot.h"
-*/
+
 /**
 @brief Classe responsavel pelo entrada de dados da amostra de fluido de perfuracao
 @class CAmostraFluido
