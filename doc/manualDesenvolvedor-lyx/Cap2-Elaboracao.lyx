@@ -97,7 +97,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -2161,13 +2161,6 @@ Vc
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Indica-se os livros 
 \begin_inset Quotes eld
 \end_inset
@@ -2304,13 +2297,6 @@ o as diversas classes de poço; Pacote Graficos, representando as classes
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -2346,13 +2332,6 @@ name "fig:Diagrama-de-Pacotes"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
 \end_inset
 
 

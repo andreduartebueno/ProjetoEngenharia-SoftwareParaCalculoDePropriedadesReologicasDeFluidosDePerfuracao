@@ -11,3 +11,8 @@ Enfim, tenha em mente que ele pode atuar de duas formas:
 - Usuário e Desenvolvedor.
 
 Neste diretório test as instruções para o usuário final, sem detalhes de desenvolvedor.
+
+Coloque arquivos num formato como:
+
+Teste-01-SalvamentoDosTesultadosEmArquivoDeDisco.in
+Teste-01-SalvamentoDosTesultadosEmArquivoDeDisco.out

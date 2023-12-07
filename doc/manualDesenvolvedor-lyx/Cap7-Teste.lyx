@@ -142,7 +142,7 @@ Todo projeto de engenharia passa por uma etapa de testes.
 \end_layout
 
 \begin_layout Section
-Teste 1: Interface
+Testes interface
 \end_layout
 
 \begin_layout Standard
@@ -201,8 +201,8 @@ name "fig:Teste-TelaPrograma"
 
 \end_layout
 
-\begin_layout Section
-Teste 2: Salvamento dos resultados em arquivo de disco
+\begin_layout Subsection
+Teste 1: Salvamento dos resultados em arquivo de disco
 \end_layout
 
 \begin_layout Standard
@@ -273,8 +273,8 @@ name "fig:Teste-salvar-em-disco"
 
 \end_layout
 
-\begin_layout Section
-Teste 3: Teste de escolha de opção incorreta
+\begin_layout Subsection
+Teste 2: Teste de escolha de opção incorreta
 \end_layout
 
 \begin_layout Standard
@@ -335,8 +335,8 @@ name "fig:Teste-opcao-incorreta"
 
 \end_layout
 
-\begin_layout Section
-Teste 4: Teste de entrada de dados incorreta
+\begin_layout Subsection
+Teste 3: Teste de entrada de dados incorreta
 \end_layout
 
 \begin_layout Standard
@@ -396,16 +396,39 @@ name "fig:entrada-dados-incorreta"
 \end_layout
 
 \begin_layout Section
-Teste 5: Cálculo das propriedades
+Testes cálculo das propriedades
 \end_layout
 
 \begin_layout Standard
 Neste teste caso o usuário insire dados reais e escolhe opções válidas,
  calculando as propriedades de forma correta.
- Veja Figura 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Tem de acrescentar uns testes;
+\end_layout
+
+\begin_layout Plain Layout
+Idealmente pegue dados de livros e referencie os livros
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Teste 4: Cálculo das Velocidades e Perda de Carga no Interior de Tubos e
+ Fluxo Laminar
+\end_layout
+
+\begin_layout Standard
+Veja Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:calculo-propriedades"
+reference "fig:Teste-TelaPrograma-Captura1-1-1-1"
 
 \end_inset
 
@@ -422,9 +445,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Teste5.png
-	lyxscale 75
-	width 75text%
+	filename ../../../ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao-Robert-old/doc/manualDesenvolvedor-lyx/imagens/Teste5.png
+	width 100text%
 
 \end_inset
 
@@ -438,7 +460,236 @@ status open
 Cálculo das propriedades 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:calculo-propriedades"
+name "fig:Teste-TelaPrograma-Captura1-1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Teste 5: Cálculo das Velocidades e Perda de Carga no Interior de Tubos e
+ Fluxo Turbulento
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FAZER e adicionar aqui
+\end_layout
+
+\begin_layout Plain Layout
+No diretório de teste colocar os arquivos com a entrada de dados
+\end_layout
+
+\begin_layout Plain Layout
+No diretório de teste colocar os arquivos com a saida de dados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1-1-1-1-1"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao-Robert-old/doc/manualDesenvolvedor-lyx/imagens/Teste5.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cálculo das propriedades 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1-1-1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Teste 6: Cálculo das Velocidades e Perda de Carga no Espaço Anular e Fluxo
+ Laminar
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FAZER e adicionar aqui
+\end_layout
+
+\begin_layout Plain Layout
+No diretório de teste colocar os arquivos txt com a entrada de dados
+\end_layout
+
+\begin_layout Plain Layout
+No diretório de teste colocar os arquivos txt com a saida de dados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1-1-1-1-1-1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao-Robert-old/doc/manualDesenvolvedor-lyx/imagens/Teste5.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cálculo das propriedades 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1-1-1-1-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Teste 7: Cálculo das Velocidades e Perda de Carga no Espaço Anular e Fluxo
+ Turbulento
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FAZER e adicionar aqui
+\end_layout
+
+\begin_layout Plain Layout
+No diretório de teste colocar os arquivos txt com a entrada de dados
+\end_layout
+
+\begin_layout Plain Layout
+No diretório de teste colocar os arquivos txt com a saida de dados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Veja Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1-1-1-1-1-1-1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../ProjetoEngenharia-SoftwareParaCalculoDePropriedadesReologicasDeFluidosDePerfuracao-Robert-old/doc/manualDesenvolvedor-lyx/imagens/Teste5.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cálculo das propriedades 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1-1-1-1-1-1-1"
 
 \end_inset
 
@@ -456,7 +707,20 @@ name "fig:calculo-propriedades"
 \end_layout
 
 \begin_layout Section
-Teste 6: Gráfico Reograma
+Testes com geração de gráficos
+\end_layout
+
+\begin_layout Standard
+Nesta seção iremos apresentar testes com a geração de gráficos de resultados.
+ Os gráficos são gerados usando o software externo 
+\family typewriter
+gnuplot
+\family default
+.
+\end_layout
+
+\begin_layout Subsection
+Teste 8: Gráfico Reograma
 \end_layout
 
 \begin_layout Standard
@@ -513,8 +777,8 @@ name "fig:reograma-fluido"
 
 \end_layout
 
-\begin_layout Section
-Teste 7: Gráfico Curva de Fluxo
+\begin_layout Subsection
+Teste 9: Gráfico Curva de Fluxo
 \end_layout
 
 \begin_layout Standard
@@ -571,8 +835,8 @@ name "fig:curva-fluxo"
 
 \end_layout
 
-\begin_layout Section
-Teste 8: Gráfico Curva de Viscosidade
+\begin_layout Subsection
+Teste 10: Gráfico Curva de Viscosidade
 \end_layout
 
 \begin_layout Standard
@@ -626,10 +890,6 @@ name "fig:curva-viscosidade"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 

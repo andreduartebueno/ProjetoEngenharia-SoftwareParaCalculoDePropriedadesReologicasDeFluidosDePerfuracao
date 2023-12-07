@@ -363,6 +363,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/Arquivo-disco.png
 	width 70text%
